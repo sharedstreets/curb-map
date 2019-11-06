@@ -1,0 +1,9 @@
+
+html, body, #root {
+  height: 100hv;
+  width: 100wv;
+}
+
+body {
+  margin: 0;
+}
