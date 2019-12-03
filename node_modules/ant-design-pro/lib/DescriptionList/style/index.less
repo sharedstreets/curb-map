@@ -1,0 +1,84 @@
+@import "../../style/themes/default.less";
+
+.antd-pro-description-list-descriptionList {
+  // offset the padding-bottom of last row
+    .ant-row {
+      margin-bottom: -16px;
+      overflow: hidden;
+    }
+  // fix margin top error of following descriptionList
+  & + & {
+      .ant-row {
+        margin-top: 16px;
+      }
+  }
+
+  .antd-pro-description-list-title {
+    margin-bottom: 16px;
+    color: @heading-color;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .antd-pro-description-list-term {
+    display: table-cell;
+    padding-bottom: 16px;
+    color: @heading-color;
+    // Line-height is 22px IE dom height will calculate error
+    line-height: 20px;
+    white-space: nowrap;
+
+    &::after {
+      position: relative;
+      top: -0.5px;
+      margin: 0 8px 0 2px;
+      content: ':';
+    }
+  }
+
+  .antd-pro-description-list-detail {
+    display: table-cell;
+    width: 100%;
+    padding-bottom: 16px;
+    color: @text-color;
+    line-height: 20px;
+  }
+
+  &.antd-pro-description-list-small {
+    // offset the padding-bottom of last row
+      .ant-row {
+        margin-bottom: -8px;
+      }
+    // fix margin top error of following descriptionList
+    & + .antd-pro-description-list-descriptionList {
+        .ant-row {
+          margin-top: 8px;
+        }
+    }
+    .antd-pro-description-list-title {
+      margin-bottom: 12px;
+      color: @text-color;
+    }
+    .antd-pro-description-list-term,
+    .antd-pro-description-list-detail {
+      padding-bottom: 8px;
+    }
+  }
+
+  &.antd-pro-description-list-large {
+    .antd-pro-description-list-title {
+      font-size: 16px;
+    }
+  }
+
+  &.antd-pro-description-list-vertical {
+    .antd-pro-description-list-term {
+      display: block;
+      padding-bottom: 8px;
+    }
+
+    .antd-pro-description-list-detail {
+      display: block;
+    }
+  }
+}

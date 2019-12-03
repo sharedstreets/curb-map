@@ -1,0 +1,66 @@
+@import "../../style/themes/default.less";
+
+.antd-pro-number-info-numberInfo {
+  .antd-pro-number-info-suffix {
+    margin-left: 4px;
+    color: @text-color;
+    font-size: 16px;
+    font-style: normal;
+  }
+  .antd-pro-number-info-numberInfoTitle {
+    margin-bottom: 16px;
+    color: @text-color;
+    font-size: @font-size-lg;
+    transition: all 0.3s;
+  }
+  .antd-pro-number-info-numberInfoSubTitle {
+    height: 22px;
+    overflow: hidden;
+    color: @text-color-secondary;
+    font-size: @font-size-base;
+    line-height: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+  .antd-pro-number-info-numberInfoValue {
+    margin-top: 4px;
+    overflow: hidden;
+    font-size: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    & > span {
+      display: inline-block;
+      height: 32px;
+      margin-right: 32px;
+      color: @heading-color;
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .antd-pro-number-info-subTotal {
+      margin-right: 0;
+      color: @text-color-secondary;
+      font-size: @font-size-lg;
+      vertical-align: top;
+      i {
+        margin-left: 4px;
+        font-size: 12px;
+        transform: scale(0.82);
+      }
+        .anticon-caret-up {
+          color: @red-6;
+        }
+        .anticon-caret-down {
+          color: @green-6;
+        }
+    }
+  }
+}
+.antd-pro-number-info-numberInfolight {
+  .antd-pro-number-info-numberInfoValue {
+    & > span {
+      color: @text-color;
+    }
+  }
+}

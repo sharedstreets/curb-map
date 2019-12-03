@@ -1,0 +1,16 @@
+@import "../../style/themes/default.less";
+
+.antd-pro-header-dropdown-container > * {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: @shadow-1-down;
+}
+
+@media screen and (max-width: @screen-xs) {
+  .antd-pro-header-dropdown-container {
+    width: 100% !important;
+  }
+  .antd-pro-header-dropdown-container > * {
+    border-radius: 0 !important;
+  }
+}

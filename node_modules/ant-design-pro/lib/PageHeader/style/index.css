@@ -1,0 +1,132 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-page-header-pageHeader {
+  padding: 16px 32px 0 32px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-wide {
+  max-width: 1200px;
+  margin: auto;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-detail {
+  display: flex;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-row {
+  display: flex;
+  width: 100%;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-breadcrumb {
+  margin-bottom: 16px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-tabs {
+  margin: 0 0 0 -8px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-tabs .ant-tabs-bar {
+  margin-bottom: 1px;
+  border-bottom: none;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-logo {
+  flex: 0 1 auto;
+  margin-right: 16px;
+  padding-top: 1px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-logo > img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-title {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 20px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-action {
+  min-width: 266px;
+  margin-left: 56px;
+}
+.antd-pro-page-header-pageHeader
+  .antd-pro-page-header-action
+  .ant-btn-group:not(:last-child),
+.antd-pro-page-header-pageHeader
+  .antd-pro-page-header-action
+  .ant-btn:not(:last-child) {
+  margin-right: 8px;
+}
+.antd-pro-page-header-pageHeader
+  .antd-pro-page-header-action
+  .ant-btn-group
+  > .ant-btn {
+  margin-right: 0;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-title,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-content {
+  flex: auto;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-action,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-main {
+  flex: 0 1 auto;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-main {
+  width: 100%;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-title,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-action {
+  margin-bottom: 16px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-logo,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-content,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent {
+  margin-bottom: 16px;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-action,
+.antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent {
+  text-align: right;
+}
+.antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent {
+  min-width: 242px;
+  margin-left: 88px;
+}
+@media screen and (max-width: 1200px) {
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent {
+    margin-left: 44px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-row {
+    display: block;
+  }
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-action,
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-extraContent {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 576px) {
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-detail {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-action .ant-btn-group,
+  .antd-pro-page-header-pageHeader .antd-pro-page-header-action .ant-btn {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .antd-pro-page-header-pageHeader
+    .antd-pro-page-header-action
+    .ant-btn-group
+    > .ant-btn {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}

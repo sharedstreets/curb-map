@@ -1,0 +1,102 @@
+{
+  "name": "preact-context",
+  "version": "1.1.4",
+  "description": "React's new Context Api for preact",
+  "main": "./dist/cjs/context.js",
+  "module": "./dist/esm/context.js",
+  "jsnext:main": "./dist/esm/context.js",
+  "browser": "./dist/context.min.js",
+  "types": "./dist/esm/context.d.ts",
+  "source": "./src/context.ts",
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "typescript",
+      "typescript/react",
+      "typescript/prettier"
+    ],
+    "rules": {
+      "require-jsdoc": 0,
+      "typescript/interface-name-prefix": 0,
+      "typescript/explicit-member-accessibility": 0,
+      "typescript/explicit-function-return-type": 0,
+      "typescript/no-var-requires": 0
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc -p .",
+    "rollup": "rollup -c",
+    "rollup-test": "rollup -c --includeSpecFiles",
+    "min": "uglifyjs dist/context.js -o dist/context.min.js -c -m eval --mangle-props regex=/^_/,reserved=[__extends] --passes 2",
+    "prepare": "npm-run-all clean build rollup min",
+    "watch:build": "npm run build -- -w",
+    "lint": "eslint --ext ts --ext tsx --ext js src karma.conf.js",
+    "fix": "npm run lint -- --fix",
+    "test:browser": "karma start",
+    "test:jsdom": "mocha -r esm -r ./dist/esm/_tests/register-jsdom.js ./dist/esm/**/*.Spec.js",
+    "test": "npm-run-all lint test:jsdom test:browser",
+    "watch:test": "npm run test:jsdom -- --watch --reporter dot",
+    "watch": "npm run prepare && npm-run-all --parallel watch:*",
+    "preversion": "npm run test"
+  },
+  "author": {
+    "name": "Georgios Valotasios",
+    "email": "valotas@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valotas/preact-context.git"
+  },
+  "bugs": {
+    "url": "https://github.com/valotas/preact-context/issues"
+  },
+  "homepage": "https://github.com/valotas/preact-context",
+  "peerDependencies": {
+    "preact": "^8.2.7"
+  },
+  "keywords": [
+    "preact",
+    "context"
+  ],
+  "devDependencies": {
+    "@types/jsdom": "^12.2.1",
+    "@types/mocha": "^5.2.0",
+    "@types/sinon": "^7.0.3",
+    "browserify": "^16.2.3",
+    "cached-path-relative": "^1.0.2",
+    "core-js": "^2.5.5",
+    "eslint": "^5.12.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-typescript": "^1.0.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-typescript": "^0.12.0",
+    "esm": "^3.0.84",
+    "expect": "^23.6.0",
+    "jsdom": "^12.1.0",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-rollup-preprocessor": "^7.0.0-rc.1",
+    "karma-sauce-launcher": "^1.2.0",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "preact": "^8.4.2",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.1.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "sinon": "^7.2.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.2.2",
+    "typescript-eslint-parser": "^19.0.2",
+    "uglify-es": "^3.3.9"
+  }
+}

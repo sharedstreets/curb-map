@@ -1,0 +1,28 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-global-footer-globalFooter {
+  margin: 48px 0 24px 0;
+  padding: 0 16px;
+  text-align: center;
+}
+.antd-pro-global-footer-globalFooter .antd-pro-global-footer-links {
+  margin-bottom: 8px;
+}
+.antd-pro-global-footer-globalFooter .antd-pro-global-footer-links a {
+  color: rgba(0, 0, 0, 0.45);
+  transition: all 0.3s;
+}
+.antd-pro-global-footer-globalFooter
+  .antd-pro-global-footer-links
+  a:not(:last-child) {
+  margin-right: 40px;
+}
+.antd-pro-global-footer-globalFooter .antd-pro-global-footer-links a:hover {
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-global-footer-globalFooter .antd-pro-global-footer-copyright {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}

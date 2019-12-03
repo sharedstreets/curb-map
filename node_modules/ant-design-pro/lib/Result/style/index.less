@@ -1,0 +1,58 @@
+@import "../../style/themes/default.less";
+
+.antd-pro-result-result {
+  width: 72%;
+  margin: 0 auto;
+  text-align: center;
+  @media screen and (max-width: @screen-xs) {
+    width: 100%;
+  }
+
+  .antd-pro-result-icon {
+    margin-bottom: 24px;
+    font-size: 72px;
+    line-height: 72px;
+
+    & > .antd-pro-result-success {
+      color: @success-color;
+    }
+
+    & > .antd-pro-result-error {
+      color: @error-color;
+    }
+  }
+
+  .antd-pro-result-title {
+    margin-bottom: 16px;
+    color: @heading-color;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .antd-pro-result-description {
+    margin-bottom: 24px;
+    color: @text-color-secondary;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .antd-pro-result-extra {
+    padding: 24px 40px;
+    text-align: left;
+    background: #fafafa;
+    border-radius: @border-radius-sm;
+
+    @media screen and (max-width: @screen-xs) {
+      padding: 18px 20px;
+    }
+  }
+
+  .antd-pro-result-actions {
+    margin-top: 32px;
+
+    button:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}

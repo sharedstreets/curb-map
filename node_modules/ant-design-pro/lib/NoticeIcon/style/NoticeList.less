@@ -1,0 +1,105 @@
+@import "../../style/themes/default.less";
+
+.antd-pro-notice-icon-list {
+  max-height: 400px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .antd-pro-notice-icon-item {
+    padding-right: 24px;
+    padding-left: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    .antd-pro-notice-icon-meta {
+      width: 100%;
+    }
+
+    .antd-pro-notice-icon-avatar {
+      margin-top: 4px;
+      background: #fff;
+    }
+    .antd-pro-notice-icon-iconElement {
+      font-size: 32px;
+    }
+
+    &.antd-pro-notice-icon-read {
+      opacity: 0.4;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+    &:hover {
+      background: @primary-1;
+    }
+    .antd-pro-notice-icon-title {
+      margin-bottom: 8px;
+      font-weight: normal;
+    }
+    .antd-pro-notice-icon-description {
+      font-size: 12px;
+      line-height: @line-height-base;
+    }
+    .antd-pro-notice-icon-datetime {
+      margin-top: 4px;
+      font-size: 12px;
+      line-height: @line-height-base;
+    }
+    .antd-pro-notice-icon-extra {
+      float: right;
+      margin-top: -1.5px;
+      margin-right: 0;
+      color: @text-color-secondary;
+      font-weight: normal;
+    }
+  }
+  .antd-pro-notice-icon-loadMore {
+    padding: 8px 0;
+    color: @primary-6;
+    text-align: center;
+    cursor: pointer;
+    &.antd-pro-notice-icon-loadedAll {
+      color: rgba(0, 0, 0, 0.25);
+      cursor: unset;
+    }
+  }
+}
+
+.antd-pro-notice-icon-notFound {
+  padding: 73px 0 88px 0;
+  color: @text-color-secondary;
+  text-align: center;
+  img {
+    display: inline-block;
+    height: 76px;
+    margin-bottom: 16px;
+  }
+}
+
+.antd-pro-notice-icon-bottomBar {
+  height: 46px;
+  color: @text-color;
+  line-height: 46px;
+  text-align: center;
+  border-top: 1px solid @border-color-split;
+  border-radius: 0 0 @border-radius-base @border-radius-base;
+  transition: all 0.3s;
+  div {
+    display: inline-block;
+    width: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+    &:hover {
+      color: @heading-color;
+    }
+    &:only-child {
+      width: 100%;
+    }
+    &:not(:only-child):last-child {
+      border-left: 1px solid @border-color-split;
+    }
+  }
+}

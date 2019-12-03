@@ -1,0 +1,37 @@
+{
+  "name": "node-eval",
+  "version": "2.0.0",
+  "description": "require or eval modules",
+  "keywords": [
+    "eval",
+    "require"
+  ],
+  "author": "Vasiliy Loginevskiy <yeti.or@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodules/node-eval"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 4"
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "nyc mocha",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "path-is-absolute": "1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "eslint-config-pedant": "^1.0.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0"
+  }
+}
