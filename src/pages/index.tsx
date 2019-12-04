@@ -166,7 +166,8 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                   //   filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP[regulation.rule.activity];
                   //   filteredData.features.push(filteredFeature);
                   // }
-                  if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
+            //    if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
+                  if(regulation.rule.activity === "parking" && !regulation.rule.payment) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["free parking"];
                     filteredFeature.properties.activity = "free parking"
                     filteredData.features.push(filteredFeature);
@@ -230,9 +231,14 @@ class Map extends React.Component<PageProps, {}> {
       viewport: {
         width: '100vw',
         height: '100vh',
-        latitude:  34.040,
-        longitude:-118.257,
-        zoom: 14
+// needs update: default viewport is hard-coded and should dynamically set based on data
+        latitude:  39.950,
+        longitude:-75.174,
+        zoom: 16
+// LA viewport
+//      latitude:  34.040,
+//      longitude:-118.257,
+//      zoom: 14
       }
     };
 
@@ -435,33 +441,6 @@ class Map extends React.Component<PageProps, {}> {
           y: ACTIVITY_LENGTH_CALC['bike/scooter parking'],
         },
       ];
-
-      // const activityPieData = [
-      //   {
-      //     x: 'Free Parking',
-      //     y: (758),
-      //   },
-      //   {
-      //     x: 'No Parking',
-      //     y: 3321,
-      //   },
-      //   {
-      //     x: 'Loading',
-      //     y: 3113,
-      //   },
-      //   {
-      //     x: 'No Loading',
-      //     y: 2341,
-      //   },
-      //   {
-      //     x: 'Passenger Pick-Up & Drop-Off',
-      //     y: 1231,
-      //   },
-      //   {
-      //     x: 'Paid Parking',
-      //     y: 1231,
-      //   },
-      // ];
 
 
 

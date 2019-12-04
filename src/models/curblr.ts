@@ -2,7 +2,7 @@ import { GlobalState } from "../common/types";
 import { DvaModelBuilder } from "dva-model-creator";
 import { time, day, priority, activity } from "../actions/filter";
 
-import geojsonData from '@/assets/data/la.curblr.json';
+import geojsonData from '@/assets/data/ccd_phil.curblr.json';
 
 import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/curblr';
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';
@@ -26,8 +26,8 @@ const initState:GlobalState = {
 const builder = new DvaModelBuilder(initState, "curblr")
     .case(time, (state,payload) => {
         return {
-            curblr:{ time:state.curblr.time, 
-            day: state.curblr.day, 
+            curblr:{ time:state.curblr.time,
+            day: state.curblr.day,
             mode:state.curblr.mode,
             data: state.curblr.data
         }}
