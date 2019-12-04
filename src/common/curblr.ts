@@ -92,7 +92,7 @@ export class TimeSpan {
 }
 
 export class UserClass {
-    classes:string;
+    classes?:string[];
     subclasses?:string[];
     maxHeight?:number;
     maxLength?:number;
