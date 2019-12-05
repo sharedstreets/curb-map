@@ -26,8 +26,8 @@ const initState:GlobalState = {
 const builder = new DvaModelBuilder(initState, "curblr")
     .case(time, (state,payload) => {
         return {
-            curblr:{ time:state.curblr.time, 
-            day: state.curblr.day, 
+            curblr:{ time:state.curblr.time,
+            day: state.curblr.day,
             mode:state.curblr.mode,
             data: state.curblr.data
         }}
