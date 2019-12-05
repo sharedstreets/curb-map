@@ -21,38 +21,13 @@ import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/c
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';
 
 
-
 var mapboxAccessToken= 'pk.eyJ1Ijoic2FhZGlxbSIsImEiOiJjamJpMXcxa3AyMG9zMzNyNmdxNDlneGRvIn0.wjlI8r1S_-xxtq2d-W5qPA';
 
 //loads map style
 const defaultMapStyle = fromJS(mapStyle)
 
-// const USER_CLASS_COLOR_MAP = {
-//     'any': 'purple',
-//     'bike': 'green',
-//     'car share': 'blue',
-//     'carpool': 'yellow',
-//     'commercial': 'orange',
-//     'compact': 'brown',
-//     'construction': 'green',
-//     'electric': 'blue',
-//     'emergency': 'yellow',
-//     'food truck': 'orange',
-//     'handicap': 'brown',
-//     'micromobility': 'green',
-//     'motorcycle': 'blue',
-//     'passenger': 'yellow',
-//     'per  ': 'orange',
-//     'police': 'blue',
-//     'rideshare': 'brown',
-//     'staff': 'green',
-//     'student': 'blue',
-//     'taxi': 'yellow',
-//     'truck': 'brown',
-//     'visitor': 'orange',
-// }
-
 const MAXSTAY_COLOR_MAP:{ [key: string]: any } = {
+    "3": "#f7fcf5",
     "15": "#f7fcf5",
     "30": "#e5f5e0",
     "45": "#c7e9c0",
@@ -61,6 +36,7 @@ const MAXSTAY_COLOR_MAP:{ [key: string]: any } = {
     "120": "#41ab5d",
     "180": "#238b45",
     "240": "#006d2c",
+    "360": "#00441b",
     "480": "#00441b"
 }
 
@@ -108,6 +84,9 @@ const dataLayer = fromJS({
   }
 });
 
+// sets average parking length (roughly 7m, per NACTO) for use in estimating length in # of parking spaces
+const avgParkingLength = 7
+
 
 const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, filterType:string):FeatureCollection<LineString> => {
 
@@ -132,11 +111,12 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
 
               filteredFeature.properties['offset'] = scaledOffset(baseOffset * (regulation.priority - 1));
 
-              if(filterType === "time") {
-                  if(regulation.rule.activity === "parking" && regulation.rule.maxStay) {
+              if(filterType === "maxStay") {
+                  if(regulation.rule.maxStay) {
                       var maxStay = regulation.rule.maxStay + "";
                       if(MAXSTAY_COLOR_MAP[maxStay]) {
                           filteredFeature.properties['color'] = MAXSTAY_COLOR_MAP[maxStay]
+                          filteredFeature.properties.maxStay = maxStay
                           filteredData.features.push(filteredFeature);
                       }
                   }
@@ -166,8 +146,7 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                   //   filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP[regulation.rule.activity];
                   //   filteredData.features.push(filteredFeature);
                   // }
-            //    if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
-                  if(regulation.rule.activity === "parking" && !regulation.rule.payment) {
+                if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["free parking"];
                     filteredFeature.properties.activity = "free parking"
                     filteredData.features.push(filteredFeature);
@@ -231,14 +210,14 @@ class Map extends React.Component<PageProps, {}> {
       viewport: {
         width: '100vw',
         height: '100vh',
-// needs update: default viewport is hard-coded and should dynamically set based on data
-        latitude:  39.950,
-        longitude:-75.174,
-        zoom: 16
+// needs update? default viewport is hard-coded and should dynamically set based on data. PHL viewport:
+//        latitude:  39.950,
+//        longitude:-75.174,
+//        zoom: 16
 // LA viewport
-//      latitude:  34.040,
-//      longitude:-118.257,
-//      zoom: 14
+      latitude:  34.040,
+      longitude:-118.257,
+      zoom: 14
       }
     };
 
@@ -256,10 +235,8 @@ class Map extends React.Component<PageProps, {}> {
     };
 
     _getMap = () => {
-      return this._mapRef.  nt ? this._mapRef.current.getMap() : null;
+      return this._mapRef ? this._mapRef.current.getMap() : null;
     };
-
-
 
     componentDidMount() {
       this._loadData();
@@ -284,18 +261,6 @@ class Map extends React.Component<PageProps, {}> {
           .addTo(map);
           });
       }
-
-// Fixed bug: viewport was updating but the bbox wasn't coming along for the ride
-    //      window.onresize = () => {
-    //     this.setState({
-    //       viewport: {
-    //         width: window.innerWidth,
-    //         height: window.innerHeight
-    //       }
-    //     });
-    //   }
-    // }
-
 
     window.onresize = () => {
       const { viewport } = this.state;
@@ -356,35 +321,23 @@ class Map extends React.Component<PageProps, {}> {
 
       var legend;
 
-      if(mode === "time") {
-        legend = (<div style={{"margin": "15px"}}>
-          <b>Max Stay (minutes)</b>:<br/>
-          <Badge color="#f7fcf5" text="15 min" /> &nbsp;
-          <Badge color="#e5f5e0" text="30 min" /> &nbsp;
-          <Badge color="#c7e9c0" text="45 min" /> &nbsp;
-          <Badge color="#a1d99b" text="60 min" />&nbsp;
-          <Badge color="#74c476" text="90 min" />&nbsp;
-          <Badge color="#41ab5d" text="120 min" />&nbsp;
-          <Badge color="#238b45" text="180 min" />&nbsp;
-          <Badge color="#006d2c" text="240 min" />&nbsp;
-        </div>)
-      }
-      // else {
+      // if(mode === "maxStay") {
       //   legend = (<div style={{"margin": "15px"}}>
-      //     <b>Activity</b>:<br/>
-      //     <Badge color={ACTIVITY_COLOR_MAP['parking']} text="Parking" /> &nbsp;
-      //     <Badge color={ACTIVITY_COLOR_MAP['no parking']} text="No parking" /> &nbsp;<br/>
-      //     <Badge color={ACTIVITY_COLOR_MAP['standing']} text="Standing" /> &nbsp;
-      //     <Badge color={ACTIVITY_COLOR_MAP['no standing']} text="No standing" /> &nbsp;<br/>
-      //     <Badge color={ACTIVITY_COLOR_MAP['loading']} text="Loading" /> &nbsp;
-      //     <Badge color={ACTIVITY_COLOR_MAP['no loading']} text="No loading" /> &nbsp;
+      //     <b>Max Stay (minutes)</b>:<br/>
+      //     <Badge color="#f7fcf5" text="15 min" /> &nbsp;
+      //     <Badge color="#e5f5e0" text="30 min" /> &nbsp;
+      //     <Badge color="#c7e9c0" text="45 min" /> &nbsp;
+      //     <Badge color="#a1d99b" text="60 min" />&nbsp;
+      //     <Badge color="#74c476" text="90 min" />&nbsp;
+      //     <Badge color="#41ab5d" text="120 min" />&nbsp;
+      //     <Badge color="#238b45" text="180 min" />&nbsp;
+      //     <Badge color="#006d2c" text="240 min" />&nbsp;
       //   </div>)
       // }
 
-// shows everything, needs to intersect the feature collection with the viewport bounding box. hard. for kevin. thanks.
-      const features = filterCurblrData(this.props.curblr.data, this.state.day, this.state.time, this.state.mode)
 
-      console.log(features.features.filter(f => f.properties.activity === 'transit').map(f => f.properties.length).reduce((acc, x) => acc + x, 0))
+// shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
+      const features = filterCurblrData(this.props.curblr.data, this.state.day, this.state.time, this.state.mode)
 
       const ACTIVITY_LENGTH_CALC = {
           "no standing": features.features.filter(f => f.properties.activity === 'no standing').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
@@ -398,6 +351,21 @@ class Map extends React.Component<PageProps, {}> {
           "restricted parking": features.features.filter(f => f.properties.activity === 'restricted parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
           "bike/scooter parking": features.features.filter(f => f.properties.activity === 'bike/scooter parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
       };
+
+      const MAXSTAY_LENGTH_CALC = {
+          "3": features.features.filter(f => f.properties.maxStay === '3').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "15": features.features.filter(f => f.properties.maxStay === '15').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "30": features.features.filter(f => f.properties.maxStay === '30').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "45": features.features.filter(f => f.properties.maxStay === '45').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "60": features.features.filter(f => f.properties.maxStay === '60').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "90": features.features.filter(f => f.properties.maxStay === '90').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "120": features.features.filter(f => f.properties.maxStay === '120').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "180": features.features.filter(f => f.properties.maxStay === '180').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "240": features.features.filter(f => f.properties.maxStay === '240').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "360": features.features.filter(f => f.properties.maxStay === '360').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "480": features.features.filter(f => f.properties.maxStay === '480').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+      };
+
 
       const activityPieData = [
         {
@@ -442,6 +410,52 @@ class Map extends React.Component<PageProps, {}> {
         },
       ];
 
+      const maxStayPieData = [
+        {
+          x: '3 mins',
+          y: MAXSTAY_LENGTH_CALC['3'],
+        },
+        {
+          x: '15 mins',
+          y: MAXSTAY_LENGTH_CALC['15'],
+        },
+        {
+          x: '30 mins',
+          y: MAXSTAY_LENGTH_CALC['30'],
+        },
+        {
+          x: '45 mins',
+          y: MAXSTAY_LENGTH_CALC['45'],
+        },
+        {
+          x: '60 mins',
+          y: MAXSTAY_LENGTH_CALC['60'],
+        },
+        {
+          x: '90 mins',
+          y: MAXSTAY_LENGTH_CALC['90'],
+        },
+        {
+          x: '120 mins',
+          y: MAXSTAY_LENGTH_CALC['120'],
+        },
+        {
+          x: '180 mins',
+          y: MAXSTAY_LENGTH_CALC['180'],
+        },
+        {
+          x: '240 mins',
+          y: ACTIVITY_LENGTH_CALC['240'],
+        },
+        {
+          x: '360 mins',
+          y: ACTIVITY_LENGTH_CALC['360'],
+        },
+        {
+          x: '480 mins',
+          y: ACTIVITY_LENGTH_CALC['480'],
+        },
+      ];
 
 
       return (
@@ -458,7 +472,7 @@ class Map extends React.Component<PageProps, {}> {
             />
           </Content>
 
-          <Card size="small" title="CurbLR (Los Angeles Meter Data)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"300px"}}>
+          <Card size="small" title="CurbLR (Los Angeles meter data)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"300px"}}>
           Day: <Select defaultValue={day} onChange={this.changeDay}>
             <Select.Option value="mo">Monday</Select.Option>
             <Select.Option value="tu">Tuesday</Select.Option>
@@ -499,29 +513,29 @@ class Map extends React.Component<PageProps, {}> {
           <br />
           <Radio.Group defaultValue={mode} buttonStyle="solid" position="center" onChange={this.changeMode}>
             <Radio.Button value="activity">Activity</Radio.Button>
-            <Radio.Button value="time">Max Stay</Radio.Button>
-            <Radio.Button value="time">&nbsp; Cost &nbsp; </Radio.Button>
+            <Radio.Button value="maxStay">Max Stay</Radio.Button>
           </Radio.Group>
           <br />
           <br />
+
           <Pie
             animate={false}
             colors={Object.values(ACTIVITY_COLOR_MAP)}
             hasLegend
             title="Activities"
-            subTitle="Total length"
+            subTitle="Total parking spaces:"
             total={() => (
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: yuan(activityPieData.reduce((pre, now) => now.y + pre, 0)),
-                }}
-              />
+              <>
+                <span>
+                  { (activityPieData.reduce((pre, now) => now.y + pre, 0) / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 }) }
+                </span>
+              </>
             )}
             data={activityPieData}
-            valueFormat={val => <span dangerouslySetInnerHTML={{ __html: yuan(val) }} />}
+            valueFormat={val => <span>{ (val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} spaces</span>}
             height={240}
           />
-          <br />
+
           <br />
 
             {legend}
@@ -533,5 +547,43 @@ class Map extends React.Component<PageProps, {}> {
       );
     }
   }
+
+
+  // <Pie
+  //   animate={false}
+  //   colors={Object.values(MAXSTAY_COLOR_MAP)}
+  //   hasLegend
+  //   title="MaxStay"
+  //   subTitle="Max Stay (mins)"
+  //   total={() => (
+  //     <>
+  //       <span>
+  //         { (maxStayPieData.reduce((pre, now) => now.y + pre, 0) / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 }) }
+  //       </span>
+  //     </>
+  //   )}
+  //   data={maxStayPieData}
+  //   valueFormat={val => <span>{(val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} spaces</span>}
+  //   height={240}
+  // />
+
+
+            // <Pie
+            //   animate={false}
+            //   colors={Object.values(ACTIVITY_COLOR_MAP)}
+            //   hasLegend
+            //   title="Activities"
+            //   subTitle="Total parking spaces:"
+            //   total={() => (
+            //     <>
+            //       <span>
+            //         { (activityPieData.reduce((pre, now) => now.y + pre, 0) / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 }) }
+            //       </span>
+            //     </>
+            //   )}
+            //   data={activityPieData}
+            //   valueFormat={val => <span>{ (val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} spaces</span>}
+            //   height={240}
+            // />
 
   export default connect(mapStateToProps)(Map);
