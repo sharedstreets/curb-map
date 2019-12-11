@@ -523,7 +523,7 @@ class Map extends React.Component<PageProps, {}> {
             colors={Object.values(ACTIVITY_COLOR_MAP)}
             hasLegend
             title="Activities"
-            subTitle="Total parking spaces:"
+            subTitle={<>Total car<br/>lengths</>}
             total={() => (
               <>
                 <span>
@@ -532,7 +532,7 @@ class Map extends React.Component<PageProps, {}> {
               </>
             )}
             data={activityPieData}
-            valueFormat={val => <span>{ (val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} spaces</span>}
+            valueFormat={val => <span>{ (val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} cars</span>}
             height={240}
           />
 
