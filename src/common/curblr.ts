@@ -7,29 +7,29 @@ function convertTimeSrtToMinOfDay(timeStr:string):number {
 }
 
 export function filterTimeAndDay(feature:CurbFeature, filterDayOfWeek:string, filterTimeStr:string):boolean {
-    var filterTime = convertTimeSrtToMinOfDay(filterTimeStr);
+    // var filterTime = convertTimeSrtToMinOfDay(filterTimeStr);
 
-    for(var regulation of feature.properties.regulations) {
-        if(regulation.timeSpans && regulation.timeSpans.length) {
-            for(var timeSpan of regulation.timeSpans) {
-                if(timeSpan.daysOfWeek) {
-                    for(var day of timeSpan.daysOfWeek.days) {
-                        if(day == filterDayOfWeek && timeSpan.timesOfDay) {
-                            for(var times of timeSpan.timesOfDay) {
-                                var from = convertTimeSrtToMinOfDay(times.from);
-                                var to = convertTimeSrtToMinOfDay(times.to);
-                                if(filterTime >= from && filterTime <= to) {
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // for(var regulation of feature.properties.regulations) {
+    //     if(regulation.timeSpans && regulation.timeSpans.length) {
+    //         for(var timeSpan of regulation.timeSpans) {
+    //             if(timeSpan.daysOfWeek) {
+    //                 for(var day of timeSpan.daysOfWeek.days) {
+    //                     if(day == filterDayOfWeek && timeSpan.timesOfDay) {
+    //                         for(var times of timeSpan.timesOfDay) {
+    //                             var from = convertTimeSrtToMinOfDay(times.from);
+    //                             var to = convertTimeSrtToMinOfDay(times.to);
+    //                             if(filterTime >= from && filterTime <= to) {
+    //                                 return true;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
-    return false;
+    return true;
 }
 
 export class Location {
