@@ -103,13 +103,13 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
         // marks each feature with its length
           filteredFeature.properties.length = curbFeature.properties.location.shstLocationEnd - curbFeature.properties.location.shstLocationStart;
 
-          if(regulation.priority) {
+          // if(regulation.priority) {
 
-              var baseOffset =  6 ;
+              var baseOffset =  10 ;
               if(curbFeature.properties.location.sideOfStreet === 'left')
-                  baseOffset = -6;
+                  baseOffset = -10;
 
-              filteredFeature.properties['offset'] = scaledOffset(baseOffset * (regulation.priority - 1));
+              filteredFeature.properties['offset'] = baseOffset;//scaledOffset(baseOffset);
 
               if(filterType === "maxStay") {
                   if(regulation.rule.maxStay) {
@@ -182,7 +182,7 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                     filteredData.features.push(filteredFeature);
                   }
               }
-          }
+          //}
       }
   }
 
@@ -215,8 +215,8 @@ class Map extends React.Component<PageProps, {}> {
 //        longitude:-75.174,
 //        zoom: 16
 // LA viewport
-      latitude:  34.040,
-      longitude:-118.257,
+      latitude:  45.521,
+      longitude: -122.68,
       zoom: 14
       }
     };
@@ -472,7 +472,7 @@ class Map extends React.Component<PageProps, {}> {
             />
           </Content>
 
-          <Card size="small" title="CurbLR (Los Angeles meter data)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"300px"}}>
+          <Card size="small" title="CurbLR (Portland Downtown Survey)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"300px"}}>
           Day: <Select defaultValue={day} onChange={this.changeDay}>
             <Select.Option value="mo">Monday</Select.Option>
             <Select.Option value="tu">Tuesday</Select.Option>
