@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./index.css";
 
-import { Layout, Menu, Icon, Card, Radio, Select, Badge } from "antd";
-import { Pie, yuan } from "ant-design-pro/lib/Charts";
+import { Layout, Menu, Icon, Card, Radio, Select, Badge, Button } from "antd";
+import { Pie } from "ant-design-pro/lib/Charts";
 import "ant-design-pro/dist/ant-design-pro.css"; // Import whole style
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -126,6 +126,7 @@ const dataLayer = fromJS({
 
 // sets average parking length (roughly 7m, per NACTO) for use in estimating length in # of parking spaces
 const avgParkingLength = 7;
+
 
 const filterCurblrData = (
   data: CurbFeatureCollection,
@@ -431,7 +432,7 @@ class Map extends React.Component<PageProps, {}> {
         .filter(f => f.properties.activity === "passenger loading")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      loading: features.features
+      "loading": features.features
         .filter(f => f.properties.activity === "loading")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
@@ -439,7 +440,7 @@ class Map extends React.Component<PageProps, {}> {
         .filter(f => f.properties.activity === "free parking")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      transit: features.features
+      "transit": features.features
         .filter(f => f.properties.activity === "transit")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
@@ -447,7 +448,7 @@ class Map extends React.Component<PageProps, {}> {
         .filter(f => f.properties.activity === "paid parking")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      restricted: features.features
+      "restricted": features.features
         .filter(f => f.properties.activity === "restricted")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0)
@@ -718,6 +719,11 @@ class Map extends React.Component<PageProps, {}> {
               height={240}
             />
           )}
+          <br />
+          <Button type="primary" icon="download" block onClick="downloadCurblr()">
+                    Download CurbLR data
+          </Button>
+          <br />
           <br />
           <p style={{ "font-size": "11px" }}>
             The curb regulations in this map were surveyed by{" "}
