@@ -464,7 +464,7 @@ class Map extends React.Component<PageProps, {}> {
             />
           </Content>
 
-          <Card size="small" title="CurbLR (Portland Downtown Survey)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"310px"}}>
+          <Card size="small" title="CurbLR Regulation Map (Portland, OR)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"310px"}}>
           Day: <Select defaultValue={day} onChange={this.changeDay}>
             <Select.Option value="mo">Monday</Select.Option>
             <Select.Option value="tu">Tuesday</Select.Option>
