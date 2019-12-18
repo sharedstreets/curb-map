@@ -291,7 +291,7 @@
           "sideOfStreet": "left",
           "shstLocationStart": 0,
           "shstLocationEnd": 29.7,
-          "marker": "temporary_sign",
+          "marker": "temporary sign",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -360,7 +360,7 @@
           "sideOfStreet": "left",
           "shstLocationStart": 10.9,
           "shstLocationEnd": 78.8,
-          "marker": "temporary_sign",
+          "marker": "temporary sign",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -491,7 +491,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -602,7 +602,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -811,7 +811,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -1050,7 +1050,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -1099,7 +1099,7 @@
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -1248,7 +1248,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -1363,7 +1363,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -1564,7 +1564,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -1724,7 +1724,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -1906,7 +1906,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2017,7 +2017,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2132,7 +2132,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2243,7 +2243,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2666,7 +2666,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2829,7 +2829,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2940,7 +2940,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -2982,7 +2982,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 7.4,
           "shstLocationEnd": 21.9,
-          "marker": "temporary_sign",
+          "marker": "temporary sign",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -3092,7 +3092,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -3207,7 +3207,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -3402,14 +3402,14 @@
           "sideOfStreet": "right",
           "shstLocationStart": 27.6,
           "shstLocationEnd": 53.3,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -3786,7 +3786,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -3983,7 +3983,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -4163,7 +4163,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 4
             },
             "userClasses": [
@@ -4209,7 +4209,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4278,7 +4278,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4331,7 +4331,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4388,7 +4388,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4445,7 +4445,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4502,7 +4502,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4559,7 +4559,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4609,7 +4609,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 3.3,
           "shstLocationEnd": 42.4,
-          "marker": "travel_lane",
+          "marker": "travel lane",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -4658,7 +4658,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 3.5,
           "shstLocationEnd": 77.2,
-          "marker": "travel_lane",
+          "marker": "travel lane",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -4714,7 +4714,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 3
             },
             "userClasses": [
@@ -4961,7 +4961,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -5001,7 +5001,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "bus_stop",
+              "reason": "bus stop",
               "priority": 4
             },
             "userClasses": [
@@ -5050,7 +5050,7 @@
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -5092,7 +5092,7 @@
           {
             "rule": {
               "activity": "no parking",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -5245,7 +5245,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -5356,7 +5356,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -5528,7 +5528,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -5978,7 +5978,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -6150,7 +6150,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -6192,7 +6192,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 61.6,
           "shstLocationEnd": 77.4,
-          "marker": "bulb_out",
+          "marker": "bulb out",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -6529,7 +6529,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -6640,7 +6640,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -6751,7 +6751,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -6866,7 +6866,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -6977,7 +6977,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -7234,7 +7234,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -7345,7 +7345,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -7456,7 +7456,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -7567,7 +7567,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -7805,7 +7805,7 @@
           "sideOfStreet": "left",
           "shstLocationStart": 25.8,
           "shstLocationEnd": 39.4,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -7978,7 +7978,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -8089,7 +8089,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -8830,7 +8830,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -8889,7 +8889,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -8991,7 +8991,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -9180,7 +9180,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 64.6,
           "shstLocationEnd": 78.3,
-          "marker": "bulb_out",
+          "marker": "bulb out",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -9225,14 +9225,14 @@
           "sideOfStreet": "right",
           "shstLocationStart": 33.5,
           "shstLocationEnd": 39.3,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 2
             },
             "userClasses": [
@@ -9336,7 +9336,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -9447,7 +9447,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -9612,7 +9612,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -9862,7 +9862,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -10011,7 +10011,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 0,
           "shstLocationEnd": 17.1,
-          "marker": "bulb_out",
+          "marker": "bulb out",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -10129,7 +10129,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -10171,7 +10171,7 @@
           "sideOfStreet": "left",
           "shstLocationStart": 0,
           "shstLocationEnd": 17.1,
-          "marker": "bulb_out",
+          "marker": "bulb out",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -10293,7 +10293,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -10408,7 +10408,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -10647,7 +10647,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -10758,7 +10758,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -10800,7 +10800,7 @@
           "sideOfStreet": "left",
           "shstLocationStart": 42.9,
           "shstLocationEnd": 55.1,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -10841,7 +10841,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 45.3,
           "shstLocationEnd": 62.8,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -10951,7 +10951,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -11062,7 +11062,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -11380,7 +11380,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -11630,7 +11630,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -11768,7 +11768,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 4
             },
             "userClasses": [
@@ -11921,7 +11921,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -11963,7 +11963,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -12013,7 +12013,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -12202,7 +12202,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -12450,7 +12450,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -12561,7 +12561,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -12610,7 +12610,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -12760,7 +12760,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "tour_bus"
+                  "tour bus"
                 ]
               }
             ],
@@ -12793,7 +12793,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 0,
           "shstLocationEnd": 19.3,
-          "marker": "bulb_out",
+          "marker": "bulb out",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -12938,7 +12938,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 4
             },
             "userClasses": [
@@ -12996,7 +12996,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -13134,7 +13134,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 4
             },
             "userClasses": [
@@ -13381,7 +13381,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -13829,7 +13829,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -13940,7 +13940,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -14051,7 +14051,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -14191,14 +14191,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 31.2,
           "shstLocationEnd": 36.6,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -14233,14 +14233,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 46.7,
           "shstLocationEnd": 52.7,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -14516,7 +14516,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -14606,7 +14606,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -14807,7 +14807,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -15061,7 +15061,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -15214,7 +15214,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -15247,14 +15247,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 39.5,
           "shstLocationEnd": 44.9,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -15464,7 +15464,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -15579,7 +15579,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -16008,7 +16008,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -16116,7 +16116,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -16158,14 +16158,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 32.7,
           "shstLocationEnd": 47.7,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -16299,7 +16299,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -16397,7 +16397,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -16544,7 +16544,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -16585,7 +16585,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -16681,7 +16681,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -16810,7 +16810,7 @@
           "sideOfStreet": "right",
           "shstLocationStart": 7.5,
           "shstLocationEnd": 31.3,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
@@ -16928,7 +16928,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -17039,7 +17039,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -17150,7 +17150,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -17250,7 +17250,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -17296,7 +17296,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -17342,7 +17342,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -17444,7 +17444,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -17486,14 +17486,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 29.4,
           "shstLocationEnd": 38,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -17675,14 +17675,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 33.7,
           "shstLocationEnd": 40.5,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -17786,7 +17786,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -17897,7 +17897,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -18069,7 +18069,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -18111,14 +18111,14 @@
           "sideOfStreet": "right",
           "shstLocationStart": 27.1,
           "shstLocationEnd": 40.9,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -18160,7 +18160,7 @@
           {
             "rule": {
               "activity": "no parking",
-              "reason": "temporary_restriction",
+              "reason": "temporary restriction",
               "priority": 4
             },
             "userClasses": [
@@ -18254,7 +18254,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -18352,7 +18352,7 @@
           {
             "rule": {
               "activity": "no stopping",
-              "reason": "travel_lane",
+              "reason": "travel lane",
               "priority": 4
             },
             "userClasses": [
@@ -18460,7 +18460,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -18612,14 +18612,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 29.4,
           "shstLocationEnd": 45.6,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -18808,14 +18808,14 @@
           "sideOfStreet": "left",
           "shstLocationStart": 28.3,
           "shstLocationEnd": 35.7,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -18850,14 +18850,14 @@
           "sideOfStreet": "right",
           "shstLocationStart": 20.3,
           "shstLocationEnd": 28.7,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -18965,7 +18965,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19076,7 +19076,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19187,7 +19187,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19298,7 +19298,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19340,14 +19340,14 @@
           "sideOfStreet": "right",
           "shstLocationStart": 43.9,
           "shstLocationEnd": 63.2,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -19512,7 +19512,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19623,7 +19623,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19776,7 +19776,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -19952,7 +19952,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -20163,7 +20163,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -20250,14 +20250,14 @@
           "sideOfStreet": "right",
           "shstLocationStart": 58.6,
           "shstLocationEnd": 64.2,
-          "marker": "curb_cut",
+          "marker": "curb cut",
           "baysAngle": "parallel"
         },
         "regulations": [
           {
             "rule": {
               "activity": "no parking",
-              "reason": "curb_cut",
+              "reason": "curb cut",
               "priority": 4
             },
             "userClasses": [
@@ -20299,7 +20299,7 @@
           {
             "rule": {
               "activity": "parking",
-              "reason": "temporary_restriction",
+              "reason": "temporary restriction",
               "priority": 2
             },
             "userClasses": [
@@ -20432,7 +20432,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -20543,7 +20543,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -20602,7 +20602,7 @@
             "userClasses": [
               {
                 "classes": [
-                  "hotel_guest"
+                  "hotel guest"
                 ]
               }
             ],
@@ -20708,7 +20708,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -20757,7 +20757,7 @@
           {
             "rule": {
               "activity": "stopping",
-              "reason": "transit_lane",
+              "reason": "transit lane",
               "priority": 4
             },
             "userClasses": [
@@ -20861,7 +20861,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -21152,7 +21152,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
@@ -21267,7 +21267,7 @@
                 ]
               },
               "methods": [
-                "pay_station",
+                "pay station",
                 "digital"
               ],
               "forms": [
