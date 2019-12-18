@@ -41,16 +41,14 @@ const MAXSTAY_COLOR_MAP:{ [key: string]: any } = {
 }
 
 const ACTIVITY_COLOR_MAP = {
-    "no standing":"#000000",
+    "no stopping":"#000000",
     "no parking":"#FF3D00",
-    "passenger loading":"#FF9100",
-    "transit":"#FFC400",
+    "passenger loading":"#FFAE00",
     "loading":"#FFEA00",
-    "taxi stand": "#37B34A",
+    "transit":"#37B34A",
     "free parking":"#00E5FF",
     "paid parking":"#2979FF",
-    "restricted parking":"#304FFE",
-    "bike/scooter parking":"#7C4DFF"
+    "restricted":"#9A3AC9"
 };
 
 const scaledOffset = (offset:number) => {return {
@@ -80,7 +78,7 @@ const dataLayer = fromJS({
   paint: {
     'line-color': ['get', 'color'],
     'line-offset': ['get', 'offset'],
-    'line-width' : scaledWidth(7)
+    'line-width' : scaledWidth(6.8)
   }
 });
 
@@ -109,7 +107,7 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
               if(curbFeature.properties.location.sideOfStreet === 'left')
                   baseOffset = -10;
 
-              filteredFeature.properties['offset'] = baseOffset;//scaledOffset(baseOffset);
+              filteredFeature.properties['offset'] = baseOffset; //scaledOffset(baseOffset);
 
               if(filterType === "maxStay") {
                   if(regulation.rule.maxStay) {
@@ -131,22 +129,18 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                     filteredFeature.properties.activity = "no parking"
                     filteredData.features.push(filteredFeature);
                   }
-                  if(regulation.rule.activity === "no standing") {
-                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["no standing"];
+                  if(regulation.rule.activity === "no stopping" || regulation.rule.activity === "no standing") {
+                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["no stopping"];
                     // set the activty to use later in hooking up chart to map data
-                    filteredFeature.properties.activity = "no standing"
+                    filteredFeature.properties.activity = "no stopping"
                     filteredData.features.push(filteredFeature);
                   }
-                  if(regulation.rule.activity === "parking" && regulation.userClasses.classes?.length > 0) {
-                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["restricted parking"];
-                    filteredFeature.properties.activity = "restricted parking"
+                  if(regulation.userClasses?.some(uc => ["motorcycle", "hotel guest", "permit", "reserved", "handicap", "scooter", "bicycle", "USPS", "car share", "police", "tour bus"].some(c => uc.classes?.includes(c)))) {
+                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["restricted"];
+                    filteredFeature.properties.activity = "restricted"
                     filteredData.features.push(filteredFeature);
                   }
-                  // if(Object.keys(ACTIVITY_COLOR_MAP).includes(regulation.rule.activity)) {
-                  //   filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP[regulation.rule.activity];
-                  //   filteredData.features.push(filteredFeature);
-                  // }
-                if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
+                  if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["free parking"];
                     filteredFeature.properties.activity = "free parking"
                     filteredData.features.push(filteredFeature);
@@ -161,24 +155,14 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                     filteredFeature.properties.activity = "loading"
                     filteredData.features.push(filteredFeature);
                   }
-                  if(regulation.rule.activity === "standing" && regulation.userClasses.classes?.includes("taxi") || regulation.rule.reason?.includes("taxi")) {
-                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["taxi stand"];
-                    filteredFeature.properties.activity = "taxi stand"
-                    filteredData.features.push(filteredFeature);
-                  }
-                  if(regulation.rule.activity === "loading" && regulation.userClasses.classes?.includes("passenger") || regulation.rule.reason?.includes("passenger")) {
+                  if(regulation.userClasses?.some(uc => ["taxi", "passenger", "TNC", "rideshare"].some(c => uc.classes?.includes(c)))) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["passenger loading"];
                     filteredFeature.properties.activity = "passenger loading"
                     filteredData.features.push(filteredFeature);
                   }
-                  if(regulation.userClasses.classes?.includes("bus")) {
+                  if(regulation.userClasses?.some(uc => uc.classes?.includes("transit"))) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["transit"];
                     filteredFeature.properties.activity = "transit"
-                    filteredData.features.push(filteredFeature);
-                  }
-                  if (["bicycle", "micromobility"].some(c => regulation.userClasses.classes?.includes(c))) {
-                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["bike/scooter parking"];
-                    filteredFeature.properties.activity = "bike/scooter parking"
                     filteredData.features.push(filteredFeature);
                   }
               }
@@ -214,10 +198,10 @@ class Map extends React.Component<PageProps, {}> {
 //        latitude:  39.950,
 //        longitude:-75.174,
 //        zoom: 16
-// LA viewport
-      latitude:  45.521,
-      longitude: -122.68,
-      zoom: 14
+// PDX viewport
+      latitude:  45.5197,
+      longitude: -122.6795,
+      zoom: 16.5
       }
     };
 
@@ -321,35 +305,35 @@ class Map extends React.Component<PageProps, {}> {
 
       var legend;
 
-      // if(mode === "maxStay") {
-      //   legend = (<div style={{"margin": "15px"}}>
-      //     <b>Max Stay (minutes)</b>:<br/>
-      //     <Badge color="#f7fcf5" text="15 min" /> &nbsp;
-      //     <Badge color="#e5f5e0" text="30 min" /> &nbsp;
-      //     <Badge color="#c7e9c0" text="45 min" /> &nbsp;
-      //     <Badge color="#a1d99b" text="60 min" />&nbsp;
-      //     <Badge color="#74c476" text="90 min" />&nbsp;
-      //     <Badge color="#41ab5d" text="120 min" />&nbsp;
-      //     <Badge color="#238b45" text="180 min" />&nbsp;
-      //     <Badge color="#006d2c" text="240 min" />&nbsp;
-      //   </div>)
-      // }
+      if(mode === "maxStay") {
+        legend = (<div style={{"margin": "15px"}}>
+          <b>Max Stay (minutes)</b>:<br/>
+          <Badge color="#f7fcf5" text="15 min" /> &nbsp;
+          <Badge color="#e5f5e0" text="30 min" /> &nbsp;
+          <Badge color="#c7e9c0" text="45 min" /> &nbsp;
+          <Badge color="#a1d99b" text="60 min" />&nbsp;
+          <Badge color="#74c476" text="90 min" />&nbsp;
+          <Badge color="#41ab5d" text="120 min" />&nbsp;
+          <Badge color="#238b45" text="180 min" />&nbsp;
+          <Badge color="#006d2c" text="240 min" />&nbsp;
+        </div>)
+      }
 
 
 // shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
       const features = filterCurblrData(this.props.curblr.data, this.state.day, this.state.time, this.state.mode)
 
       const ACTIVITY_LENGTH_CALC = {
-          "no standing": features.features.filter(f => f.properties.activity === 'no standing').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "no stopping": features.features.filter(f => f.properties.activity === 'no stopping').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
           "no parking": features.features.filter(f => f.properties.activity === 'no parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
           "passenger loading": features.features.filter(f => f.properties.activity === 'passenger loading').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
-          "transit": features.features.filter(f => f.properties.activity === 'transit').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
           "loading": features.features.filter(f => f.properties.activity === 'loading').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
-          "taxi stand": features.features.filter(f => f.properties.activity === 'taxi stand').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+//          "taxi stand": features.features.filter(f => f.properties.activity === 'taxi stand').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
           "free parking": features.features.filter(f => f.properties.activity === 'free parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "transit": features.features.filter(f => f.properties.activity === 'transit').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
           "paid parking": features.features.filter(f => f.properties.activity === 'paid parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
-          "restricted parking": features.features.filter(f => f.properties.activity === 'restricted parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
-          "bike/scooter parking": features.features.filter(f => f.properties.activity === 'bike/scooter parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          "restricted": features.features.filter(f => f.properties.activity === 'restricted').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
+          // "bike/scooter parking": features.features.filter(f => f.properties.activity === 'bike/scooter parking').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
       };
 
       const MAXSTAY_LENGTH_CALC = {
@@ -369,28 +353,28 @@ class Map extends React.Component<PageProps, {}> {
 
       const activityPieData = [
         {
-          x: 'No Standing',
-          y: ACTIVITY_LENGTH_CALC['no standing'],
+          x: 'No Stopping',
+          y: ACTIVITY_LENGTH_CALC['no stopping'],
         },
         {
           x: 'No Parking',
           y: ACTIVITY_LENGTH_CALC['no parking'],
         },
         {
-          x: 'Passenger Pick-Up',
+          x: 'Taxi, TNC, Other PUDO',
           y: ACTIVITY_LENGTH_CALC['passenger loading'],
-        },
-        {
-          x: 'Transit',
-          y: ACTIVITY_LENGTH_CALC['transit'],
         },
         {
           x: 'Loading',
           y: ACTIVITY_LENGTH_CALC['loading'],
         },
+        // {
+        //   x: 'Taxi Stand',
+        //   y: ACTIVITY_LENGTH_CALC['taxi stand'],
+        // },
         {
-          x: 'Taxi Stand',
-          y: ACTIVITY_LENGTH_CALC['taxi stand'],
+          x: 'Transit',
+          y: ACTIVITY_LENGTH_CALC['transit'],
         },
         {
           x: 'Free Parking',
@@ -401,13 +385,13 @@ class Map extends React.Component<PageProps, {}> {
           y: ACTIVITY_LENGTH_CALC['paid parking'],
         },
         {
-          x: 'Restricted Parking',
-          y: ACTIVITY_LENGTH_CALC['restricted parking'],
+          x: 'Other Restricted Uses',
+          y: ACTIVITY_LENGTH_CALC['restricted'],
         },
-        {
-          x: 'Bike & scooter',
-          y: ACTIVITY_LENGTH_CALC['bike/scooter parking'],
-        },
+        // {
+        //   x: 'Bike & scooter',
+        //   y: ACTIVITY_LENGTH_CALC['bike/scooter parking'],
+        // },
       ];
 
       const maxStayPieData = [
@@ -549,6 +533,7 @@ class Map extends React.Component<PageProps, {}> {
   }
 
 
+// maxStay legend
   // <Pie
   //   animate={false}
   //   colors={Object.values(MAXSTAY_COLOR_MAP)}
@@ -566,24 +551,5 @@ class Map extends React.Component<PageProps, {}> {
   //   valueFormat={val => <span>{(val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} spaces</span>}
   //   height={240}
   // />
-
-
-            // <Pie
-            //   animate={false}
-            //   colors={Object.values(ACTIVITY_COLOR_MAP)}
-            //   hasLegend
-            //   title="Activities"
-            //   subTitle="Total parking spaces:"
-            //   total={() => (
-            //     <>
-            //       <span>
-            //         { (activityPieData.reduce((pre, now) => now.y + pre, 0) / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 }) }
-            //       </span>
-            //     </>
-            //   )}
-            //   data={activityPieData}
-            //   valueFormat={val => <span>{ (val / avgParkingLength).toLocaleString('en', { style: 'decimal', maximumFractionDigits : 0, minimumFractionDigits : 0 })} spaces</span>}
-            //   height={240}
-            // />
 
   export default connect(mapStateToProps)(Map);
