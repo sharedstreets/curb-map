@@ -131,11 +131,12 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
         // marks each feature with its length
           filteredFeature.properties.length = curbFeature.properties.location.shstLocationEnd - curbFeature.properties.location.shstLocationStart;
 
-          // if(regulation.priority) {
+          // var priority = curbFeature.properties.regulations.priority;
+          // if(priority) {
 
-              var baseOffset =  10 ;
+              var baseOffset =  10;// + (5 * priority);
               if(curbFeature.properties.location.sideOfStreet === 'left')
-                  baseOffset = -10;
+                  baseOffset = 0 - 10;// + (5 * priority);
 
               filteredFeature.properties['offset'] = baseOffset; //scaledOffset(baseOffset);
 
@@ -463,7 +464,7 @@ class Map extends React.Component<PageProps, {}> {
             />
           </Content>
 
-          <Card size="small" title="CurbLR (Portland Downtown Survey)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"300px"}}>
+          <Card size="small" title="CurbLR (Portland Downtown Survey)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"350px"}}>
           Day: <Select defaultValue={day} onChange={this.changeDay}>
             <Select.Option value="mo">Monday</Select.Option>
             <Select.Option value="tu">Tuesday</Select.Option>
