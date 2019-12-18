@@ -728,8 +728,8 @@ class Map extends React.Component<PageProps, {}> {
           <p style={{ "font-size": "11px" }}>
             The curb regulations in this map were surveyed by{" "}
             <a href="https://sharedstreets.io/">SharedStreets</a> in November
-            2019. This is not an authoritative dataset and any parking decisions
-            should be verified at the street level.
+            2019. This is not an authoritative dataset; users should verify any parking decisions
+            at the street level.
           </p>
         </Card>
       </Layout>
