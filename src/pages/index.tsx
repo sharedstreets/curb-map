@@ -166,17 +166,12 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                     filteredFeature.properties.activity = "no stopping"
                     filteredData.features.push(filteredFeature);
                   }
-                  if(regulation.userClasses?.some(uc => ["motorcycle", "hotel guest", "permit", "reserved", "handicap", "scooter", "bicycle", "USPS", "car share", "police", "tour bus"].some(c => uc.classes?.includes(c)))) {
-                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["restricted"];
-                    filteredFeature.properties.activity = "restricted"
-                    filteredData.features.push(filteredFeature);
-                  }
-                  if(regulation.rule.activity === "parking" && !regulation.rule.payment && regulation.payment?.rates?.fees?.length === 0) {
+                  if(regulation.rule.activity === "parking" && !regulation.rule.payment && !regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["free parking"];
                     filteredFeature.properties.activity = "free parking"
                     filteredData.features.push(filteredFeature);
                   }
-                  if(regulation.rule.activity === "parking" && (regulation.rule.payment || regulation.payment?.rates?.fees?.length > 0)) {
+                  if(regulation.rule.activity === "parking" && regulation.rule.payment && !regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["paid parking"];
                     filteredFeature.properties.activity = "paid parking"
                     filteredData.features.push(filteredFeature);
@@ -184,6 +179,11 @@ const filterCurblrData = (data:CurbFeatureCollection, day:string, time:string, f
                   if(regulation.rule.activity === "loading") {
                     filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["loading"];
                     filteredFeature.properties.activity = "loading"
+                    filteredData.features.push(filteredFeature);
+                  }
+                  if(regulation.userClasses?.some(uc => ["motorcycle", "hotel guest", "permit", "reserved", "handicap", "scooter", "bicycle", "USPS", "car share", "police", "tour bus"].some(c => uc.classes?.includes(c)))) {
+                    filteredFeature.properties['color'] = ACTIVITY_COLOR_MAP["restricted"];
+                    filteredFeature.properties.activity = "restricted"
                     filteredData.features.push(filteredFeature);
                   }
                   if(regulation.userClasses?.some(uc => ["taxi", "passenger", "TNC", "rideshare"].some(c => uc.classes?.includes(c)))) {
