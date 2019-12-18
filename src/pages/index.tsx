@@ -464,7 +464,7 @@ class Map extends React.Component<PageProps, {}> {
             />
           </Content>
 
-          <Card size="small" title="CurbLR (Portland Downtown Survey)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"350px"}}>
+          <Card size="small" title="CurbLR (Portland Downtown Survey)" bordered={true} style={{ position: "fixed", top: "40px", left: "40px", width:"310px"}}>
           Day: <Select defaultValue={day} onChange={this.changeDay}>
             <Select.Option value="mo">Monday</Select.Option>
             <Select.Option value="tu">Tuesday</Select.Option>
@@ -549,7 +549,10 @@ class Map extends React.Component<PageProps, {}> {
 
 }
 
-          <br />
+  <br />
+  <p style={{"font-size": "11px"}}>
+  The curb regulations in this map were surveyed by <a href="https://sharedstreets.io/">SharedStreets</a> in November 2019. This is not an authoritative dataset and any parking decisions should be verified at the street level.
+  </p>
 
           </Card>
         </Layout>
