@@ -80,7 +80,7 @@ const MAXSTAY_COLOR_MAP: { [key: string]: any } = {
 // }
 
 const ACTIVITY_COLOR_MAP = {
-  "no stopping": "#777777",
+  "no standing": "#777777",
   "no parking": "#DD2C00",
   "passenger loading": "#FF9100",
   "loading": "#FFEA00",
@@ -178,13 +178,12 @@ const filterCurblrData = (
           filteredData.features.push(filteredFeature);
         }
         if (
-          regulation.rule.activity === "no stopping" ||
           regulation.rule.activity === "no standing"
         ) {
           filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["no stopping"];
+            ACTIVITY_COLOR_MAP["no standing"];
           // set the activty to use later in hooking up chart to map data
-          filteredFeature.properties.activity = "no stopping";
+          filteredFeature.properties.activity = "no standing";
           filteredData.features.push(filteredFeature);
         }
         if (
@@ -420,8 +419,8 @@ class Map extends React.Component<PageProps, {}> {
     );
 
     const ACTIVITY_LENGTH_CALC = {
-      "no stopping": features.features
-        .filter(f => f.properties.activity === "no stopping")
+      "no standing": features.features
+        .filter(f => f.properties.activity === "no standing")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
       "no parking": features.features
@@ -492,7 +491,7 @@ class Map extends React.Component<PageProps, {}> {
     const activityPieData = [
       {
         x: "No Stopping",
-        y: ACTIVITY_LENGTH_CALC["no stopping"]
+        y: ACTIVITY_LENGTH_CALC["no standing"]
       },
       {
         x: "No Parking",

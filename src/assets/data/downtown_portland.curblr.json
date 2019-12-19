@@ -15,7 +15,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "construction",
               "priority": 2
             },
@@ -57,7 +57,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "construction",
               "priority": 2
             },
@@ -107,7 +107,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "construction",
               "priority": 2
             },
@@ -650,7 +650,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -863,7 +863,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -1144,7 +1144,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -1612,7 +1612,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -1762,7 +1762,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -1802,7 +1802,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -2356,7 +2356,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -2400,7 +2400,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -2440,7 +2440,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -2480,7 +2480,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -2520,7 +2520,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -2561,7 +2561,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "construction",
               "priority": 2
             },
@@ -2718,7 +2718,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -3319,7 +3319,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -3367,7 +3367,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -3449,7 +3449,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -3489,7 +3489,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -3530,7 +3530,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -3575,7 +3575,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -3879,7 +3879,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -4162,7 +4162,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 4
             },
@@ -4208,7 +4208,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4277,7 +4277,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4330,7 +4330,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4387,7 +4387,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4444,7 +4444,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4501,7 +4501,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4558,7 +4558,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -4713,7 +4713,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 3
             },
@@ -5000,7 +5000,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "bus stop",
               "priority": 4
             },
@@ -5137,7 +5137,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "loading",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -5617,7 +5617,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -5658,7 +5658,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -5764,7 +5764,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "loading",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -6198,7 +6198,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -6247,7 +6247,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -6292,7 +6292,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -6341,7 +6341,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -7615,7 +7615,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -7664,7 +7664,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -7713,7 +7713,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -7762,7 +7762,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8141,7 +8141,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8190,7 +8190,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8239,7 +8239,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8284,7 +8284,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8325,7 +8325,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8370,7 +8370,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8411,7 +8411,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -8464,7 +8464,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -9043,7 +9043,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -9092,7 +9092,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -9186,7 +9186,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 2
             },
             "userClasses": [
@@ -9664,7 +9664,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -9709,7 +9709,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -9754,7 +9754,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -9971,7 +9971,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "maxStay": 5,
               "priority": 4
             },
@@ -10017,7 +10017,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -10177,7 +10177,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -10806,7 +10806,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -10847,7 +10847,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -11110,7 +11110,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -11155,7 +11155,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -11291,7 +11291,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -11335,7 +11335,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -11379,7 +11379,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -11428,7 +11428,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -11578,7 +11578,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -11629,7 +11629,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -11674,7 +11674,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -11767,7 +11767,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 4
             },
@@ -11816,7 +11816,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -11872,7 +11872,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -11920,7 +11920,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -11962,7 +11962,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -12012,7 +12012,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -12107,7 +12107,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12156,7 +12156,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12201,7 +12201,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -12289,7 +12289,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12338,7 +12338,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12609,7 +12609,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -12655,7 +12655,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12704,7 +12704,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12799,7 +12799,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -12937,7 +12937,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 4
             },
@@ -13133,7 +13133,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 4
             },
@@ -13232,7 +13232,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -13277,7 +13277,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -13429,7 +13429,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -13474,7 +13474,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -13519,7 +13519,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -13564,7 +13564,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14099,7 +14099,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14148,7 +14148,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14197,7 +14197,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "curb cut",
               "priority": 4
             },
@@ -14239,7 +14239,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "curb cut",
               "priority": 4
             },
@@ -14281,7 +14281,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14330,7 +14330,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14654,7 +14654,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14699,7 +14699,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14900,7 +14900,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -14949,7 +14949,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15109,7 +15109,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15158,7 +15158,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15253,7 +15253,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "curb cut",
               "priority": 4
             },
@@ -15356,7 +15356,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "loading",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -15627,7 +15627,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15672,7 +15672,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15717,7 +15717,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15762,7 +15762,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -15807,7 +15807,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -15858,7 +15858,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -15909,7 +15909,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -15960,7 +15960,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -16007,7 +16007,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -16164,7 +16164,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "curb cut",
               "priority": 4
             },
@@ -16246,7 +16246,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -16298,7 +16298,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -16344,7 +16344,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -16396,7 +16396,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -16441,7 +16441,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -16488,7 +16488,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -16543,7 +16543,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -16584,7 +16584,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -16630,7 +16630,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "loading",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -16727,7 +16727,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -16771,7 +16771,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -17198,7 +17198,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "loading",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -18201,7 +18201,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -18253,7 +18253,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -18299,7 +18299,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "priority": 4
             },
             "userClasses": [
@@ -18351,7 +18351,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "reason": "travel lane",
               "priority": 4
             },
@@ -20756,7 +20756,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "stopping",
+              "activity": "standing",
               "reason": "transit lane",
               "priority": 4
             },
@@ -20953,7 +20953,7 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no stopping",
+              "activity": "no standing",
               "priority": 4
             },
             "userClasses": [
@@ -21340,8 +21340,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21426,8 +21426,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21512,8 +21512,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21598,8 +21598,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21684,8 +21684,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21766,8 +21766,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21848,8 +21848,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -21930,8 +21930,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -22012,8 +22012,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -22094,8 +22094,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
@@ -22176,8 +22176,8 @@
                     "to": "08:00"
                   },
                   {
-                    "from": "23:59",
-                    "to": "19:00"
+                    "from": "19:00",
+                    "to": "23:59"
                   }
                 ]
               },
