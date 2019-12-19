@@ -16,8 +16,8 @@ const curblrData = geojsonData as CurbFeatureCollection;
 
 const initState:GlobalState = {
     curblr: {
-        time: "13:00",
-        day: "tu",
+        time: "08:01",
+        day: "mo",
         mode: "time",
         data: curblrData
     }
