@@ -1,4 +1,14 @@
 {
+  "manifest": {
+    "createdDate": "2019-12-30T11:40:45Z",
+    "lastUpdatedDate": "2019-12-30T17:40:45Z",
+    "timeZone": "America/Los_Angeles",
+    "currency": "USD",
+    "authority": {
+      "name": "Portland Bureau of Transportation",
+      "url": "https://www.portlandoregon.gov/transportation/"
+    }
+  },
   "type": "FeatureCollection",
   "features": [
     {
