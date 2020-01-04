@@ -307,6 +307,7 @@ class Map extends React.Component<PageProps, {}> {
     return this._mapRef ? this._mapRef.current.getMap() : null;
   };
 
+
   componentDidMount() {
     this._loadData();
 
@@ -410,13 +411,17 @@ class Map extends React.Component<PageProps, {}> {
   render() {
     const { viewport, mapStyle, day, time, mode } = this.state;
 
-    // shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
+  // shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
     const features = filterCurblrData(
       this.props.curblr.data,
       this.state.day,
       this.state.time,
       this.state.mode
     );
+
+  // takes CurbLR feed (loaded into map as a prop, above) and puts it into a "dataUri" that can be downloaded from the export button. (Linking to file pathway doesn't work bc of umi build... couldn't find a static location for the data)
+    let curblrStr = JSON.stringify(this.props.curblr.data);
+    let curblrDataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(curblrStr);
 
     const ACTIVITY_LENGTH_CALC = {
       "no standing": features.features
@@ -719,7 +724,7 @@ class Map extends React.Component<PageProps, {}> {
             />
           )}
           <br />
-          <Button type="primary" icon="download" block onClick="downloadCurblr()">
+          <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
                     Download CurbLR data
           </Button>
           <br />
