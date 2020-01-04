@@ -1,0 +1,17 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-header-dropdown-container > * {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 480px) {
+  .antd-pro-header-dropdown-container {
+    width: 100% !important;
+  }
+  .antd-pro-header-dropdown-container > * {
+    border-radius: 0 !important;
+  }
+}

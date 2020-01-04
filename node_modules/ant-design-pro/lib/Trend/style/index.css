@@ -1,0 +1,37 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-trend-trendItem {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 22px;
+}
+.antd-pro-trend-trendItem .antd-pro-trend-up,
+.antd-pro-trend-trendItem .antd-pro-trend-down {
+  position: relative;
+  top: 1px;
+  margin-left: 4px;
+}
+.antd-pro-trend-trendItem .antd-pro-trend-up i,
+.antd-pro-trend-trendItem .antd-pro-trend-down i {
+  font-size: 12px;
+  transform: scale(0.83);
+}
+.antd-pro-trend-trendItem .antd-pro-trend-up {
+  color: #f5222d;
+}
+.antd-pro-trend-trendItem .antd-pro-trend-down {
+  top: -1px;
+  color: #52c41a;
+}
+.antd-pro-trend-trendItem.antd-pro-trend-trendItemGrey .antd-pro-trend-up,
+.antd-pro-trend-trendItem.antd-pro-trend-trendItemGrey .antd-pro-trend-down {
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-trend-trendItem.antd-pro-trend-reverseColor .antd-pro-trend-up {
+  color: #52c41a;
+}
+.antd-pro-trend-trendItem.antd-pro-trend-reverseColor .antd-pro-trend-down {
+  color: #f5222d;
+}

@@ -1,0 +1,35 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-header-search-headerSearch .anticon-search {
+  font-size: 16px;
+  cursor: pointer;
+}
+.antd-pro-header-search-headerSearch .antd-pro-header-search-input {
+  width: 0;
+  background: transparent;
+  border-radius: 0;
+  transition: width 0.3s, margin-left 0.3s;
+}
+.antd-pro-header-search-headerSearch
+  .antd-pro-header-search-input
+  .ant-select-selection {
+  background: transparent;
+}
+.antd-pro-header-search-headerSearch .antd-pro-header-search-input input {
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+  box-shadow: none !important;
+}
+.antd-pro-header-search-headerSearch .antd-pro-header-search-input,
+.antd-pro-header-search-headerSearch .antd-pro-header-search-input:hover,
+.antd-pro-header-search-headerSearch .antd-pro-header-search-input:focus {
+  border-bottom: 1px solid #d9d9d9;
+}
+.antd-pro-header-search-headerSearch
+  .antd-pro-header-search-input.antd-pro-header-search-show {
+  width: 210px;
+  margin-left: 8px;
+}

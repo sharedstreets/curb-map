@@ -1,0 +1,55 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-result-result {
+  width: 72%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .antd-pro-result-result {
+    width: 100%;
+  }
+}
+.antd-pro-result-result .antd-pro-result-icon {
+  margin-bottom: 24px;
+  font-size: 72px;
+  line-height: 72px;
+}
+.antd-pro-result-result .antd-pro-result-icon > .antd-pro-result-success {
+  color: #52c41a;
+}
+.antd-pro-result-result .antd-pro-result-icon > .antd-pro-result-error {
+  color: #f5222d;
+}
+.antd-pro-result-result .antd-pro-result-title {
+  margin-bottom: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+.antd-pro-result-result .antd-pro-result-description {
+  margin-bottom: 24px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  line-height: 22px;
+}
+.antd-pro-result-result .antd-pro-result-extra {
+  padding: 24px 40px;
+  text-align: left;
+  background: #fafafa;
+  border-radius: 2px;
+}
+@media screen and (max-width: 480px) {
+  .antd-pro-result-result .antd-pro-result-extra {
+    padding: 18px 20px;
+  }
+}
+.antd-pro-result-result .antd-pro-result-actions {
+  margin-top: 32px;
+}
+.antd-pro-result-result .antd-pro-result-actions button:not(:last-child) {
+  margin-right: 8px;
+}

@@ -1,0 +1,153 @@
+@import "../../style/themes/default.less";
+
+.antd-pro-page-header-pageHeader {
+  padding: 16px 32px 0 32px;
+  background: @component-background;
+  border-bottom: @border-width-base @border-style-base @border-color-split;
+  .antd-pro-page-header-wide {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .antd-pro-page-header-detail {
+    display: flex;
+  }
+
+  .antd-pro-page-header-row {
+    display: flex;
+    width: 100%;
+  }
+
+  .antd-pro-page-header-breadcrumb {
+    margin-bottom: 16px;
+  }
+
+  .antd-pro-page-header-tabs {
+    margin: 0 0 0 -8px;
+      // 1px 可以让选中效果显示完成
+      .ant-tabs-bar {
+        margin-bottom: 1px;
+        border-bottom: none;
+      }
+  }
+
+  .antd-pro-page-header-logo {
+    flex: 0 1 auto;
+    margin-right: 16px;
+    padding-top: 1px;
+    > img {
+      display: block;
+      width: 28px;
+      height: 28px;
+      border-radius: @border-radius-base;
+    }
+  }
+
+  .antd-pro-page-header-title {
+    color: @heading-color;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .antd-pro-page-header-action {
+    min-width: 266px;
+    margin-left: 56px;
+      .ant-btn-group:not(:last-child),
+      .ant-btn:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      .ant-btn-group > .ant-btn {
+        margin-right: 0;
+      }
+  }
+
+  .antd-pro-page-header-title,
+  .antd-pro-page-header-content {
+    flex: auto;
+  }
+
+  .antd-pro-page-header-action,
+  .antd-pro-page-header-extraContent,
+  .antd-pro-page-header-main {
+    flex: 0 1 auto;
+  }
+
+  .antd-pro-page-header-main {
+    width: 100%;
+  }
+
+  .antd-pro-page-header-title,
+  .antd-pro-page-header-action {
+    margin-bottom: 16px;
+  }
+
+  .antd-pro-page-header-logo,
+  .antd-pro-page-header-content,
+  .antd-pro-page-header-extraContent {
+    margin-bottom: 16px;
+  }
+
+  .antd-pro-page-header-action,
+  .antd-pro-page-header-extraContent {
+    text-align: right;
+  }
+
+  .antd-pro-page-header-extraContent {
+    min-width: 242px;
+    margin-left: 88px;
+  }
+}
+
+@media screen and (max-width: @screen-xl) {
+  .antd-pro-page-header-pageHeader {
+    .antd-pro-page-header-extraContent {
+      margin-left: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-lg) {
+  .antd-pro-page-header-pageHeader {
+    .antd-pro-page-header-extraContent {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .antd-pro-page-header-pageHeader {
+    .antd-pro-page-header-row {
+      display: block;
+    }
+
+    .antd-pro-page-header-action,
+    .antd-pro-page-header-extraContent {
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .antd-pro-page-header-pageHeader {
+    .antd-pro-page-header-detail {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-xs) {
+  .antd-pro-page-header-pageHeader {
+    .antd-pro-page-header-action {
+        .ant-btn-group,
+        .ant-btn {
+          display: block;
+          margin-bottom: 8px;
+        }
+        .ant-btn-group > .ant-btn {
+          display: inline-block;
+          margin-bottom: 0;
+        }
+    }
+  }
+}

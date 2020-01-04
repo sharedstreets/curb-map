@@ -1,0 +1,73 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.antd-pro-description-list-descriptionList .ant-row {
+  margin-bottom: -16px;
+  overflow: hidden;
+}
+.antd-pro-description-list-descriptionList
+  + .antd-pro-description-list-descriptionList
+  .ant-row {
+  margin-top: 16px;
+}
+.antd-pro-description-list-descriptionList .antd-pro-description-list-title {
+  margin-bottom: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 14px;
+}
+.antd-pro-description-list-descriptionList .antd-pro-description-list-term {
+  display: table-cell;
+  padding-bottom: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 20px;
+  white-space: nowrap;
+}
+.antd-pro-description-list-descriptionList
+  .antd-pro-description-list-term::after {
+  position: relative;
+  top: -0.5px;
+  margin: 0 8px 0 2px;
+  content: ":";
+}
+.antd-pro-description-list-descriptionList .antd-pro-description-list-detail {
+  display: table-cell;
+  width: 100%;
+  padding-bottom: 16px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 20px;
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-small
+  .ant-row {
+  margin-bottom: -8px;
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-small
+  + .antd-pro-description-list-descriptionList
+  .ant-row {
+  margin-top: 8px;
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-small
+  .antd-pro-description-list-title {
+  margin-bottom: 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-small
+  .antd-pro-description-list-term,
+.antd-pro-description-list-descriptionList.antd-pro-description-list-small
+  .antd-pro-description-list-detail {
+  padding-bottom: 8px;
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-large
+  .antd-pro-description-list-title {
+  font-size: 16px;
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-vertical
+  .antd-pro-description-list-term {
+  display: block;
+  padding-bottom: 8px;
+}
+.antd-pro-description-list-descriptionList.antd-pro-description-list-vertical
+  .antd-pro-description-list-detail {
+  display: block;
+}
