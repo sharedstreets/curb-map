@@ -148,6 +148,8 @@ const filterCurblrData = (
         curbFeature.properties.location.shstLocationEnd -
         curbFeature.properties.location.shstLocationStart;
 
+      filteredFeature.properties.priority = regulation.priority;
+
       // var priority = curbFeature.properties.regulations.priority;
       // if(priority) {
 
@@ -170,6 +172,7 @@ const filterCurblrData = (
       // Splits out common activities and variants for an overall view. Features that fall into more than one "bucket" are duplicated, but handled by ensuring that they ultimately fall into the more specific bucket via painter's algorithm.
       // Requires ts.3.7 because of null arrays - I lucked out on mine but this will break on a different environment
       else if (filterType === "activity") {
+
         if (regulation.rule.activity === "no parking") {
           filteredFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["no parking"];
@@ -256,6 +259,10 @@ const filterCurblrData = (
       //}
     }
   }
+
+  // sort filtered data in order of priority so that the map displays the highest-priority feature on top
+
+  filteredData.features.sort((a, b) => b.properties.priority - a.properties.priority)
 
   return filteredData;
 };
