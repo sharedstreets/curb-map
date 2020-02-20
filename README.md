@@ -1,7 +1,7 @@
 # CurbLR viewer
 ---
 
-SharedStreets CurbLR Viewer is an interactive web map that displays curb regulations and key stats for a specified weekday and hour. Input data must be provided in the [CurbLR](https://www.github.com/sharedstreets/curblr) specification.
+SharedStreets CurbLR Viewer is an interactive web map that displays curb regulations and key stats for a specified weekday and hour. Input data must be provided in the [CurbLR](https://www.github.com/sharedstreets/curblr) specification. This map can ingest data created in CurbLR version 1.0.0 or 1.1.0.
 
 ![image](https://user-images.githubusercontent.com/9657971/71771664-f759a780-2ef3-11ea-9465-19feb35f5d5d.png)
 
