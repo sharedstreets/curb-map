@@ -217,17 +217,38 @@ const filterCurblrData = (
         if (
           regulation.userClasses?.some(uc =>
             [
+              "philadelphia tours",
               "motorcycle",
-              "hotel guest",
-              "permit",
-              "reserved",
-              "handicap",
-              "scooter",
-              "bicycle",
-              "USPS",
-              "car share",
+              "electirc vehicle",
+              "authorized",
               "police",
-              "tour bus"
+              "philadelphia trolley works",
+              "hub of hope volunteers",
+              "registered package delivery",
+              "judge",
+              "philadelphia tours",
+              "ambulance",
+              "handicapped",
+              "federal government",
+              "bicycle",
+              "consul vehicle",
+              "military",
+              "septa",
+              "enterprise car share",
+              "seniors",
+              "contractor",
+              "love park authorized vehicle",
+              "hotel",
+              "district attorney",
+              "tour bus",
+              "city controller",
+              "carriage",
+              "red cross",
+              "valet",
+              "ccd",
+              "press",
+              "municipal government",
+              "truck"
             ].some(c => uc.classes?.includes(c))
           )
         ) {
@@ -249,7 +270,7 @@ const filterCurblrData = (
           filteredData.features.push(filteredFeature);
         }
         if (
-          regulation.userClasses?.some(uc => uc.classes?.includes("transit"))
+          regulation.userClasses?.some(uc => uc.classes?.includes("bus"))
         ) {
           filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
           filteredFeature.properties.activity = "transit";
@@ -286,14 +307,9 @@ class Map extends React.Component<PageProps, {}> {
     viewport: {
       width: "100vw",
       height: "100vh",
-      // needs update? default viewport is hard-coded and should dynamically set based on data. PHL viewport:
-      //        latitude:  39.950,
-      //        longitude:-75.174,
-      //        zoom: 16
-      // PDX viewport
-      latitude: 45.5197,
-      longitude: -122.6795,
-      zoom: 16.5
+      latitude: 39.9535903,
+      longitude: -75.1587843,
+      zoom: 14.8
     }
   };
 
@@ -510,7 +526,7 @@ class Map extends React.Component<PageProps, {}> {
         y: ACTIVITY_LENGTH_CALC["no parking"]
       },
       {
-        x: "Taxi, TNC, Other PUDO",
+        x: "Taxi",
         y: ACTIVITY_LENGTH_CALC["passenger loading"]
       },
       {
@@ -589,7 +605,7 @@ class Map extends React.Component<PageProps, {}> {
 
         <Card
           size="small"
-          title="CurbLR Regulation Map (Portland, OR)"
+          title="CurbLR Regulation Map (Philadelphia, PA)"
           bordered={true}
           style={{
             position: "fixed",
