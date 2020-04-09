@@ -2,7 +2,8 @@ import { GlobalState } from "../common/types";
 import { DvaModelBuilder } from "dva-model-creator";
 import { time, day, priority, activity } from "../actions/filter";
 
-import geojsonData from '@/assets/data/philadelphia.curblr.json';
+// import geojsonData from '@/assets/data/philadelphia.curblr.json';
+import geojsonData from '@/assets/data/philadelphia_original-geoms.curblr.json';
 
 import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/curblr';
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';

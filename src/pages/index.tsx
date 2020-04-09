@@ -139,6 +139,9 @@ const filterCurblrData = (
   for (var curbFeature of data.features) {
     var filteredFeature = feature<LineString>(curbFeature.geometry);
     filteredFeature.properties = {};
+  //   if (curbFeature.properties.location.objectId == '{E96F24CF-034F-4F47-BF46-456049AEA4BA}') {
+  //    console.log(curbFeature)
+  //  }
 
     if (!filterTimeAndDay(curbFeature, day, time)) continue;
 
@@ -147,18 +150,20 @@ const filterCurblrData = (
       filteredFeature.properties.length =
         curbFeature.properties.location.shstLocationEnd -
         curbFeature.properties.location.shstLocationStart;
-
+      
+      // TODO: this is temporary
+      if (isNaN(filteredFeature.properties.length)) {
+        filteredFeature.properties.length = 0
+      }
+      
       filteredFeature.properties.priority = regulation.priority;
-
-      // var priority = curbFeature.properties.regulations.priority;
-      // if(priority) {
-
-      var baseOffset = 10; // + (5 * priority);
-      if (curbFeature.properties.location.sideOfStreet === "left")
-        baseOffset = 0 - 10; // + (5 * priority);
+      // var baseOffset = 10; // + (5 * priority);
+      // if (curbFeature.properties.location.sideOfStreet === "left")
+      //   baseOffset = 0 - 10; // + (5 * priority);
+      var baseOffset = 0; 
 
       filteredFeature.properties["offset"] = baseOffset; //scaledOffset(baseOffset);
-
+      
       if (filterType === "maxStay") {
         if (regulation.rule.maxStay) {
           var maxStay = regulation.rule.maxStay + "";
@@ -169,115 +174,91 @@ const filterCurblrData = (
           }
         }
       }
+
       // Splits out common activities and variants for an overall view. Features that fall into more than one "bucket" are duplicated, but handled by ensuring that they ultimately fall into the more specific bucket via painter's algorithm.
       // Requires ts.3.7 because of null arrays - I lucked out on mine but this will break on a different environment
-      else if (filterType === "activity") {
-
+      if (filterType === "activity") {
+        if (curbFeature.properties.location.objectId == '{E96F24CF-034F-4F47-BF46-456049AEA4BA}') {
+          console.log(regulation)
+        }
+        // PARKING
+        if (regulation.rule.activity === "parking") {
+          // if there's a user class
+          if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
+            if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
+              filteredFeature.properties.activity = "transit";
+              filteredData.features.push(filteredFeature);
+            }
+            else {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
+              filteredFeature.properties.activity = "restricted";
+              filteredData.features.push(filteredFeature);
+            }
+            // if there's no user class
+          } else {
+            // if payment is required
+            if (!regulation.rule.payment) {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
+              filteredFeature.properties.activity = "free parking";
+              filteredData.features.push(filteredFeature);
+            } else {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["paid parking"];
+              filteredFeature.properties.activity = "paid parking";
+              filteredData.features.push(filteredFeature);
+            }
+          }
+        }
+        
+        // NO PARKING
         if (regulation.rule.activity === "no parking") {
-          filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["no parking"];
-          // set the activty to use later in hooking up chart to map data
+          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no parking"];
           filteredFeature.properties.activity = "no parking";
           filteredData.features.push(filteredFeature);
         }
-        if (
-          regulation.rule.activity === "no standing"
-        ) {
-          filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["no standing"];
-          // set the activty to use later in hooking up chart to map data
-          filteredFeature.properties.activity = "no standing";
-          filteredData.features.push(filteredFeature);
-        }
-        if (
-          regulation.rule.activity === "parking" &&
-          !regulation.rule.payment &&
-          !regulation.userClasses?.some(uc => uc.classes?.length > 0)
-        ) {
-          filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["free parking"];
-          filteredFeature.properties.activity = "free parking";
-          filteredData.features.push(filteredFeature);
-        }
-        if (
-          regulation.rule.activity === "parking" &&
-          regulation.rule.payment &&
-          !regulation.userClasses?.some(uc => uc.classes?.length > 0)
-        ) {
-          filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["paid parking"];
-          filteredFeature.properties.activity = "paid parking";
-          filteredData.features.push(filteredFeature);
-        }
-        if (regulation.rule.activity === "loading") {
+        
+        // STANDING
+        if (regulation.rule.activity === "standing") {
           filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
           filteredFeature.properties.activity = "loading";
           filteredData.features.push(filteredFeature);
         }
-        if (
-          regulation.userClasses?.some(uc =>
-            [
-              "philadelphia tours",
-              "motorcycle",
-              "electirc vehicle",
-              "authorized",
-              "police",
-              "philadelphia trolley works",
-              "hub of hope volunteers",
-              "registered package delivery",
-              "judge",
-              "philadelphia tours",
-              "ambulance",
-              "handicapped",
-              "federal government",
-              "bicycle",
-              "consul vehicle",
-              "military",
-              "septa",
-              "enterprise car share",
-              "seniors",
-              "contractor",
-              "love park authorized vehicle",
-              "hotel",
-              "district attorney",
-              "tour bus",
-              "city controller",
-              "carriage",
-              "red cross",
-              "valet",
-              "ccd",
-              "press",
-              "municipal government",
-              "truck"
-            ].some(c => uc.classes?.includes(c))
-          )
-        ) {
-          filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["restricted"];
-          filteredFeature.properties.activity = "restricted";
+
+        // NO STANDING
+        if (regulation.rule.activity === "no standing") {
+          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no standing"];
+          filteredFeature.properties.activity = "no standing";
           filteredData.features.push(filteredFeature);
         }
-        if (
-          regulation.userClasses?.some(uc =>
-            ["taxi", "passenger", "TNC", "rideshare"].some(c =>
-              uc.classes?.includes(c)
-            )
-          )
-        ) {
-          filteredFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["passenger loading"];
-          filteredFeature.properties.activity = "passenger loading";
-          filteredData.features.push(filteredFeature);
+
+        if (regulation.rule.activity === "loading") {
+          if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
+            if (regulation.userClasses?.some(uc => ["taxi", "passenger", "passenger loading"].some(c => uc.classes?.includes(c)))) {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["passenger loading"];
+              filteredFeature.properties.activity = "passenger loading";
+              filteredData.features.push(filteredFeature);
+            } else if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
+              filteredFeature.properties.activity = "transit";
+              filteredData.features.push(filteredFeature);
+            } else {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
+              filteredFeature.properties.activity = "restricted";
+              filteredData.features.push(filteredFeature);
+            } 
+          } else {
+            filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
+            filteredFeature.properties.activity = "loading";
+            filteredData.features.push(filteredFeature);
+          }
         }
-        if (
-          regulation.userClasses?.some(uc => uc.classes?.includes("bus"))
-        ) {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
-          filteredFeature.properties.activity = "transit";
-          filteredData.features.push(filteredFeature);
+
+        if (typeof filteredFeature.properties.activity === "undefined") {
+          filteredFeature.properties["color"] = "white";//ACTIVITY_COLOR_MAP["free parking"];
+          filteredFeature.properties.activity = "free parking";
+          filteredData.features.push(filteredFeature);  
         }
       }
-      //}
     }
   }
 
@@ -302,14 +283,14 @@ class Map extends React.Component<PageProps, {}> {
   state = {
     mode: "activity",
     day: "mo",
-    time: "08:01",
+    time: "09:01",
     mapStyle: defaultMapStyle,
     viewport: {
       width: "100vw",
       height: "100vh",
       latitude: 39.9535903,
       longitude: -75.1587843,
-      zoom: 14.8
+      zoom: 14.5
     }
   };
 
@@ -518,7 +499,7 @@ class Map extends React.Component<PageProps, {}> {
 
     const activityPieData = [
       {
-        x: "No Stopping",
+        x: "No Standing",
         y: ACTIVITY_LENGTH_CALC["no standing"]
       },
       {
@@ -526,7 +507,7 @@ class Map extends React.Component<PageProps, {}> {
         y: ACTIVITY_LENGTH_CALC["no parking"]
       },
       {
-        x: "Taxi",
+        x: "Pasenger Loading",
         y: ACTIVITY_LENGTH_CALC["passenger loading"]
       },
       {
@@ -752,7 +733,7 @@ class Map extends React.Component<PageProps, {}> {
           </Button>
           <br />
           <br />
-          <p style={{ "font-size": "11px" }}>
+          <p style={{ "fontSize": "11px" }}>
             The curb regulations in this map were surveyed by{" "}
             <a href="https://sharedstreets.io/">SharedStreets</a> in November
             2019. This is not an authoritative dataset; users should verify any parking decisions

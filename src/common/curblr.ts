@@ -66,7 +66,7 @@ export class Manifest {
 }
 
 export class Rule  {
-    activity:"parking" | "no parking" | "stopping" | "no stopping" | "loading" | "no loading";
+    activity:"parking" | "no parking" | "standing" | "no standing" | "loading" | "no loading";
     reason?:string;
     maxStay?:number
     noReturn?:number
