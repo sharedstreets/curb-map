@@ -2,8 +2,7 @@ import { GlobalState } from "../common/types";
 import { DvaModelBuilder } from "dva-model-creator";
 import { time, day, priority, activity } from "../actions/filter";
 
-// import geojsonData from '@/assets/data/philadelphia.curblr.json';
-import geojsonData from '@/assets/data/philadelphia_original-geoms.curblr.json';
+import geojsonData from '@/assets/data/philadelphia.curblr.json';
 
 import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/curblr';
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';
@@ -17,7 +16,7 @@ const curblrData = geojsonData as CurbFeatureCollection;
 
 const initState:GlobalState = {
     curblr: {
-        time: "08:01",
+        time: "09:01",
         day: "mo",
         mode: "time",
         data: curblrData

@@ -30,7 +30,7 @@ import {
 } from "@turf/helpers";
 
 var mapboxAccessToken =
-  "pk.eyJ1Ijoic2FhZGlxbSIsImEiOiJjamJpMXcxa3AyMG9zMzNyNmdxNDlneGRvIn0.wjlI8r1S_-xxtq2d-W5qPA";
+  "pk.eyJ1Ijoic2thc3NlbCIsImEiOiJjazg5N3Boc20wMHBkM2xzNHI5dGh4NGJqIn0.Veu8-ifVOuoddqHEOKmccQ";
 
 //loads map style
 const defaultMapStyle = fromJS(mapStyle);
@@ -139,10 +139,6 @@ const filterCurblrData = (
   for (var curbFeature of data.features) {
     var filteredFeature = feature<LineString>(curbFeature.geometry);
     filteredFeature.properties = {};
-  //   if (curbFeature.properties.location.objectId == '{E96F24CF-034F-4F47-BF46-456049AEA4BA}') {
-  //    console.log(curbFeature)
-  //  }
-
     if (!filterTimeAndDay(curbFeature, day, time)) continue;
 
     for (var regulation of curbFeature.properties.regulations) {
@@ -150,7 +146,6 @@ const filterCurblrData = (
       filteredFeature.properties.length =
         curbFeature.properties.location.shstLocationEnd -
         curbFeature.properties.location.shstLocationStart;
-      
       // TODO: this is temporary
       if (isNaN(filteredFeature.properties.length)) {
         filteredFeature.properties.length = 0
@@ -178,22 +173,29 @@ const filterCurblrData = (
       // Splits out common activities and variants for an overall view. Features that fall into more than one "bucket" are duplicated, but handled by ensuring that they ultimately fall into the more specific bucket via painter's algorithm.
       // Requires ts.3.7 because of null arrays - I lucked out on mine but this will break on a different environment
       if (filterType === "activity") {
-        if (curbFeature.properties.location.objectId == '{E96F24CF-034F-4F47-BF46-456049AEA4BA}') {
-          console.log(regulation)
+
+        if (regulation.userClasses != undefined) {
+          if (regulation.userClasses[0].classes[0] == "contractor") {
+            continue;
+          }
         }
+
         // PARKING
         if (regulation.rule.activity === "parking") {
           // if there's a user class
+          
           if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
             if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
               filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
               filteredFeature.properties.activity = "transit";
               filteredData.features.push(filteredFeature);
+              break;
             }
             else {
               filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
               filteredFeature.properties.activity = "restricted";
               filteredData.features.push(filteredFeature);
+              break;
             }
             // if there's no user class
           } else {
@@ -202,10 +204,12 @@ const filterCurblrData = (
               filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
               filteredFeature.properties.activity = "free parking";
               filteredData.features.push(filteredFeature);
+              break;
             } else {
               filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["paid parking"];
               filteredFeature.properties.activity = "paid parking";
               filteredData.features.push(filteredFeature);
+              break;
             }
           }
         }
@@ -215,6 +219,7 @@ const filterCurblrData = (
           filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no parking"];
           filteredFeature.properties.activity = "no parking";
           filteredData.features.push(filteredFeature);
+          break;
         }
         
         // STANDING
@@ -222,6 +227,7 @@ const filterCurblrData = (
           filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
           filteredFeature.properties.activity = "loading";
           filteredData.features.push(filteredFeature);
+          break;
         }
 
         // NO STANDING
@@ -229,34 +235,43 @@ const filterCurblrData = (
           filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no standing"];
           filteredFeature.properties.activity = "no standing";
           filteredData.features.push(filteredFeature);
+          break;
         }
 
         if (regulation.rule.activity === "loading") {
-          if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
-            if (regulation.userClasses?.some(uc => ["taxi", "passenger", "passenger loading"].some(c => uc.classes?.includes(c)))) {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["passenger loading"];
-              filteredFeature.properties.activity = "passenger loading";
-              filteredData.features.push(filteredFeature);
-            } else if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
-              filteredFeature.properties.activity = "transit";
-              filteredData.features.push(filteredFeature);
-            } else {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
-              filteredFeature.properties.activity = "restricted";
-              filteredData.features.push(filteredFeature);
-            } 
-          } else {
+          if (regulation.userClasses != undefined) {
+            if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
+              if (regulation.userClasses?.some(uc => ["taxi", "passenger", "passenger loading"].some(c => uc.classes?.includes(c)))) {
+                filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["passenger loading"];
+                filteredFeature.properties.activity = "passenger loading";
+                filteredData.features.push(filteredFeature);
+                break;
+              } else if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
+                filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
+                filteredFeature.properties.activity = "transit";
+                filteredData.features.push(filteredFeature);
+                break;
+              } else {
+                filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
+                filteredFeature.properties.activity = "restricted";
+                filteredData.features.push(filteredFeature);
+                break;
+              } 
+            }
+          }
+          else {
             filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
             filteredFeature.properties.activity = "loading";
             filteredData.features.push(filteredFeature);
+            break;
           }
         }
 
-        if (typeof filteredFeature.properties.activity === "undefined") {
-          filteredFeature.properties["color"] = "white";//ACTIVITY_COLOR_MAP["free parking"];
+        if (typeof filteredFeature.properties.activity == undefined) {
+          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
           filteredFeature.properties.activity = "free parking";
-          filteredData.features.push(filteredFeature);  
+          filteredData.features.push(filteredFeature);
+          break;
         }
       }
     }

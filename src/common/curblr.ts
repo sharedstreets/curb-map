@@ -9,27 +9,63 @@ function convertTimeSrtToMinOfDay(timeStr:string):number {
 export function filterTimeAndDay(feature:CurbFeature, filterDayOfWeek:string, filterTimeStr:string):boolean {
     var filterTime = convertTimeSrtToMinOfDay(filterTimeStr);
 
-    for(var regulation of feature.properties.regulations) {
+    for (var regulation of feature.properties.regulations) {
         if(regulation.timeSpans && regulation.timeSpans.length) {
-            for(var timeSpan of regulation.timeSpans) {
-                if(timeSpan.daysOfWeek) {
-                    for(var day of timeSpan.daysOfWeek.days) {
-                        if(day == filterDayOfWeek) {
-                            if(timeSpan.timesOfDay) {
-                                for(var times of timeSpan.timesOfDay) {
-                                    var from = convertTimeSrtToMinOfDay(times.from);
-                                    var to = convertTimeSrtToMinOfDay(times.to);
-                                    if(filterTime >= from && filterTime <= to) {
-                                        return true;
-                                    }
+            for (var timeSpan of regulation.timeSpans) {
+                // if (timeSpan.daysOfWeek) {
+                var days = [];
+                if (timeSpan.daysOfWeek == undefined) {
+                    days = days.concat(["mo", "tu", "we", "th", "fr", "sa", "su"]);
+                } else {
+                    days = days.concat(timeSpan.daysOfWeek.days);
+                }
+                // if (timeSpan.daysOfWeek) {
+                for (var day of days) {
+                    if(day == filterDayOfWeek) {
+                        if (timeSpan.timesOfDay) {
+                            for(var times of timeSpan.timesOfDay) {
+                                var from = convertTimeSrtToMinOfDay(times.from);
+                                var to = convertTimeSrtToMinOfDay(times.to);
+                                if(filterTime >= from && filterTime <= to) {
+                                    return true;
                                 }
                             }
-                            else
-                                return false;
                         }
                     }
                 }
+    
+                // }
+                //     if (timeSpan.daysOfWeek != undefined) {
+                //         console.log(timeSpan.daysOfWeek);
+                //         for (var day of timeSpan.daysOfWeek.days) {
+                //             if(day == filterDayOfWeek) {
+                //                 if(timeSpan.timesOfDay) {
+                //                     for(var times of timeSpan.timesOfDay) {
+                //                         var from = convertTimeSrtToMinOfDay(times.from);
+                //                         var to = convertTimeSrtToMinOfDay(times.to);
+                //                         if(filterTime >= from && filterTime <= to) {
+                //                             return true;
+                //                         }
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //     }
+                //     else {
+                //         console.log(regulation);
+                //         if(timeSpan.timesOfDay) {
+                //             for(var times of timeSpan.timesOfDay) {
+                //                 var from = convertTimeSrtToMinOfDay(times.from);
+                //                 var to = convertTimeSrtToMinOfDay(times.to);
+                //                 if(filterTime >= from && filterTime <= to) {
+                //                     return true;
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
             }
+            return false;
         }
         else
             return true;
