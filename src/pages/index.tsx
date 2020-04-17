@@ -30,35 +30,15 @@ import {
 } from "@turf/helpers";
 
 var mapboxAccessToken =
-  "pk.eyJ1Ijoic2thc3NlbCIsImEiOiJjazg5N3Boc20wMHBkM2xzNHI5dGh4NGJqIn0.Veu8-ifVOuoddqHEOKmccQ";
+  "pk.eyJ1Ijoic2FhZGlxbSIsImEiOiJjamJpMXcxa3AyMG9zMzNyNmdxNDlneGRvIn0.wjlI8r1S_-xxtq2d-W5qPA";
 
 //loads map style
 const defaultMapStyle = fromJS(mapStyle);
 
-//sunset
-// const MAXSTAY_COLOR_MAP:{ [key: string]: any } = {
-//     "3": "#FFDF00",
-//     "15": "#F1B408",
-//     "30": "#F1871C",
-//     "60": "#F06121",
-//     "120": "#F12627",
-//     "180": "#C80286",
-//     "240": "#63238A",
-// }
-
-//opposite of sunset
-// const MAXSTAY_COLOR_MAP:{ [key: string]: any } = {
-//     "3": "#FFDF00",
-//     "15": "#8BBA25",
-//     "30": "#018D5A",
-//     "60": "#00A8C4",
-//     "120": "#1078C3",
-//     "180": "#4336A2",
-//     "240": "#6D238A",
-// }
 
 //blues
 const MAXSTAY_COLOR_MAP: { [key: string]: any } = {
+  "0": "#ffffff",
   "3": "#e1f5fe",
   "15": "#81d4fa",
   "30": "#4fc3f7",
@@ -68,16 +48,6 @@ const MAXSTAY_COLOR_MAP: { [key: string]: any } = {
   "240": "#00345D"
 };
 
-//greens
-// const MAXSTAY_COLOR_MAP:{ [key: string]: any } = {
-//     "3": "#ffee58",
-//     "15": "#cddc39",
-//     "30": "#7cb342",
-//     "60": "#689f38",
-//     "120": "#388e3c",
-//     "180": "#1b5e20",
-//     "240": "#124116",
-// }
 
 const ACTIVITY_COLOR_MAP = {
   "no standing": "#777777",
@@ -139,146 +109,153 @@ const filterCurblrData = (
   for (var curbFeature of data.features) {
     var filteredFeature = feature<LineString>(curbFeature.geometry);
     filteredFeature.properties = {};
-    if (!filterTimeAndDay(curbFeature, day, time)) continue;
-
     for (var regulation of curbFeature.properties.regulations) {
       // marks each feature with its length
-      filteredFeature.properties.length =
-        curbFeature.properties.location.shstLocationEnd -
-        curbFeature.properties.location.shstLocationStart;
-      // TODO: this is temporary
-      if (isNaN(filteredFeature.properties.length)) {
-        filteredFeature.properties.length = 0
-      }
-      
-      filteredFeature.properties.priority = regulation.priority;
-      // var baseOffset = 10; // + (5 * priority);
-      // if (curbFeature.properties.location.sideOfStreet === "left")
-      //   baseOffset = 0 - 10; // + (5 * priority);
-      var baseOffset = 0; 
-
-      filteredFeature.properties["offset"] = baseOffset; //scaledOffset(baseOffset);
-      
-      if (filterType === "maxStay") {
-        if (regulation.rule.maxStay) {
-          var maxStay = regulation.rule.maxStay + "";
-          if (MAXSTAY_COLOR_MAP[maxStay]) {
-            filteredFeature.properties["color"] = MAXSTAY_COLOR_MAP[maxStay];
-            filteredFeature.properties.maxStay = maxStay;
-            filteredData.features.push(filteredFeature);
-          }
-        }
-      }
-
-      // Splits out common activities and variants for an overall view. Features that fall into more than one "bucket" are duplicated, but handled by ensuring that they ultimately fall into the more specific bucket via painter's algorithm.
-      // Requires ts.3.7 because of null arrays - I lucked out on mine but this will break on a different environment
-      if (filterType === "activity") {
-
-        if (regulation.userClasses != undefined) {
-          if (regulation.userClasses[0].classes[0] == "contractor") {
-            continue;
-          }
+      if (filterTimeAndDay(regulation, curbFeature, day, time)) {
+        filteredFeature.properties.length =
+          curbFeature.properties.location.shstLocationEnd -
+          curbFeature.properties.location.shstLocationStart;
+        
+        if (isNaN(filteredFeature.properties.length)) {
+          filteredFeature.properties.length = 0
         }
 
-        // PARKING
-        if (regulation.rule.activity === "parking") {
-          // if there's a user class
-          
-          if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
-            if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
-              filteredFeature.properties.activity = "transit";
-              filteredData.features.push(filteredFeature);
-              break;
+        if (filterType === "maxStay") {
+          if (regulation.rule.activity === "parking" && !regulation.userClasses) {
+            if (regulation.rule.maxStay) {
+              var ms = regulation.rule.maxStay;
+              if (ms > 240) {
+                ms = 240;
+              }
+              var maxStay = ms + ""
             }
             else {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
-              filteredFeature.properties.activity = "restricted";
-              filteredData.features.push(filteredFeature);
-              break;
+              var maxStay = "240"
             }
-            // if there's no user class
-          } else {
-            // if payment is required
-            if (!regulation.rule.payment) {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
-              filteredFeature.properties.activity = "free parking";
-              filteredData.features.push(filteredFeature);
-              break;
-            } else {
-              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["paid parking"];
-              filteredFeature.properties.activity = "paid parking";
-              filteredData.features.push(filteredFeature);
-              break;
+            if (MAXSTAY_COLOR_MAP[maxStay]) {
+              filteredFeature.properties["color"] = MAXSTAY_COLOR_MAP[maxStay];
+                filteredFeature.properties.maxStay = maxStay;
+                filteredData.features.push(filteredFeature);
             }
           }
-        }
-        
-        // NO PARKING
-        if (regulation.rule.activity === "no parking") {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no parking"];
-          filteredFeature.properties.activity = "no parking";
-          filteredData.features.push(filteredFeature);
-          break;
-        }
-        
-        // STANDING
-        if (regulation.rule.activity === "standing") {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
-          filteredFeature.properties.activity = "loading";
-          filteredData.features.push(filteredFeature);
-          break;
+          
+
+          
         }
 
-        // NO STANDING
-        if (regulation.rule.activity === "no standing") {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no standing"];
-          filteredFeature.properties.activity = "no standing";
-          filteredData.features.push(filteredFeature);
-          break;
-        }
+        // Splits out common activities and variants for an overall view. Features that fall into more than one "bucket" are duplicated, but handled by ensuring that they ultimately fall into the more specific bucket via painter's algorithm.
+        // Requires ts.3.7 because of null arrays - I lucked out on mine but this will break on a different environment
+        if (filterType === "activity") {
 
-        if (regulation.rule.activity === "loading") {
           if (regulation.userClasses != undefined) {
+            if (regulation.userClasses[0].classes[0] == "contractor") {
+              continue;
+            }
+          }
+
+          // PARKING
+          if (regulation.rule.activity === "parking") {
+            // if there's a user class
             if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
-              if (regulation.userClasses?.some(uc => ["taxi", "passenger", "passenger loading"].some(c => uc.classes?.includes(c)))) {
-                filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["passenger loading"];
-                filteredFeature.properties.activity = "passenger loading";
-                filteredData.features.push(filteredFeature);
-                break;
-              } else if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
+              if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
                 filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
                 filteredFeature.properties.activity = "transit";
                 filteredData.features.push(filteredFeature);
                 break;
-              } else {
+              }
+              else {
                 filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
                 filteredFeature.properties.activity = "restricted";
                 filteredData.features.push(filteredFeature);
                 break;
-              } 
+              }
+              // if there's no user class
+            } else {
+              // if payment is required
+              if (!regulation.rule.payment) {
+                filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
+                filteredFeature.properties.activity = "free parking";
+                filteredData.features.push(filteredFeature);
+                break;
+              } else {
+                filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["paid parking"];
+                filteredFeature.properties.activity = "paid parking";
+                filteredData.features.push(filteredFeature);
+                break;
+              }
             }
           }
-          else {
+
+          // NO PARKING
+          if (regulation.rule.activity === "no parking") {
+            filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no parking"];
+            filteredFeature.properties.activity = "no parking";
+            filteredData.features.push(filteredFeature);
+            break;
+          }
+
+          // STANDING
+          if (regulation.rule.activity === "standing") {
             filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
             filteredFeature.properties.activity = "loading";
             filteredData.features.push(filteredFeature);
             break;
           }
-        }
 
-        if (typeof filteredFeature.properties.activity == undefined) {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
-          filteredFeature.properties.activity = "free parking";
-          filteredData.features.push(filteredFeature);
-          break;
+          // NO STANDING
+          if (regulation.rule.activity === "no standing") {
+
+            filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["no standing"];
+            filteredFeature.properties.activity = "no standing";
+            filteredData.features.push(filteredFeature);
+            break;
+          }
+
+          if (regulation.rule.activity === "loading") {
+            if (regulation.userClasses != undefined) {
+              if (regulation.userClasses?.some(uc => uc.classes?.length > 0)) {
+                if (regulation.userClasses?.some(uc => ["taxi", "passenger", "passenger loading"].some(c => uc.classes?.includes(c)))) {
+                  filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["passenger loading"];
+                  filteredFeature.properties.activity = "passenger loading";
+                  filteredData.features.push(filteredFeature);
+                  break;
+                } else if (regulation.userClasses?.some(uc => uc.classes?.includes("bus"))) {
+                  filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
+                  filteredFeature.properties.activity = "transit";
+                  filteredData.features.push(filteredFeature);
+                  break;
+                } else {
+                  filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["restricted"];
+                  filteredFeature.properties.activity = "restricted";
+                  filteredData.features.push(filteredFeature);
+                  break;
+                }
+              }
+            }
+            else {
+              filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
+              filteredFeature.properties.activity = "loading";
+              filteredData.features.push(filteredFeature);
+              break;
+            }
+          }
+
+          if (typeof filteredFeature.properties.activity == undefined) {
+            filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["free parking"];
+            filteredFeature.properties.activity = "free parking";
+            filteredData.features.push(filteredFeature);
+            break;
+          }
         }
       }
+
+
+
+
     }
   }
 
   // sort filtered data in order of priority so that the map displays the highest-priority feature on top
-
   filteredData.features.sort((a, b) => b.properties.priority - a.properties.priority)
 
   return filteredData;
@@ -331,28 +308,6 @@ class Map extends React.Component<PageProps, {}> {
     this._loadData();
 
     const map = this._getMap();
-
-    if (map) {
-      // TODO doesn't fire due to overlays div
-      map.on("mouseover", "dataLayer", function(e) {
-        console.log({ e });
-        var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.description;
-
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
-
-        // TODO needs work
-        // new mapboxgl.Popup()
-        // .setLngLat(coordinates)
-        // .setHTML(description)
-        // .addTo(map);
-      });
-    }
 
     window.onresize = () => {
       const { viewport } = this.state;
@@ -430,7 +385,7 @@ class Map extends React.Component<PageProps, {}> {
   render() {
     const { viewport, mapStyle, day, time, mode } = this.state;
 
-  // shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
+    // shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
     const features = filterCurblrData(
       this.props.curblr.data,
       this.state.day,
@@ -438,9 +393,9 @@ class Map extends React.Component<PageProps, {}> {
       this.state.mode
     );
 
-  // takes CurbLR feed (loaded into map as a prop, above) and puts it into a "dataUri" that can be downloaded from the export button. (Linking to file pathway doesn't work bc of umi build... couldn't find a static location for the data)
-    let curblrStr = JSON.stringify(this.props.curblr.data);
-    let curblrDataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(curblrStr);
+    // takes CurbLR feed (loaded into map as a prop, above) and puts it into a "dataUri" that can be downloaded from the export button. (Linking to file pathway doesn't work bc of umi build... couldn't find a static location for the data)
+    let curblrStr = JSON.stringify(this.props.curblr.downloadData);
+    let curblrDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(curblrStr);
 
     const ACTIVITY_LENGTH_CALC = {
       "no standing": features.features
@@ -508,8 +463,6 @@ class Map extends React.Component<PageProps, {}> {
         .filter(f => Number(f.properties.maxStay) >= 240)
         .map(f => Number(f.properties.length))
         .reduce((acc, x) => acc + x, 0)
-      //  "360": features.features.filter(f => f.properties.maxStay === '360').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
-      //  "480": features.features.filter(f => f.properties.maxStay === '480').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
     };
 
     const activityPieData = [
@@ -560,18 +513,10 @@ class Map extends React.Component<PageProps, {}> {
         x: "30 min",
         y: MAXSTAY_LENGTH_CALC["30"]
       },
-      // {
-      //   x: '45 min',
-      //   y: MAXSTAY_LENGTH_CALC['45'],
-      // },
       {
         x: "1 hr",
         y: MAXSTAY_LENGTH_CALC["60"]
       },
-      // {
-      //   x: '90 min',
-      //   y: MAXSTAY_LENGTH_CALC['90'],
-      // },
       {
         x: "2 hr",
         y: MAXSTAY_LENGTH_CALC["120"]
@@ -581,7 +526,7 @@ class Map extends React.Component<PageProps, {}> {
         y: MAXSTAY_LENGTH_CALC["180"]
       },
       {
-        x: "4 hr or more",
+        x: "4+ hr",
         y: MAXSTAY_LENGTH_CALC["240"]
       }
     ];
@@ -702,49 +647,49 @@ class Map extends React.Component<PageProps, {}> {
               height={240}
             />
           ) : (
-            <Pie
-              animate={false}
-              colors={Object.values(ACTIVITY_COLOR_MAP)}
-              hasLegend
-              title="Activities"
-              subTitle={
-                <>
-                  Total car
+              <Pie
+                animate={false}
+                colors={Object.values(ACTIVITY_COLOR_MAP)}
+                hasLegend
+                title="Activities"
+                subTitle={
+                  <>
+                    Total car
                   <br />
                   lengths
                 </>
-              }
-              total={() => (
-                <>
+                }
+                total={() => (
+                  <>
+                    <span>
+                      {(
+                        activityPieData.reduce((pre, now) => now.y + pre, 0) /
+                        avgParkingLength
+                      ).toLocaleString("en", {
+                        style: "decimal",
+                        maximumFractionDigits: 0,
+                        minimumFractionDigits: 0
+                      })}
+                    </span>
+                  </>
+                )}
+                data={activityPieData}
+                valueFormat={val => (
                   <span>
-                    {(
-                      activityPieData.reduce((pre, now) => now.y + pre, 0) /
-                      avgParkingLength
-                    ).toLocaleString("en", {
+                    {(val / avgParkingLength).toLocaleString("en", {
                       style: "decimal",
                       maximumFractionDigits: 0,
                       minimumFractionDigits: 0
-                    })}
-                  </span>
-                </>
-              )}
-              data={activityPieData}
-              valueFormat={val => (
-                <span>
-                  {(val / avgParkingLength).toLocaleString("en", {
-                    style: "decimal",
-                    maximumFractionDigits: 0,
-                    minimumFractionDigits: 0
-                  })}{" "}
+                    })}{" "}
                   cars
-                </span>
-              )}
-              height={240}
-            />
-          )}
+                  </span>
+                )}
+                height={240}
+              />
+            )}
           <br />
           <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
-                    Download CurbLR data
+            Download CurbLR data
           </Button>
           <br />
           <br />

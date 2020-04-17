@@ -5,7 +5,8 @@ interface CurblrDataType {
     time: string,
     day: string,
     mode: string,
-    data: CurbFeatureCollection;
+    data: CurbFeatureCollection,
+    downloadData: CurbFeatureCollection
 }  
 
 export interface GlobalState {
