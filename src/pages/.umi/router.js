@@ -3,7 +3,7 @@ import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@tmp/history';
-import RendererWrapper0 from '/Users/eros/github/curb-map/src/pages/.umi/LocaleWrapper.jsx';
+import RendererWrapper0 from '/home/simon/files/miscellaneous/demos/demos/src/phila-curb-map/src/pages/.umi/LocaleWrapper.jsx';
 import { routerRedux } from 'dva';
 
 const Router = routerRedux.ConnectedRouter;
@@ -30,7 +30,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/Users/eros/github/curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('/home/simon/files/miscellaneous/demos/demos/src/phila-curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
@@ -44,7 +44,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('/Users/eros/github/curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('/home/simon/files/miscellaneous/demos/demos/src/phila-curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),
