@@ -28,7 +28,7 @@
             "type": "vector"
         }
     },
-    "sprite": "mapbox://sprites/emilyeros/ck2zof08b08gu1cllljkqj54m/cj530pqtvmepv7xox0ujq2mef",
+    "sprite": "mapbox://sprites/emilyeros/ck2zof08b08gu1cllljkqj54m",
     "glyphs": "mapbox://fonts/emilyeros/{fontstack}/{range}.pbf",
     "layers": [
         {
