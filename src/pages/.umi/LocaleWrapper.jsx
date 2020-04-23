@@ -32,7 +32,7 @@ defaultAntd = defaultAntd.default || defaultAntd;
 const localeInfo = {
   'en-US': {
     messages: {
-      ...((locale) => locale.__esModule ? locale.default : locale)(require('/Users/eros/github/curb-map/src/locales/en-US.ts')),
+      ...((locale) => locale.__esModule ? locale.default : locale)(require('/home/simon/files/miscellaneous/demos/demos/src/phila-curb-map/src/locales/en-US.ts')),
     },
     locale: 'en-US',
     antd: require('antd/lib/locale-provider/en_US'),
