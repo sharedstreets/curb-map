@@ -688,9 +688,9 @@ class Map extends React.Component<PageProps, {}> {
               />
             )}
           <br />
-          <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
+          {/* <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
             Download CurbLR data
-          </Button>
+          </Button> */}
           <br />
           <br />
           <p style={{ "fontSize": "11px" }}>
