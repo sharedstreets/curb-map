@@ -672,16 +672,17 @@ class Map extends React.Component<PageProps, {}> {
               />
             )}
           <br />
-          <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
+          {/* <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
             Download CurbLR data
-          </Button>
+          </Button> */}
           <br />
           <br />
           <p style={{ "fontSize": "11px" }}>
-            The curb regulations in this map were surveyed by{" "}
-            <a href="https://www.centercityphila.org/">Center City District</a> in
-            2019. This is not an authoritative dataset; users should verify any parking decisions
-            at the street level.
+            The data for this map was developed in partnership with {" "}
+            <a href="https://www.centercityphila.org/">Center City District</a> in May 2020.
+             This is not an authoritative dataset; users should verify any parking decisions
+            at the street level. This map design was created by {" "}
+            <a href="https://sharedstreets.io/">Shared Streets.</a>  
           </p>
         </Card>
       </Layout>
