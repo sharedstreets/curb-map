@@ -38,9 +38,6 @@ const defaultMapStyle = fromJS(mapStyle);
 
 //blues
 const MAXSTAY_COLOR_MAP: { [key: string]: any } = {
-  "0": "#ffffff",
-  "3": "#e1f5fe",
-  "15": "#81d4fa",
   "30": "#4fc3f7",
   "60": "#03a9f4",
   "120": "#0277bd",
@@ -121,26 +118,29 @@ const filterCurblrData = (
         }
 
         if (filterType === "maxStay") {
-          if (regulation.rule.activity === "parking" && !regulation.userClasses) {
-            if (regulation.rule.maxStay) {
-              var ms = regulation.rule.maxStay;
-              if (ms > 240) {
-                ms = 240;
+          if (regulation.rule.activity === "parking" || regulation.rule.activity === "loading") {
+            if (!regulation.userClasses) {
+              if (regulation.rule.maxStay) {
+                var ms = regulation.rule.maxStay;
+                if (ms > 240) {
+                  ms = 240;
+                }
+                var maxStay = ms + "";
               }
-              var maxStay = ms + ""
-            }
-            else {
-              var maxStay = "240"
-            }
-            if (MAXSTAY_COLOR_MAP[maxStay]) {
-              filteredFeature.properties["color"] = MAXSTAY_COLOR_MAP[maxStay];
-                filteredFeature.properties.maxStay = maxStay;
-                filteredData.features.push(filteredFeature);
+              else {
+                if (regulation.rule.activity === "loading") {
+                  var maxStay = "20";
+                } else {
+                  var maxStay = "240";
+                }
+              }
+              if (MAXSTAY_COLOR_MAP[maxStay]) {
+                filteredFeature.properties["color"] = MAXSTAY_COLOR_MAP[maxStay];
+                  filteredFeature.properties.maxStay = maxStay;
+                  filteredData.features.push(filteredFeature);
+              }
             }
           }
-          
-
-          
         }
 
         // Splits out common activities and variants for an overall view. Features that fall into more than one "bucket" are duplicated, but handled by ensuring that they ultimately fall into the more specific bucket via painter's algorithm.
@@ -433,16 +433,8 @@ class Map extends React.Component<PageProps, {}> {
     };
 
     const MAXSTAY_LENGTH_CALC = {
-      "3": features.features
-        .filter(f => Number(f.properties.maxStay) <= 5)
-        .map(f => Number(f.properties.length))
-        .reduce((acc, x) => acc + x, 0),
-      "15": features.features
-        .filter(f => Number(f.properties.maxStay) === 15)
-        .map(f => Number(f.properties.length))
-        .reduce((acc, x) => acc + x, 0),
       "30": features.features
-        .filter(f => Number(f.properties.maxStay) === 30)
+        .filter(f => Number(f.properties.maxStay) <= 30)
         .map(f => Number(f.properties.length))
         .reduce((acc, x) => acc + x, 0),
       //"45": features.features.filter(f => f.properties.maxStay === '45').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
@@ -502,15 +494,7 @@ class Map extends React.Component<PageProps, {}> {
 
     const maxStayPieData = [
       {
-        x: "5 min or less",
-        y: MAXSTAY_LENGTH_CALC["3"]
-      },
-      {
-        x: "15 min",
-        y: MAXSTAY_LENGTH_CALC["15"]
-      },
-      {
-        x: "30 min",
+        x: "30 min or fewer",
         y: MAXSTAY_LENGTH_CALC["30"]
       },
       {
