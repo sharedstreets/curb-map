@@ -1,16 +1,27 @@
 import React from "react";
 import styles from "./index.css";
+import logo from '../assets/azavea-logo.svg';
+import { 
+  Layout, 
+  Icon, 
+  Radio, 
+  Select, 
+  Button,
+  Typography,
+  Form,
+  Input,
+  Divider
+} from "antd";
 
-import { Layout, Menu, Icon, Card, Radio, Select, Badge, Button } from "antd";
 import { Pie } from "ant-design-pro/lib/Charts";
 import "ant-design-pro/dist/ant-design-pro.css"; // Import whole style
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
+const { Title, Paragraph } = Typography;
 
 import { formatMessage } from "umi-plugin-locale";
 import { connect } from "dva";
 
-//mapstyle, change to dark matter
 import mapStyle from "../assets/style.json";
 import { fromJS } from "immutable";
 
@@ -30,11 +41,10 @@ import {
 } from "@turf/helpers";
 
 var mapboxAccessToken =
-  "pk.eyJ1Ijoic2FhZGlxbSIsImEiOiJjamJpMXcxa3AyMG9zMzNyNmdxNDlneGRvIn0.wjlI8r1S_-xxtq2d-W5qPA";
+  "pk.eyJ1IjoiYXphdmVhIiwiYSI6IkFmMFBYUUUifQ.eYn6znWt8NzYOa3OrWop8A";
 
 //loads map style
 const defaultMapStyle = fromJS(mapStyle);
-
 
 //blues
 const MAXSTAY_COLOR_MAP: { [key: string]: any } = {
@@ -248,10 +258,6 @@ const filterCurblrData = (
           }
         }
       }
-
-
-
-
     }
   }
 
@@ -515,10 +521,212 @@ class Map extends React.Component<PageProps, {}> {
       }
     ];
 
+    const dayPicker = (
+      <>
+      <Select defaultValue={day} onChange={this.changeDay}>
+        <Select.Option value="mo">Monday</Select.Option>
+        <Select.Option value="tu">Tuesday</Select.Option>
+        <Select.Option value="we">Wednesday</Select.Option>
+        <Select.Option value="th">Thursday</Select.Option>
+        <Select.Option value="fr">Friday</Select.Option>
+        <Select.Option value="sa">Saturday</Select.Option>
+        <Select.Option value="su">Sunday</Select.Option>
+      </Select>
+      </>
+    );
+
+    const timePicker = (
+      <>
+        <Select defaultValue={time} onChange={this.changeTime}>
+          <Select.Option value="00:01">00:00</Select.Option>
+          <Select.Option value="01:01">01:00</Select.Option>
+          <Select.Option value="02:01">02:00</Select.Option>
+          <Select.Option value="03:01">03:00</Select.Option>
+          <Select.Option value="04:01">04:00</Select.Option>
+          <Select.Option value="05:01">05:00</Select.Option>
+          <Select.Option value="06:01">06:00</Select.Option>
+          <Select.Option value="07:01">07:00</Select.Option>
+          <Select.Option value="08:01">08:00</Select.Option>
+          <Select.Option value="09:01">09:00</Select.Option>
+          <Select.Option value="10:01">10:00</Select.Option>
+          <Select.Option value="11:01">11:00</Select.Option>
+          <Select.Option value="12:01">12:00</Select.Option>
+          <Select.Option value="13:01">13:00</Select.Option>
+          <Select.Option value="14:01">14:00</Select.Option>
+          <Select.Option value="15:01">15:00</Select.Option>
+          <Select.Option value="16:01">16:00</Select.Option>
+          <Select.Option value="17:01">17:00</Select.Option>
+          <Select.Option value="18:01">18:00</Select.Option>
+          <Select.Option value="19:01">19:00</Select.Option>
+          <Select.Option value="20:01">20:00</Select.Option>
+          <Select.Option value="21:01">21:00</Select.Option>
+          <Select.Option value="22:01">22:00</Select.Option>
+          <Select.Option value="23:01">23:00</Select.Option>
+        </Select>
+      </>
+    );
+
+    const viewOptions = (
+      <>
+        <Radio.Group
+          className="full-width-radioGroup"
+          defaultValue={mode}
+          buttonStyle="solid"
+          position="center"
+          onChange={this.changeMode}
+        >
+          <Radio.Button value="activity">Activity</Radio.Button>
+          <Radio.Button value="maxStay">Max Stay</Radio.Button>
+        </Radio.Group>
+      </>
+    );
+
+    const pieMaxStay = (
+      <>
+        <Pie
+          animate={false}
+          colors={Object.values(MAXSTAY_COLOR_MAP)}
+          hasLegend
+          title="Maximum Stay"
+          subTitle={
+            <>
+              Total car
+              <br />
+              lengths
+            </>
+          }
+          total={() => (
+            <>
+              <span>
+                {(
+                  maxStayPieData.reduce((pre, now) => now.y + pre, 0) /
+                  avgParkingLength
+                ).toLocaleString("en", {
+                  style: "decimal",
+                  maximumFractionDigits: 0,
+                  minimumFractionDigits: 0
+                })}
+              </span>
+            </>
+          )}
+          data={maxStayPieData}
+          valueFormat={val => (
+            <span>
+              {(val / avgParkingLength).toLocaleString("en", {
+                style: "decimal",
+                maximumFractionDigits: 0,
+                minimumFractionDigits: 0
+              })}{" "}
+              cars
+            </span>
+          )}
+          height={240}
+          />
+      </>
+    );
+
+    const pieActivity = (
+      <>
+        <Pie
+          animate={false}
+          colors={Object.values(ACTIVITY_COLOR_MAP)}
+          hasLegend
+          title="Activities"
+          subTitle={
+            <>
+              Total car
+            <br />
+            lengths
+          </>
+          }
+          total={() => (
+            <>
+              <span>
+                {(
+                  activityPieData.reduce((pre, now) => now.y + pre, 0) /
+                  avgParkingLength
+                ).toLocaleString("en", {
+                  style: "decimal",
+                  maximumFractionDigits: 0,
+                  minimumFractionDigits: 0
+                })}
+              </span>
+            </>
+          )}
+          data={activityPieData}
+          valueFormat={val => (
+            <span>
+              {(val / avgParkingLength).toLocaleString("en", {
+                style: "decimal",
+                maximumFractionDigits: 0,
+                minimumFractionDigits: 0
+              })}{" "}
+            cars
+            </span>
+          )}
+          height={240}
+        />
+      </>
+    );
+
+    const stickyHeader = (
+      <div className="sticky-header">
+        <Title level={4} style={{fontSize: '16px', margin: '0'}}>CurbLR Regulation Map (Philadelphia, PA)</Title>
+      </div>
+    );
+
+    const branding = (
+      <div className="branding">
+        <a href="https://azavea.com" target="_blank">
+          <img src={logo} alt="Azavea logo"/>
+        </a>
+      </div>
+    );
+
     // time query below adds one minute to selected time, to reconcile conflicting regulations that begin and end at the hour mark
     return (
       <Layout>
-        <Content>
+          <Sider 
+            className="app-sidebar"
+            theme="light" 
+            width="340"
+            style={{
+              padding: '10px'
+            }}>
+            {branding}
+            {stickyHeader}
+            <Form>
+              <Form.Item label="Time and Day">
+                <Input.Group compact className="compact-input-group">
+                    {dayPicker}
+                    <span className="input-group-addon">@</span>
+                    {timePicker}
+                </Input.Group>
+              </Form.Item>
+              <Form.Item label="View by">
+                {viewOptions}
+              </Form.Item>
+            </Form>
+
+            {mode === "maxStay" ? ( pieMaxStay ) : ( pieActivity )}
+            <br />
+            {/* <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
+              Download CurbLR data
+            </Button> */}
+            <Divider />
+            <Paragraph style={{ "fontSize": "14px" }}>
+              The data for this map was developed in partnership with {" "}
+              <a href="https://www.centercityphila.org/">Center City District</a> in May 2020.
+             This is not an authoritative dataset; users should verify any parking decisions
+            at the street level. This map design was created by {" "}
+            <a href="https://sharedstreets.io/">Shared Streets.</a>
+            </Paragraph>
+          </Sider>
+        <Content style={{
+          height: '100vh',
+          position: 'sticky',
+          top: '0'
+        }}>
           <MapGL
             ref={this._mapRef}
             mapboxApiAccessToken={mapboxAccessToken}
@@ -527,164 +735,6 @@ class Map extends React.Component<PageProps, {}> {
             onViewportChange={viewport => this.setState({ viewport })}
           />
         </Content>
-
-        <Card
-          size="small"
-          title="CurbLR Regulation Map (Philadelphia, PA)"
-          bordered={true}
-          style={{
-            position: "fixed",
-            top: "40px",
-            left: "40px",
-            width: "310px"
-          }}
-        >
-          Day:{" "}
-          <Select defaultValue={day} onChange={this.changeDay}>
-            <Select.Option value="mo">Monday</Select.Option>
-            <Select.Option value="tu">Tuesday</Select.Option>
-            <Select.Option value="we">Wednesday</Select.Option>
-            <Select.Option value="th">Thursday</Select.Option>
-            <Select.Option value="fr">Friday</Select.Option>
-            <Select.Option value="sa">Saturday</Select.Option>
-            <Select.Option value="su">Sunday</Select.Option>
-          </Select>
-          &nbsp; &nbsp; Time:{" "}
-          <Select defaultValue={time} onChange={this.changeTime}>
-            <Select.Option value="00:01">00:00</Select.Option>
-            <Select.Option value="01:01">01:00</Select.Option>
-            <Select.Option value="02:01">02:00</Select.Option>
-            <Select.Option value="03:01">03:00</Select.Option>
-            <Select.Option value="04:01">04:00</Select.Option>
-            <Select.Option value="05:01">05:00</Select.Option>
-            <Select.Option value="06:01">06:00</Select.Option>
-            <Select.Option value="07:01">07:00</Select.Option>
-            <Select.Option value="08:01">08:00</Select.Option>
-            <Select.Option value="09:01">09:00</Select.Option>
-            <Select.Option value="10:01">10:00</Select.Option>
-            <Select.Option value="11:01">11:00</Select.Option>
-            <Select.Option value="12:01">12:00</Select.Option>
-            <Select.Option value="13:01">13:00</Select.Option>
-            <Select.Option value="14:01">14:00</Select.Option>
-            <Select.Option value="15:01">15:00</Select.Option>
-            <Select.Option value="16:01">16:00</Select.Option>
-            <Select.Option value="17:01">17:00</Select.Option>
-            <Select.Option value="18:01">18:00</Select.Option>
-            <Select.Option value="19:01">19:00</Select.Option>
-            <Select.Option value="20:01">20:00</Select.Option>
-            <Select.Option value="21:01">21:00</Select.Option>
-            <Select.Option value="22:01">22:00</Select.Option>
-            <Select.Option value="23:01">23:00</Select.Option>
-          </Select>
-          <br />
-          <br />
-          View by:{" "}
-          <Radio.Group
-            defaultValue={mode}
-            buttonStyle="solid"
-            position="center"
-            onChange={this.changeMode}
-          >
-            <Radio.Button value="activity">Activity</Radio.Button>
-            <Radio.Button value="maxStay">Max Stay</Radio.Button>
-          </Radio.Group>
-          <br />
-          <br />
-          {mode === "maxStay" ? (
-            <Pie
-              animate={false}
-              colors={Object.values(MAXSTAY_COLOR_MAP)}
-              hasLegend
-              title="Maximum Stay"
-              subTitle={
-                <>
-                  Total car
-                  <br />
-                  lengths
-                </>
-              }
-              total={() => (
-                <>
-                  <span>
-                    {(
-                      maxStayPieData.reduce((pre, now) => now.y + pre, 0) /
-                      avgParkingLength
-                    ).toLocaleString("en", {
-                      style: "decimal",
-                      maximumFractionDigits: 0,
-                      minimumFractionDigits: 0
-                    })}
-                  </span>
-                </>
-              )}
-              data={maxStayPieData}
-              valueFormat={val => (
-                <span>
-                  {(val / avgParkingLength).toLocaleString("en", {
-                    style: "decimal",
-                    maximumFractionDigits: 0,
-                    minimumFractionDigits: 0
-                  })}{" "}
-                  cars
-                </span>
-              )}
-              height={240}
-            />
-          ) : (
-              <Pie
-                animate={false}
-                colors={Object.values(ACTIVITY_COLOR_MAP)}
-                hasLegend
-                title="Activities"
-                subTitle={
-                  <>
-                    Total car
-                  <br />
-                  lengths
-                </>
-                }
-                total={() => (
-                  <>
-                    <span>
-                      {(
-                        activityPieData.reduce((pre, now) => now.y + pre, 0) /
-                        avgParkingLength
-                      ).toLocaleString("en", {
-                        style: "decimal",
-                        maximumFractionDigits: 0,
-                        minimumFractionDigits: 0
-                      })}
-                    </span>
-                  </>
-                )}
-                data={activityPieData}
-                valueFormat={val => (
-                  <span>
-                    {(val / avgParkingLength).toLocaleString("en", {
-                      style: "decimal",
-                      maximumFractionDigits: 0,
-                      minimumFractionDigits: 0
-                    })}{" "}
-                  cars
-                  </span>
-                )}
-                height={240}
-              />
-            )}
-          <br />
-          {/* <Button type="primary" icon="download" block href={curblrDataUri} download="export.curblr.json">
-            Download CurbLR data
-          </Button> */}
-          <br />
-          <br />
-          <p style={{ "fontSize": "11px" }}>
-            The data for this map was developed in partnership with {" "}
-            <a href="https://www.centercityphila.org/">Center City District</a> in May 2020.
-             This is not an authoritative dataset; users should verify any parking decisions
-            at the street level. This map design was created by {" "}
-            <a href="https://sharedstreets.io/">Shared Streets.</a>  
-          </p>
-        </Card>
       </Layout>
     );
   }

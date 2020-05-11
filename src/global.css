@@ -1,9 +1,75 @@
 
 html, body, #root {
-  height: 100hv;
-  width: 100wv;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   margin: 0;
+}
+
+.ant-form-item {
+  margin-bottom: 5px;
+}
+
+.ant-form-item-label {
+  line-height: 1;
+}
+
+.ant-input-group.ant-input-group-compact.compact-input-group {
+  display: inline-flex;
+}
+
+.ant-input-group.ant-input-group-compact.compact-input-group > .ant-select {
+  flex: 1 !important;
+}
+
+.ant-input-group.ant-input-group-compact.compact-input-group .input-group-addon {
+  padding: 4px 7px;
+  background: #e9e9e9;
+  border: 1px solid #d9d9d9;
+}
+
+.full-width-radioGroup {
+  display: inline-flex;
+  width: 100%;
+}
+
+.full-width-radioGroup .ant-radio-button-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 5px;
+  background: white;
+  z-index: 10;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.branding {
+  max-width: 100px;
+}
+
+.antd-pro-charts-pie-pie .antd-pro-charts-pie-legendTitle,
+.antd-pro-charts-pie-pie .antd-pro-charts-pie-value {
+  color: #142129;
+}
+
+.antd-pro-charts-pie-pie .antd-pro-charts-pie-dot {
+  border: 1px solid currentColor;
+}
+
+.antd-pro-charts-pie-legendBlock.antd-pro-charts-pie-hasLegend .antd-pro-charts-pie-chart {
+  margin-bottom: 0;
+}
+
+.app-sidebar {
+  box-shadow: 2px 0 5px rgba(20, 33, 42, 0.25);
+  z-index: 10;
 }
