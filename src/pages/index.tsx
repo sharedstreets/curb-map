@@ -20,7 +20,7 @@ import { GlobalState } from "@/common/types";
 import {
   CurbFeature,
   CurbFeatureCollection,
-  filterTimeAndDay
+  filterCurblrData
 } from "@/common/curblr";
 import {
   FeatureCollection,
@@ -128,27 +128,25 @@ const dataLayer = fromJS({
 const avgParkingLength = 7;
 
 
-const filterCurblrData = (
+const renderCurblrData = (
   data: CurbFeatureCollection,
   day: string,
   time: string,
   filterType: string
 ): FeatureCollection<LineString> => {
-  var filteredData = featureCollection<LineString>([]);
-
-  for (var curbFeature of data.features) {
-    var filteredFeature = feature<LineString>(curbFeature.geometry);
-    filteredFeature.properties = {};
-
-    if (!filterTimeAndDay(curbFeature, day, time)) continue;
+  var renderData = featureCollection<LineString>([]);
+  var filteredData = filterCurblrData(data, day, time);
+  for (var curbFeature of filteredData.features) {
+    var renderFeature = feature<LineString>(curbFeature.geometry);
+    renderFeature.properties = {};
 
     for (var regulation of curbFeature.properties.regulations) {
       // marks each feature with its length
-      filteredFeature.properties.length =
+      renderFeature.properties.length = 
         curbFeature.properties.location.shstLocationEnd -
         curbFeature.properties.location.shstLocationStart;
 
-      filteredFeature.properties.priority = regulation.priority;
+      renderFeature.properties.priority = regulation.priority;
 
       // var priority = curbFeature.properties.regulations.priority;
       // if(priority) {
@@ -157,15 +155,15 @@ const filterCurblrData = (
       if (curbFeature.properties.location.sideOfStreet === "left")
         baseOffset = 0 - 10; // + (5 * priority);
 
-      filteredFeature.properties["offset"] = baseOffset; //scaledOffset(baseOffset);
+      renderFeature.properties["offset"] = baseOffset; //scaledOffset(baseOffset);
 
       if (filterType === "maxStay") {
         if (regulation.rule.maxStay) {
           var maxStay = regulation.rule.maxStay + "";
           if (MAXSTAY_COLOR_MAP[maxStay]) {
-            filteredFeature.properties["color"] = MAXSTAY_COLOR_MAP[maxStay];
-            filteredFeature.properties.maxStay = maxStay;
-            filteredData.features.push(filteredFeature);
+            renderFeature.properties["color"] = MAXSTAY_COLOR_MAP[maxStay];
+            renderFeature.properties.maxStay = maxStay;
+            renderData.features.push(renderFeature);
           }
         }
       }
@@ -174,45 +172,45 @@ const filterCurblrData = (
       else if (filterType === "activity") {
 
         if (regulation.rule.activity === "no parking") {
-          filteredFeature.properties["color"] =
+          renderFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["no parking"];
           // set the activty to use later in hooking up chart to map data
-          filteredFeature.properties.activity = "no parking";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties.activity = "no parking";
+          renderData.features.push(renderFeature);
         }
         if (
           regulation.rule.activity === "no standing"
         ) {
-          filteredFeature.properties["color"] =
+          renderFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["no standing"];
           // set the activty to use later in hooking up chart to map data
-          filteredFeature.properties.activity = "no standing";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties.activity = "no standing";
+          renderData.features.push(renderFeature);
         }
         if (
           regulation.rule.activity === "parking" &&
           !regulation.rule.payment &&
           !regulation.userClasses?.some(uc => uc.classes?.length > 0)
         ) {
-          filteredFeature.properties["color"] =
+          renderFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["free parking"];
-          filteredFeature.properties.activity = "free parking";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties.activity = "free parking";
+          renderData.features.push(renderFeature);
         }
         if (
           regulation.rule.activity === "parking" &&
           regulation.rule.payment &&
           !regulation.userClasses?.some(uc => uc.classes?.length > 0)
         ) {
-          filteredFeature.properties["color"] =
+          renderFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["paid parking"];
-          filteredFeature.properties.activity = "paid parking";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties.activity = "paid parking";
+          renderData.features.push(renderFeature);
         }
         if (regulation.rule.activity === "loading") {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
-          filteredFeature.properties.activity = "loading";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
+          renderFeature.properties.activity = "loading";
+          renderData.features.push(renderFeature);
         }
         if (
           regulation.userClasses?.some(uc =>
@@ -231,10 +229,10 @@ const filterCurblrData = (
             ].some(c => uc.classes?.includes(c))
           )
         ) {
-          filteredFeature.properties["color"] =
+          renderFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["restricted"];
-          filteredFeature.properties.activity = "restricted";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties.activity = "restricted";
+          renderData.features.push(renderFeature);
         }
         if (
           regulation.userClasses?.some(uc =>
@@ -243,28 +241,23 @@ const filterCurblrData = (
             )
           )
         ) {
-          filteredFeature.properties["color"] =
+          renderFeature.properties["color"] =
             ACTIVITY_COLOR_MAP["passenger loading"];
-          filteredFeature.properties.activity = "passenger loading";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties.activity = "passenger loading";
+          renderData.features.push(renderFeature);
         }
         if (
           regulation.userClasses?.some(uc => uc.classes?.includes("transit"))
         ) {
-          filteredFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
-          filteredFeature.properties.activity = "transit";
-          filteredData.features.push(filteredFeature);
+          renderFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
+          renderFeature.properties.activity = "transit";
+          renderData.features.push(renderFeature);
         }
       }
-      //}
     }
   }
 
-  // sort filtered data in order of priority so that the map displays the highest-priority feature on top
-
-  filteredData.features.sort((a, b) => b.properties.priority - a.properties.priority)
-
-  return filteredData;
+  return renderData;
 };
 
 const mapStateToProps = (d: GlobalState) => {
@@ -365,7 +358,7 @@ class Map extends React.Component<PageProps, {}> {
         ["sources", "curblrData"],
         fromJS({
           type: "geojson",
-          data: filterCurblrData(
+          data: renderCurblrData(
             this.props.curblr.data,
             this.state.day,
             this.state.time,
@@ -382,7 +375,7 @@ class Map extends React.Component<PageProps, {}> {
   changeTime = (value: any) => {
     this.setState({ time: value });
 
-    var data = filterCurblrData(
+    var data = renderCurblrData(
       this.props.curblr.data,
       this.state.day,
       value,
@@ -394,7 +387,7 @@ class Map extends React.Component<PageProps, {}> {
   changeDay = (value: any) => {
     this.setState({ day: value });
 
-    var data = filterCurblrData(
+    var data = renderCurblrData(
       this.props.curblr.data,
       value,
       this.state.time,
@@ -406,7 +399,7 @@ class Map extends React.Component<PageProps, {}> {
   changeMode = (event: any) => {
     this.setState({ mode: event.target.value });
 
-    var data = filterCurblrData(
+    var data = renderCurblrData(
       this.props.curblr.data,
       this.state.day,
       this.state.time,
@@ -419,7 +412,7 @@ class Map extends React.Component<PageProps, {}> {
     const { viewport, mapStyle, day, time, mode } = this.state;
 
   // shows everything. would be great if this could intersect the feature collection with the viewport bounding box. i can't figure it out. for kevin?
-    const features = filterCurblrData(
+    const features = renderCurblrData(
       this.props.curblr.data,
       this.state.day,
       this.state.time,
