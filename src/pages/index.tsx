@@ -136,6 +136,7 @@ const renderCurblrData = (
 ): FeatureCollection<LineString> => {
   var renderData = featureCollection<LineString>([]);
   var filteredData = filterCurblrData(data, day, time);
+  
   for (var curbFeature of filteredData.features) {
     var renderFeature = feature<LineString>(curbFeature.geometry);
     renderFeature.properties = {};
@@ -148,12 +149,14 @@ const renderCurblrData = (
 
       renderFeature.properties.priority = regulation.priority;
 
-      // var priority = curbFeature.properties.regulations.priority;
+      var priority = renderFeature.properties.priority;
       // if(priority) {
-
-      var baseOffset = 10; // + (5 * priority);
+      var offsetPriority = 0;
+      //offsetPriority = (10 * priority);
+      
+      var baseOffset = 10 + offsetPriority;
       if (curbFeature.properties.location.sideOfStreet === "left")
-        baseOffset = 0 - 10; // + (5 * priority);
+        baseOffset = 0 - 10 - offsetPriority;
 
       renderFeature.properties["offset"] = baseOffset; //scaledOffset(baseOffset);
 

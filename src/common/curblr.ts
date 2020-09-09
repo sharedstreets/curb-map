@@ -55,45 +55,38 @@ export function filterCurblrData (
         filteredFeatureDefault.geometry = curbFeature.geometry;
         filteredFeatureDefault.properties.location = {...curbFeature.properties.location};
         let defaultRegulation = new Regulation();
-        defaultRegulation.priority=100;               // TODO: change to be priority agnostic
+        defaultRegulation.priority=10;               // TODO: change to be priority agnostic
         defaultRegulation.rule = new Rule();
         defaultRegulation.rule.activity = "parking";  // make configurable
         filteredFeatureDefault.properties.regulations.push(defaultRegulation);
         sortedCurbFeatures.add(filteredFeatureDefault);
-
+        
         for (const regulation of curbFeature.properties.regulations) {
             if (!filterTimeAndDay(regulation, day, time)) continue;
 
-            let filteredFeature = new CurbFeature();
+            let filteredFeature = new CurbFeature(); 
             filteredFeature.geometry = curbFeature.geometry;
-            filteredFeature.properties.location = curbFeature.properties.location;
+            filteredFeature.properties.location = {...curbFeature.properties.location};
             filteredFeature.properties.regulations.push(regulation);
             sortedCurbFeatures.add(filteredFeature)
         }
     }
-
+    
     for(let curbFeatures of sortedCurbFeatures.values()){
         let filteredFeatures: CurbFeature[] = [];
         curbFeatures.sort((a, b) => a.properties.regulations[0].priority - b.properties.regulations[0].priority);
         while(curbFeatures.length>0){
-            console.log("curbFeatures: ", curbFeatures.length ,curbFeatures.map(v=>v.properties));
             let curbFeature = curbFeatures.shift()
             if(!curbFeature) continue;
             let start = curbFeature.properties.location.shstLocationStart;
             let end = curbFeature.properties.location.shstLocationEnd;
-            console.log("curbFeature: ",curbFeature.properties);
-            console.log("filteredFeatures: ",filteredFeatures.map(v=>v.properties));
             for(let alreadyFilteredFeatures of filteredFeatures){
-                console.log("alreadyFilteredFeatures: ",alreadyFilteredFeatures.properties);
                 if(end <= alreadyFilteredFeatures.properties.location.shstLocationStart 
                     || start >= alreadyFilteredFeatures.properties.location.shstLocationEnd){
-                    console.log("cond: 1");
                     continue;
                 } else if(start < alreadyFilteredFeatures.properties.location.shstLocationStart 
                     && end > alreadyFilteredFeatures.properties.location.shstLocationEnd){
-                        console.log("cond: 2");
-                        let splitFeatur = curbFeature;
-                        splitFeatur.properties.location = {...curbFeature.properties.location};
+                        let splitFeatur = JSON.parse(JSON.stringify(curbFeature));      //TODO: use beter deep copy
                         splitFeatur.properties.location.shstLocationStart = alreadyFilteredFeatures.properties.location.shstLocationEnd;
                         curbFeatures.unshift(splitFeatur);
                         end = alreadyFilteredFeatures.properties.location.shstLocationStart;
@@ -105,16 +98,15 @@ export function filterCurblrData (
                     start=end;
                 }
             }
+
             curbFeature.properties.location.shstLocationStart=start;
             curbFeature.properties.location.shstLocationEnd=end;
-            if(start<end)
+            if(start<end){
                 filteredFeatures.push(curbFeature);
+            }
         }
-        filteredData.features.push(...filteredFeatures);
+        filteredData.features.push(...filteredFeatures.reverse());
     }
-
-
-
 
     return filteredData;
 };
