@@ -2,7 +2,7 @@ import { GlobalState } from "../common/types";
 import { DvaModelBuilder } from "dva-model-creator";
 import { time, day, priority, activity } from "../actions/filter";
 
-import geojsonData from '@/assets/data/downtown_portland_2020-02-20.curblr.json';
+import geojsonData from '@/assets/data/downtown_portland_2020-07-30.curblr.json';
 
 import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/curblr';
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';
@@ -38,5 +38,4 @@ export default builder.build();
 export const actions = {
     time,
     day,
-    priority
 };
