@@ -136,6 +136,7 @@ export class Authority {
 export class Manifest {
     createdDate?:string; // should this be a full timestamp? ISO format
     lastUpdatedDate?:string; // should this be a full timestamp? ISO format
+    curblrVersion?:string;
     priorityHierarchy:Array<string>;
     timeZone?:string;
     currency?:string;
