@@ -3,6 +3,8 @@
 
 SharedStreets CurbLR Viewer is an interactive web map that displays curb regulations and key stats for a specified weekday and hour. Input data must be provided in the [CurbLR](https://www.github.com/sharedstreets/curblr) specification. This map can ingest data created in CurbLR version 1.1.0 (released in Sept 2020). For data feeds using older versions of CurbLR, see other branches.
 
+Note: This map was bolted together pretty quickly for a demo project, and wasn't really intended to stick around as a tool. It's quirky, but it gets the job done.
+
 ![image](https://user-images.githubusercontent.com/9657971/94090506-c30c7b00-fde3-11ea-89b9-81032ad08ad7.png)
 
 ## Install
@@ -24,9 +26,11 @@ git checkout node_modules/ant-design-pro
 ```sh
 yarn start
 ```
+**Important: The Passport API can only be accessed from a browser with CORS disabled. Open a new window and change the settings before running the map**
 
 ## Configure
 
+- Passport API access token is hardcoded in /pages/index.tsx. Search for "Bearer".
 - CurbLR data feeds are stored in /src/assets/data. Add desired CurbLR feed here.
 - CurbLR feed is specified in /src/models/curblr.ts
 - Default viewport and zoom level are specified in /src/pages/index.tsx
