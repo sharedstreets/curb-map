@@ -1,0 +1,763 @@
+{
+  "manifest": {
+    "createdDate": "2020-11-08T23:40:45Z",
+    "lastUpdatedDate": "2020-11-08T23:40:45Z",
+    "priorityHierarchy": [
+      "no standing",
+      "restricted loading",
+      "loading",
+      "restricted parking",
+      "parking",
+      "default unrestricted parking"
+    ],
+    "curblrVersion": "1.1.0",
+    "timeZone": "America/Chicago",
+    "currency": "USD",
+    "authority": {
+      "name": "City of Austin",
+      "url": "https://www.austintexas.gov"
+    }
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 18.1,
+          "shstLocationEnd": 95.1
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "default unrestricted parking"
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74500439153712, 30.266621273659453],
+          [-97.74576756003354, 30.266834294002486]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 89.1,
+          "shstLocationEnd": 95
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "restricted parking"
+            },
+            "userClasses": [
+              {
+                "classes": ["bicycle"]
+              }
+            ],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74570759430549, 30.266817556188723],
+          [-97.74576651637791, 30.266834002694477]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 61.7,
+          "shstLocationEnd": 80.9
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "parking",
+              "maxStay": 180,
+              "payment": true
+            },
+            "userClasses": [{}],
+            "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": ["mo", "tu"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "08:00",
+                    "to": "18:00"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": ["we", "th", "fr"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "08:00",
+                    "to": "12:00"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": ["sa"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "10:00",
+                    "to": "12:00"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74543648440748, 30.266741882769086],
+          [-97.74562700015659, 30.26679506045626]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 3,
+          "shstLocationEnd": 18.1
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "no standing",
+              "priorityCategory": "no standing"
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74485472386161, 30.26657949685844],
+          [-97.74500471003302, 30.266621362561125]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 95,
+          "shstLocationEnd": 108.2
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "no standing",
+              "priorityCategory": "no standing"
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74576662728506, 30.266834033651193],
+          [-97.7458464, 30.2668563],
+          [-97.74589724689882, 30.266870477849057]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 38.9,
+          "shstLocationEnd": 61.8
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "loading",
+              "priorityCategory": "restricted loading",
+              "maxStay": 30
+            },
+            "userClasses": [
+              {
+                "classes": ["commercial"]
+              }
+            ],
+            "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": ["we", "th", "fr", "sa"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "02:30",
+                    "to": "17:30"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74521048295266, 30.266678799705957],
+          [-97.74543682350726, 30.266741977420565]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 81,
+          "shstLocationEnd": 89
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "parking",
+              "maxStay": 15
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74562756320233, 30.26679521761584],
+          [-97.74570666155267, 30.266817295835697]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 18.2,
+          "shstLocationEnd": 39.1
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "restricted parking"
+            },
+            "userClasses": [
+              {
+                "classes": ["valet"]
+              }
+            ],
+            "timeSpans": [
+              {
+                "timesOfDay": [
+                  {
+                    "from": "16:30",
+                    "to": "23:59"
+                  },
+                  {
+                    "from": "00:00",
+                    "to": "01:00"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74500545713045, 30.266621571098224],
+          [-97.74521199867863, 30.26667922278727]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 18.1,
+          "shstLocationEnd": 39
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "parking",
+              "maxStay": 180,
+              "payment": true
+            },
+            "userClasses": [{}],
+            "timeSpans": [
+              {
+                "timesOfDay": [
+                  {
+                    "from": "08:00",
+                    "to": "16:30"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74500479453444, 30.26662138614798],
+          [-97.74521133608063, 30.26667903783773]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 14.9,
+          "shstLocationEnd": 35.7
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "loading",
+              "priorityCategory": "restricted loading",
+              "maxStay": 30
+            },
+            "userClasses": [
+              {
+                "classes": ["commercial"]
+              }
+            ],
+            "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": ["mo", "tu", "we", "th", "fr", "sa"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "07:00",
+                    "to": "19:00"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74577793631562, 30.266837190258094],
+          [-97.74557154236714, 30.266779580841376]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "0f2fa1549a55f7d445f18614e741f94a",
+          "sideOfStreet": "right",
+          "shstLocationStart": 38.9,
+          "shstLocationEnd": 61.7
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "restricted parking"
+            },
+            "userClasses": [
+              {
+                "classes": ["valet"]
+              }
+            ],
+            "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": ["we", "th", "fr", "sa"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "17:30",
+                    "to": "23:59"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": ["th", "fr", "sa", "su"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "00:00",
+                    "to": "02:30"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74521014597417, 30.266678705645884],
+          [-97.74543648653284, 30.26674188336232]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 3,
+          "shstLocationEnd": 14.7
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "no standing",
+              "priorityCategory": "no standing"
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74589557306162, 30.266870011126557],
+          [-97.7458464, 30.2668563],
+          [-97.74577939803825, 30.266837598257936]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 96.8,
+          "shstLocationEnd": 108.2
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "no standing",
+              "priorityCategory": "no standing"
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74496638439972, 30.26661066473075],
+          [-97.74485305019739, 30.266579029686685]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 15,
+          "shstLocationEnd": 28.2
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "restricted parking"
+            },
+            "userClasses": [
+              {
+                "classes": ["pedicab"]
+              }
+            ],
+            "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": ["mo", "tu", "we", "th", "fr", "sa"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "19:00",
+                    "to": "23:59"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": ["tu", "we", "th", "fr", "sa", "su"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "00:00",
+                    "to": "03:00"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74577702175577, 30.26683693498374],
+          [-97.74564602606503, 30.26680037104252]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 28.2,
+          "shstLocationEnd": 35.6
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "restricted parking"
+            },
+            "userClasses": [
+              {
+                "classes": ["Austin Police Department"]
+              }
+            ],
+            "timeSpans": [
+              {
+                "timesOfDay": [
+                  {
+                    "from": "17:00",
+                    "to": "23:59"
+                  },
+                  {
+                    "from": "00:00",
+                    "to": "07:00"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74564559773152, 30.266800251484423],
+          [-97.74557214133006, 30.266779748026615]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 35.7,
+          "shstLocationEnd": 96.6
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "parking",
+              "maxStay": 180,
+              "payment": true
+            },
+            "userClasses": [{}],
+            "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": ["mo", "tu"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "08:00",
+                    "to": "18:00"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": ["we", "th", "fr"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "08:00",
+                    "to": "12:00"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": ["sa"]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "10:00",
+                    "to": "12:00"
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74557160101858, 30.266779597212423],
+          [-97.74496791718208, 30.266611092576397]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": {
+          "shstRefId": "5d0def012eeffb10ff2a5514fa249545",
+          "sideOfStreet": "right",
+          "shstLocationStart": 14.7,
+          "shstLocationEnd": 96.6
+        },
+        "regulations": [
+          {
+            "rule": {
+              "activity": "parking",
+              "priorityCategory": "default unrestricted parking"
+            },
+            "userClasses": [{}],
+            "timeSpans": [],
+            "payment": {
+              "rates": {}
+            }
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-97.74577986441395, 30.266837728433938],
+          [-97.74496823568123, 30.266611181479075]
+        ]
+      }
+    }
+  ]
+}

@@ -56,7 +56,7 @@ export function filterCurblrData (
         filteredFeatureDefault.properties.location = {...curbFeature.properties.location};
         let defaultRegulation = new Regulation();
         defaultRegulation.rule = new Rule();
-        defaultRegulation.rule.priorityCategory = "free parking";  // defaults to free parking. TODO make configurable
+        defaultRegulation.rule.priorityCategory = "default unrestricted parking";  // defaults to free parking. TODO make configurable
         defaultRegulation.rule.activity = "parking";  // defaults to free parking. TODO make configurable
         filteredFeatureDefault.properties.regulations.push(defaultRegulation);
         sortedCurbFeatures.add(filteredFeatureDefault);
@@ -134,8 +134,8 @@ export class Authority {
 }
 
 export class Manifest {
-    createdDate?:string; // should this be a full timestamp? ISO format
-    lastUpdatedDate?:string; // should this be a full timestamp? ISO format
+    createdDate?:string;
+    lastUpdatedDate?:string;
     curblrVersion?:string;
     priorityHierarchy:Array<string>;
     timeZone?:string;

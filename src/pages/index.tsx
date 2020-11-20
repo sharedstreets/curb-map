@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.css";
 
 import { Layout, Menu, Icon, Card, Radio, Select, Badge, Button } from "antd";
-import { Pie } from "ant-design-pro/lib/Charts";
+import { Pie, TimelineChart } from "ant-design-pro/lib/Charts";
 import "ant-design-pro/dist/ant-design-pro.css"; // Import whole style
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -28,6 +28,7 @@ import {
   feature,
   LineString
 } from "@turf/helpers";
+import { configConsumerProps } from 'antd/lib/config-provider';
 
 var mapboxAccessToken =
   "pk.eyJ1Ijoic2FhZGlxbSIsImEiOiJjamJpMXcxa3AyMG9zMzNyNmdxNDlneGRvIn0.wjlI8r1S_-xxtq2d-W5qPA";
@@ -79,15 +80,24 @@ const MAXSTAY_COLOR_MAP: { [key: string]: any } = {
 //     "240": "#124116",
 // }
 
+// const ACTIVITY_COLOR_MAP = {
+//   "no standing": "#777777",
+//   "no parking": "#DD2C00",
+//   "passenger loading": "#FF9100",
+//   "loading": "#FFEA00",
+//   "transit": "#37B34A",
+//   "free parking": "#00E5FF",
+//   "paid parking": "#2979FF",
+//   "restricted": "#AA00FF"
+// };
+
 const ACTIVITY_COLOR_MAP = {
-  "no standing": "#777777",
-  "no parking": "#DD2C00",
-  "passenger loading": "#FF9100",
-  "loading": "#FFEA00",
-  "transit": "#37B34A",
+  "no standing": "#DD2C00",
+  "restricted parking": "#FF9100",
+  "commercial loading": "#FFEA00",
+  "bicycle parking": "#37B34A",
   "free parking": "#00E5FF",
-  "paid parking": "#2979FF",
-  "restricted": "#AA00FF"
+  "paid parking": "#2979FF"
 };
 
 const scaledOffset = (offset: number) => {
@@ -147,7 +157,7 @@ const renderCurblrData = (
         curbFeature.properties.location.shstLocationEnd -
         curbFeature.properties.location.shstLocationStart;
 
-      renderFeature.properties.priority = regulation.priority;
+      renderFeature.properties.priority = regulation.rule.priorityCategory;
 
       var priority = renderFeature.properties.priority;
       // if(priority) {
@@ -174,13 +184,6 @@ const renderCurblrData = (
       // Requires ts.3.7 because of null arrays - I lucked out on mine but this will break on a different environment
       else if (filterType === "activity") {
 
-        if (regulation.rule.activity === "no parking") {
-          renderFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["no parking"];
-          // set the activty to use later in hooking up chart to map data
-          renderFeature.properties.activity = "no parking";
-          renderData.features.push(renderFeature);
-        }
         if (
           regulation.rule.activity === "no standing"
         ) {
@@ -211,49 +214,33 @@ const renderCurblrData = (
           renderData.features.push(renderFeature);
         }
         if (regulation.rule.activity === "loading") {
-          renderFeature.properties["color"] = ACTIVITY_COLOR_MAP["loading"];
-          renderFeature.properties.activity = "loading";
+          renderFeature.properties["color"] = ACTIVITY_COLOR_MAP["commercial loading"];
+          renderFeature.properties.activity = "commercial loading";
           renderData.features.push(renderFeature);
         }
         if (
           regulation.userClasses?.some(uc =>
             [
-              "motorcycle",
-              "hotel guest",
-              "permit",
-              "reserved",
-              "handicap",
-              "scooter",
-              "bicycle",
-              "USPS",
-              "car share",
-              "police",
-              "tour bus"
+              "Austin Police Department",
+              "pedicab"
             ].some(c => uc.classes?.includes(c))
           )
         ) {
           renderFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["restricted"];
-          renderFeature.properties.activity = "restricted";
+            ACTIVITY_COLOR_MAP["restricted parking"];
+          renderFeature.properties.activity = "restricted parking";
           renderData.features.push(renderFeature);
         }
         if (
           regulation.userClasses?.some(uc =>
-            ["taxi", "passenger", "TNC", "rideshare"].some(c =>
+            ["bicycle", "bike"].some(c =>
               uc.classes?.includes(c)
             )
           )
         ) {
           renderFeature.properties["color"] =
-            ACTIVITY_COLOR_MAP["passenger loading"];
-          renderFeature.properties.activity = "passenger loading";
-          renderData.features.push(renderFeature);
-        }
-        if (
-          regulation.userClasses?.some(uc => uc.classes?.includes("transit"))
-        ) {
-          renderFeature.properties["color"] = ACTIVITY_COLOR_MAP["transit"];
-          renderFeature.properties.activity = "transit";
+            ACTIVITY_COLOR_MAP["bicycle parking"];
+          renderFeature.properties.activity = "bicycle parking";
           renderData.features.push(renderFeature);
         }
       }
@@ -287,9 +274,13 @@ class Map extends React.Component<PageProps, {}> {
       //        longitude:-75.174,
       //        zoom: 16
       // PDX viewport
-      latitude: 45.5197,
-      longitude: -122.6795,
-      zoom: 16.5
+      // latitude: 45.5197,
+      // longitude: -122.6795,
+      // zoom: 16.5
+      // Austin viewport
+      latitude: 30.266796112060547,
+      longitude: -97.74539184570312,
+      zoom: 18.5
     }
   };
 
@@ -431,32 +422,24 @@ class Map extends React.Component<PageProps, {}> {
         .filter(f => f.properties.activity === "no standing")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      "no parking": features.features
-        .filter(f => f.properties.activity === "no parking")
+      "restricted parking": features.features
+        .filter(f => f.properties.activity === "restricted parking")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      "passenger loading": features.features
-        .filter(f => f.properties.activity === "passenger loading")
+      "commercial loading": features.features
+        .filter(f => f.properties.activity === "commercial loading")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      "loading": features.features
-        .filter(f => f.properties.activity === "loading")
+      "bicycle parking": features.features
+        .filter(f => f.properties.activity === "bicycle parking")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
       "free parking": features.features
         .filter(f => f.properties.activity === "free parking")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0),
-      "transit": features.features
-        .filter(f => f.properties.activity === "transit")
-        .map(f => f.properties.length)
-        .reduce((acc, x) => acc + x, 0),
       "paid parking": features.features
         .filter(f => f.properties.activity === "paid parking")
-        .map(f => f.properties.length)
-        .reduce((acc, x) => acc + x, 0),
-      "restricted": features.features
-        .filter(f => f.properties.activity === "restricted")
         .map(f => f.properties.length)
         .reduce((acc, x) => acc + x, 0)
     };
@@ -496,26 +479,23 @@ class Map extends React.Component<PageProps, {}> {
       //  "480": features.features.filter(f => f.properties.maxStay === '480').map(f => f.properties.length).reduce((acc, x) => acc + x, 0),
     };
 
+
     const activityPieData = [
       {
         x: "No Stopping",
         y: ACTIVITY_LENGTH_CALC["no standing"]
       },
       {
-        x: "No Parking",
-        y: ACTIVITY_LENGTH_CALC["no parking"]
+        x: "Restricted Parking",
+        y: ACTIVITY_LENGTH_CALC["restricted parking"]
       },
       {
-        x: "Taxi, TNC, Other PUDO",
-        y: ACTIVITY_LENGTH_CALC["passenger loading"]
+        x: "Commercial Loading",
+        y: ACTIVITY_LENGTH_CALC["commercial loading"]
       },
       {
-        x: "Loading",
-        y: ACTIVITY_LENGTH_CALC["loading"]
-      },
-      {
-        x: "Transit",
-        y: ACTIVITY_LENGTH_CALC["transit"]
+        x: "Bicycle Parking",
+        y: ACTIVITY_LENGTH_CALC["bicycle parking"]
       },
       {
         x: "Free Parking",
@@ -524,10 +504,6 @@ class Map extends React.Component<PageProps, {}> {
       {
         x: "Paid Parking",
         y: ACTIVITY_LENGTH_CALC["paid parking"]
-      },
-      {
-        x: "Other Restricted Uses",
-        y: ACTIVITY_LENGTH_CALC["restricted"]
       }
     ];
 
@@ -580,12 +556,136 @@ class Map extends React.Component<PageProps, {}> {
             mapStyle={mapStyle}
             {...viewport}
             onViewportChange={viewport => this.setState({ viewport })}
+            onClick={async ({features, lngLat, point}) => {
+              const curblrFeatures = features.filter(({layer: { source }}) => source === "curblrData")
+              const { day, time } = this.state;
+              console.log(curblrFeatures);
+              console.log(day, time)
+              console.log(lngLat);
+
+              this.setState({
+                clickPoint: point
+              });
+
+              let headers = {
+                Authorization:
+                  "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFrUkJPVGs1TURKQlJrWTNSVEl3UWtFMk4wTXdSalJGUlVRME1FRXhPVE14TURBNFJERkdPQSJ9.eyJodHRwczovL2FwaS5wYXNzcG9ydGxhYnMuaW8iOnsiZmlkIjoiNjYyMjYzNDktYjA4Ny00NGVjLTk5NDQtMDViZmFiNTFkZTA2IiwiZmFrIjoiMzMwZmFiYjItNjBkOS00MjUxLWJkZDQtYmNiOTg4OTVkOGI2IiwiZmNpZCI6IjkwNWMyMmNkLTJhYzktNDYwZS04MDUyLTA2MmEwZDY2MjQ1OCJ9LCJpc3MiOiJodHRwczovL3Bhc3Nwb3J0LWZhY2lsaXRhdG9ycy1wcm9kLmF1dGgwLmNvbS8iLCJzdWIiOiJQU2o2djNHdmd5a3U1VzRLZlFYV1lVZU9lelF3YjBZY0BjbGllbnRzIiwiYXVkIjoicHVibGljLmFwaS5wYXNzcG9ydGluYy5jb20iLCJpYXQiOjE2MDU2NDIyOTgsImV4cCI6MTYwNTcyODY5OCwiYXpwIjoiUFNqNnYzR3ZneWt1NVc0S2ZRWFdZVWVPZXpRd2IwWWMiLCJzY29wZSI6InJlYWQ6cXVvdGVzIHdyaXRlOnF1b3RlcyByZWFkOnJhdGVzIHJlYWQ6c2Vzc2lvbnMgd3JpdGU6c2Vzc2lvbnMgcmVhZDp6b25lcyIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.exXr5UbDj8j1UfBipbnDNvtGRiW71zaAmxmLzj_PRu4qdeiNM0DFukUXMAn-erzTsMCftgXFL1V1ZG39kTUbz_e97CSnuoU2Pb90W4yTr3vZfFVHQsKu0aQQpt0S0uo09Bi1MpjyrUQXO_K2TBDJlv_rCsfaMW_F_gmUA0fBBK3FhdhSKw0-RKKsivqyon6Vesua_hnerxAx3KtKVntlvxbhO98g_7rYhzDnh78O2JVfqoKit1icR8qR4GFGFk8Hy2Lor6zP5sjzw9lDyc5Twj4AiFjQbIiGWCbwz5UntLsjXAGHqdjR6GVPomdv0_C5nsUv5iXMUebcbaNIoARjGA",
+              };
+
+              const zoneSearchUrl = `https://api.us.passportinc.com/v3/shared/zones?latitude=${lngLat[1]}&longitude=${lngLat[0]}`;
+
+              const zoneDetails = await (await fetch(zoneSearchUrl, { headers })).json()
+
+             if (zoneDetails != null && zoneDetails.data != null && zoneDetails.data.length > 0) {
+                const zone = zoneDetails.data[0];
+
+                const zoneId = zone.id;
+                const zoneLocation = zone.name;
+
+                const now = new Date();
+                let dayOffset = -1 * now.getDay();
+
+                switch (day) {
+                  case "su":
+                    dayOffset += 0;
+                    break;
+
+                  case "mo":
+                    dayOffset += 1;
+                    break;
+  
+                  case "tu":
+                    dayOffset += 2;
+                    break;
+
+                  case "we":
+                    dayOffset += 3;
+                    break;
+      
+                  case "th":
+                    dayOffset += 4;
+                    break;
+
+                  case "fr":
+                    dayOffset += 5;
+                    break;
+
+                  case "sa":
+                    dayOffset += 6;
+                    break;
+                }
+
+                console.log(dayOffset)
+                const utcOffset = -2; // this value is the hour difference between Pacific and Central time. It has to do w/ being in Pacific time, calculating Central time, and converting to UTC
+                const hour = parseInt(time.split(":")[0], 10);
+
+                const representativeDate = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getDate() + dayOffset, utcOffset + hour, 1);
+
+
+                // console.log(now.getTime())
+                // console.log(now.getTime() + (dayOffset * 86400e3) - now.getUTCMilliseconds())
+                console.log(representativeDate.toUTCString(), representativeDate.toISOString())
+
+                const getRatesUrl = `https://api.us.passportinc.com/v3/parking/rates?time_period=220&zone_id=${zoneId}&start_time=${representativeDate.toISOString()}&vehicle_plate=9V4766&vehicle_state=OR&vehicle_country=US`;
+
+                const rateInfo = await(await fetch(getRatesUrl, { headers })).json();
+
+                console.log({rateInfo});
+                console.log({zoneDetails});
+                this.setState({rateInfo,zoneDetails});
+                if (rateInfo.rates != null) {
+                  console.log(`
+                    ${rateInfo.rates[0].increment} mins = $${rateInfo.rates[0].total_fees.amount}`);
+                } else {
+                  console.log("no rate info");
+                }
+            }
+            }}
           />
         </Content>
+        {this.state.rateInfo && this.state.rateInfo.rates &&
+        <Card
+          size="small"
+          title="Parking Fees"
+          bordered
+          style={{
+            position: "fixed",
+            top: `${this.state.clickPoint[1] - 200}px`,
+            left: `${this.state.clickPoint[0]}px`,
+            width: "180px",
+            height: "200px"
+          }}
+          onClick={() => this.setState({rateInfo: null, zoneDetails: null})}
+
+        >
+        15 mins: ${this.state.rateInfo.rates ? this.state.rateInfo.rates[0].total_fees.amount : "0"}
+        <br/>
+        30 mins: ${this.state.rateInfo.rates ? this.state.rateInfo.rates[1].total_fees.amount : "0"}
+        <br/>
+        1 hr: ${this.state.rateInfo.rates ? this.state.rateInfo.rates[3].total_fees.amount : "0"}
+        <br/>
+        2 hr: ${this.state.rateInfo.rates ? this.state.rateInfo.rates[7].total_fees.amount : "0"}
+        <br/>
+        <br/>
+        Location: {this.state.zoneDetails.data[0].name}
+        </Card>}
+        {/* <Card
+          size="small"
+          title="Rate Info"
+          bordered
+          style={{
+            position: "fixed",
+            top: `${this.state.clickPoint[1] - 100}px`,
+            left: `${this.state.clickPoint[0]}px`,
+            width: "150px",
+            height: "100px"   <- if this changes, change it above.
+          }}
+          onClick={() => this.setState({rateInfo: null})}
+        >Amount: ${this.state.rateInfo.rates[0].total_fees.amount}<br />${JSON.stringify(this.state.rateInfo)}</Card>} */}
 
         <Card
           size="small"
-          title="CurbLR Regulation Map (Portland, OR)"
+          title="CurbLR<>Passport Test Map (Austin, TX)"
           bordered={true}
           style={{
             position: "fixed",
@@ -732,12 +832,6 @@ class Map extends React.Component<PageProps, {}> {
           </Button>
           <br />
           <br />
-          <p style={{ "font-size": "11px" }}>
-            The curb regulations in this map were surveyed by{" "}
-            <a href="https://sharedstreets.io/">SharedStreets</a> in November
-            2019. This is not an authoritative dataset; users should verify any parking decisions
-            at the street level.
-          </p>
         </Card>
       </Layout>
     );
