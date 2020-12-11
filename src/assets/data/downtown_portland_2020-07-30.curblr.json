@@ -9,8 +9,7 @@
     "authority": {
       "name": "Portland Bureau of Transportation",
       "url": "https://www.portlandoregon.gov/transportation/"
-    }
-},
+  },
   "type": "FeatureCollection",
   "features": [
     {
@@ -35,7 +34,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -76,7 +77,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -125,7 +128,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -171,7 +176,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -232,7 +239,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -273,7 +282,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -333,7 +344,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -402,7 +415,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -489,14 +504,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -600,14 +617,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -672,7 +691,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -717,7 +738,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -808,14 +831,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -877,7 +902,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -918,7 +945,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -960,7 +989,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1047,14 +1078,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -1112,7 +1145,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1157,7 +1192,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1244,14 +1281,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -1359,14 +1398,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -1428,7 +1469,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1473,7 +1516,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1560,14 +1605,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -1625,7 +1672,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1688,7 +1737,9 @@
               }
             ],
             "payment": {
-              "rates": {},
+              "rates": [
+                {}
+              ],
               "phone": "+15032785410"
             }
           }
@@ -1735,7 +1786,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1777,7 +1830,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1819,7 +1874,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -1906,14 +1963,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -2017,14 +2076,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -2132,14 +2193,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -2243,14 +2306,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -2328,7 +2393,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2373,7 +2440,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2419,7 +2488,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2461,7 +2532,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2503,7 +2576,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2545,7 +2620,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2586,7 +2663,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2673,14 +2752,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -2749,7 +2830,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -2782,15 +2865,88 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no standing",
-              "priorityCategory": "no standing"
+              "activity": "parking",
+              "priorityCategory": "paid parking",
+              "maxStay": 120,
+              "payment": true
             },
             "userClasses": [
               {}
             ],
             "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": [
+                    "mo",
+                    "tu",
+                    "we",
+                    "th",
+                    "fr",
+                    "sa"
+                  ]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "08:00",
+                    "to": "19:00"
+                  }
+                ],
+                "designatedPeriods": [
+                  {
+                    "name": "holidays",
+                    "apply": "except during"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": [
+                    "su"
+                  ]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "13:00",
+                    "to": "19:00"
+                  }
+                ],
+                "designatedPeriods": [
+                  {
+                    "name": "holidays",
+                    "apply": "except during"
+                  }
+                ]
+              }
             ],
-            "payment": {}
+            "payment": {
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
+              "methods": [
+                "pay_station",
+                "digital"
+              ],
+              "forms": [
+                "Visa",
+                "Mastercard",
+                "American Express",
+                "Smart Card",
+                "coins",
+                "Parking Kitty"
+              ],
+              "phone": "+15032785410",
+              "operator": "PBOT",
+              "deviceIds": [
+                "zone 1002"
+              ]
+            }
           }
         ]
       },
@@ -2876,14 +3032,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -2987,14 +3145,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -3098,14 +3258,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -3163,7 +3325,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3250,14 +3414,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -3365,14 +3531,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -3450,7 +3618,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3496,7 +3666,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3546,7 +3718,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3587,7 +3761,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3629,7 +3805,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3671,7 +3849,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3712,7 +3892,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3757,7 +3939,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3803,7 +3987,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3864,7 +4050,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -3951,14 +4139,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -4016,7 +4206,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4061,7 +4253,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4148,14 +4342,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -4213,7 +4409,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4254,7 +4452,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4299,7 +4499,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4344,7 +4546,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4396,7 +4600,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4464,7 +4670,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4516,7 +4724,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4572,7 +4782,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4628,7 +4840,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4684,7 +4898,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4740,7 +4956,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4789,7 +5007,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4838,7 +5058,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4894,7 +5116,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4943,7 +5167,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -4992,7 +5218,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5041,7 +5269,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5082,7 +5312,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5132,7 +5364,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5180,7 +5414,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5221,7 +5457,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5262,7 +5500,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5303,7 +5543,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5348,7 +5590,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5397,7 +5641,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5458,7 +5704,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5545,14 +5793,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -5610,7 +5860,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5675,7 +5927,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5720,7 +5974,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5765,7 +6021,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5826,7 +6084,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -5913,14 +6173,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -5998,7 +6260,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6085,14 +6349,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -6150,7 +6416,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6199,7 +6467,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6244,7 +6514,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6293,7 +6565,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6343,7 +6617,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6398,7 +6674,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6480,7 +6758,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -6567,14 +6847,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -6678,14 +6960,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -6793,14 +7077,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -6904,14 +7190,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -6977,7 +7265,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7018,7 +7308,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7067,7 +7359,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7162,14 +7456,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -7273,14 +7569,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -7384,14 +7682,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -7495,14 +7795,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -7560,7 +7862,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7609,7 +7913,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7658,7 +7964,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7707,7 +8015,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7756,7 +8066,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7806,7 +8118,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -7905,14 +8219,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -8016,14 +8332,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -8085,7 +8403,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8134,7 +8454,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8183,7 +8505,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8228,7 +8552,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8269,7 +8595,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8314,7 +8642,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8355,7 +8685,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8408,7 +8740,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8462,7 +8796,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8503,7 +8839,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8552,7 +8890,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8601,7 +8941,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8658,7 +9000,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8749,14 +9093,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -8823,7 +9169,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -8910,14 +9258,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -8979,7 +9329,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9028,7 +9380,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9069,7 +9423,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9122,7 +9478,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9167,7 +9525,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9254,14 +9614,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -9365,14 +9727,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -9443,7 +9807,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9530,14 +9896,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -9599,7 +9967,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9644,7 +10014,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9689,7 +10061,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9780,14 +10154,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -9865,7 +10241,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9907,7 +10285,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -9952,7 +10332,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -10047,14 +10429,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10112,7 +10496,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -10211,14 +10597,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10326,14 +10714,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10404,7 +10794,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -10491,14 +10883,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10602,14 +10996,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10667,7 +11063,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -10708,7 +11106,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -10795,14 +11195,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10906,14 +11308,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -10972,7 +11376,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11018,7 +11424,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11064,7 +11472,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11110,7 +11520,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11156,7 +11568,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11202,7 +11616,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11247,7 +11663,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11303,7 +11721,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11352,7 +11772,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11401,7 +11823,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11453,7 +11877,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11498,7 +11924,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11550,7 +11978,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11595,7 +12025,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11643,7 +12075,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11691,7 +12125,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11747,7 +12183,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11788,7 +12226,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11829,7 +12269,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11878,7 +12320,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11931,7 +12375,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -11972,7 +12418,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12021,7 +12469,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12066,7 +12516,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12112,7 +12564,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12153,7 +12607,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12202,7 +12658,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12297,14 +12755,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -12408,14 +12868,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -12473,7 +12935,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12518,7 +12982,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12567,7 +13033,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12621,7 +13089,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12662,7 +13132,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12707,7 +13179,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12752,7 +13226,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12808,7 +13284,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12857,7 +13335,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12898,7 +13378,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -12947,7 +13429,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13003,7 +13487,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13045,7 +13531,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13094,7 +13582,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13139,7 +13629,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13226,14 +13718,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -13291,7 +13785,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13336,7 +13832,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13381,7 +13879,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13426,7 +13926,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13477,7 +13979,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13526,7 +14030,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13587,7 +14093,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -13674,14 +14182,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -13785,14 +14295,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -13896,14 +14408,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -13961,7 +14475,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14006,7 +14522,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14051,7 +14569,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14092,7 +14612,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14133,7 +14655,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14178,7 +14702,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14237,7 +14763,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14278,7 +14806,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14319,7 +14849,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14364,7 +14896,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14455,14 +14989,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -14524,7 +15060,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14565,7 +15103,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14610,7 +15150,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14701,14 +15243,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -14766,7 +15310,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14811,7 +15357,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14861,7 +15409,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14902,7 +15452,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -14963,7 +15515,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15008,7 +15562,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15095,14 +15651,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -15210,14 +15768,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -15275,7 +15835,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15320,7 +15882,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15365,7 +15929,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15410,7 +15976,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15462,7 +16030,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15510,7 +16080,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15562,7 +16134,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15603,7 +16177,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15694,14 +16270,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -15759,7 +16337,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15800,7 +16380,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15848,7 +16430,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15893,7 +16477,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15945,7 +16531,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -15990,7 +16578,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16042,7 +16632,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16090,7 +16682,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16139,7 +16733,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16180,7 +16776,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16229,7 +16827,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16274,7 +16874,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16324,7 +16926,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16370,7 +16974,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16415,7 +17021,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16510,14 +17118,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -16621,14 +17231,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -16732,14 +17344,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -16801,7 +17415,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16847,7 +17463,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16893,7 +17511,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -16939,7 +17559,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17026,14 +17648,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -17091,7 +17715,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17132,7 +17758,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17193,7 +17821,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17238,7 +17868,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17279,7 +17911,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17366,14 +18000,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -17477,14 +18113,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -17562,7 +18200,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17649,14 +18289,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -17714,7 +18356,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17755,7 +18399,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17803,7 +18449,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17848,7 +18496,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17900,7 +18550,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -17945,7 +18597,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18036,14 +18690,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -18125,7 +18781,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18166,7 +18824,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18211,7 +18871,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18256,7 +18918,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18297,7 +18961,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18355,7 +19021,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18404,7 +19072,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18445,7 +19115,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18536,14 +19208,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -18647,14 +19321,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -18758,14 +19434,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -18869,14 +19547,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -18934,7 +19614,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -18995,7 +19677,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19082,14 +19766,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -19193,14 +19879,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -19259,7 +19947,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19346,14 +20036,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -19435,7 +20127,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19522,14 +20216,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -19600,7 +20296,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19641,7 +20339,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19732,14 +20432,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -19801,7 +20503,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19842,7 +20546,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19908,7 +20614,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -19999,14 +20707,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -20110,14 +20820,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -20184,7 +20896,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -20275,14 +20989,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -20340,7 +21056,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -20427,14 +21145,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -20496,7 +21216,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -20538,7 +21260,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -20592,7 +21316,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -20633,7 +21359,9 @@
             ],
             "timeSpans": [],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -20720,14 +21448,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -20835,14 +21565,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -20940,7 +21672,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21025,7 +21759,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21110,7 +21846,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21195,7 +21933,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21280,7 +22020,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21361,7 +22103,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21442,7 +22186,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21523,7 +22269,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21604,7 +22352,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21685,7 +22435,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21766,7 +22518,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21847,7 +22601,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -21928,7 +22684,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22009,7 +22767,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22090,7 +22850,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22171,7 +22933,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22252,7 +23016,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22333,7 +23099,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22414,7 +23182,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22495,7 +23265,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22576,7 +23348,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22661,7 +23435,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22742,7 +23518,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22823,7 +23601,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22908,7 +23688,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -22989,7 +23771,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23074,7 +23858,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23155,7 +23941,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23236,7 +24024,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23317,7 +24107,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23362,16 +24154,57 @@
         "regulations": [
           {
             "rule": {
-              "activity": "no standing",
-              "priorityCategory": "no standing"
+              "activity": "parking",
+              "priorityCategory": "free parking"
             },
             "userClasses": [
               {}
             ],
             "timeSpans": [
+              {
+                "daysOfWeek": {
+                  "days": [
+                    "mo",
+                    "tu",
+                    "we",
+                    "th",
+                    "fr",
+                    "sa"
+                  ]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "00:00",
+                    "to": "08:00"
+                  },
+                  {
+                    "from": "19:00",
+                    "to": "23:59"
+                  }
+                ]
+              },
+              {
+                "daysOfWeek": {
+                  "days": [
+                    "su"
+                  ]
+                },
+                "timesOfDay": [
+                  {
+                    "from": "00:00",
+                    "to": "13:00"
+                  },
+                  {
+                    "from": "19:00",
+                    "to": "23:59"
+                  }
+                ]
+              }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23452,7 +24285,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23533,117 +24368,8 @@
               }
             ],
             "payment": {
-              "rates": {}
-            }
-          }
-        ]
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -122.68021111387712,
-            45.5202675180879
-          ],
-          [
-            -122.67944582511943,
-            45.52005891064309
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "location": {
-          "shstRefId": "d8ac712de9b139a85e95797a192fa347",
-          "sideOfStreet": "left",
-          "shstLocationStart": 3,
-          "shstLocationEnd": 67,
-          "assetType": "sign",
-          "baysAngle": "parallel"
-        },
-        "regulations": [
-          {
-            "rule": {
-              "activity": "parking",
-              "priorityCategory": "paid parking",
-              "maxStay": 120,
-              "payment": true
-            },
-            "userClasses": [
-              {}
-            ],
-            "timeSpans": [
-              {
-                "daysOfWeek": {
-                  "days": [
-                    "mo",
-                    "tu",
-                    "we",
-                    "th",
-                    "fr",
-                    "sa"
-                  ]
-                },
-                "timesOfDay": [
-                  {
-                    "from": "08:00",
-                    "to": "19:00"
-                  }
-                ],
-                "designatedPeriods": [
-                  {
-                    "name": "holidays",
-                    "apply": "except during"
-                  }
-                ]
-              },
-              {
-                "daysOfWeek": {
-                  "days": [
-                    "su"
-                  ]
-                },
-                "timesOfDay": [
-                  {
-                    "from": "13:00",
-                    "to": "19:00"
-                  }
-                ],
-                "designatedPeriods": [
-                  {
-                    "name": "holidays",
-                    "apply": "except during"
-                  }
-                ]
-              }
-            ],
-            "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
-              "methods": [
-                "pay_station",
-                "digital"
-              ],
-              "forms": [
-                "Visa",
-                "Mastercard",
-                "American Express",
-                "Smart Card",
-                "coins",
-                "Parking Kitty"
-              ],
-              "phone": "+15032785410",
-              "operator": "PBOT",
-              "deviceIds": [
-                "zone 1002"
+              "rates": [
+                {}
               ]
             }
           }
@@ -23725,7 +24451,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23806,7 +24534,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23887,7 +24617,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -23968,7 +24700,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24053,7 +24787,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24134,7 +24870,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24215,7 +24953,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24300,7 +25040,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24381,7 +25123,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24462,7 +25206,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24543,7 +25289,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24624,7 +25372,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24709,7 +25459,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24790,7 +25542,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24871,7 +25625,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -24952,7 +25708,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25037,7 +25795,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25118,7 +25878,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25199,7 +25961,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25280,7 +26044,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25361,7 +26127,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25442,7 +26210,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25523,7 +26293,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25604,7 +26376,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25689,7 +26463,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25770,7 +26546,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25851,7 +26629,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -25932,7 +26712,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26013,7 +26795,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26094,7 +26878,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26175,7 +26961,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26260,7 +27048,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26341,7 +27131,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26422,7 +27214,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26503,7 +27297,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26584,7 +27380,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26665,7 +27463,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26746,7 +27546,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26831,7 +27633,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26912,7 +27716,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -26993,7 +27799,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27074,7 +27882,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27155,7 +27965,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27240,7 +28052,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27321,7 +28135,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27406,7 +28222,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27487,7 +28305,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27574,14 +28394,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -27685,14 +28507,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -27796,14 +28620,16 @@
               }
             ],
             "payment": {
-              "rates": {
-                "fees": [
-                  0.5
-                ],
-                "durations": [
-                  15
-                ]
-              },
+              "rates": [
+                {
+                  "fees": [
+                    0.5
+                  ],
+                  "durations": [
+                    15
+                  ]
+                }
+              ],
               "methods": [
                 "pay_station",
                 "digital"
@@ -27901,7 +28727,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
@@ -27982,7 +28810,9 @@
               }
             ],
             "payment": {
-              "rates": {}
+              "rates": [
+                {}
+              ]
             }
           }
         ]
