@@ -186,14 +186,14 @@ export class UserClass {
     minWeight?:number;
 }
 
-export class Rates {
+export class Rate {
     fees?:number[] = [];
     durations?:number[] = [];
     timeSpans?:TimeSpan[] = [];
 }
 
 export class Payment {
-    rates?:Rates;
+    rates?:Rate[];
     methods?:string[] = [];
     forms?:string[] = [];
     operator?:string;
