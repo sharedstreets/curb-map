@@ -284,12 +284,12 @@ class Map extends React.Component<PageProps, {}> {
       height: "100vh",
       // needs update? default viewport is hard-coded and should dynamically set based on data. PHL viewport:
       //        latitude:  39.950,
-      //        longitude:-75.174,
+      //        longitude:-75.174, //-71.20566699900684,46.81214413176751 - QUEBEC
       //        zoom: 16
-      // PDX viewport
-      latitude: 45.5197,
-      longitude: -122.6795,
-      zoom: 16.5
+      // PDX viewport 
+      latitude: 46.81214413176751,
+      longitude: -71.20566699900684,
+      zoom: 15
     }
   };
 
@@ -585,7 +585,7 @@ class Map extends React.Component<PageProps, {}> {
 
         <Card
           size="small"
-          title="CurbLR Regulation Map (Portland, OR)"
+          title="Stationnements Québec, QC"
           bordered={true}
           style={{
             position: "fixed",
@@ -733,10 +733,7 @@ class Map extends React.Component<PageProps, {}> {
           <br />
           <br />
           <p style={{ "font-size": "11px" }}>
-            The curb regulations in this map were surveyed by{" "}
-            <a href="https://sharedstreets.io/">SharedStreets</a> in November
-            2019. This is not an authoritative dataset; users should verify any parking decisions
-            at the street level.
+            Données de <a href= "https://www.donneesquebec.ca/recherche/fr/dataset/vque_7"> stationnements de la ville de Québec </a> 
           </p>
         </Card>
       </Layout>
