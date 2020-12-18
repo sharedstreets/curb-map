@@ -736,6 +736,18 @@ class Map extends React.Component<PageProps, {}> {
             Données de <a href= "https://www.donneesquebec.ca/recherche/fr/dataset/vque_7"> stationnements de la ville de Québec </a> 
           </p>
         </Card>
+        <Button
+          size="small"
+          type="primary" 
+          href="https://wiki.lafabriquedesmobilites.fr/wiki/Carte_CurbLR_de_la_ville_de_Qu%C3%A9bec"
+          style={{
+            position: "fixed",
+            bottom: "40px",
+            right: "40px"
+          }}
+        >
+            Plus d'informations sur la carte ici
+        </Button>
       </Layout>
     );
   }

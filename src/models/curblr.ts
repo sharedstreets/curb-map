@@ -3,8 +3,10 @@ import { DvaModelBuilder } from "dva-model-creator";
 import { time, day, priority, activity } from "../actions/filter";
 
 // import geojsonData from '@/assets/data/downtown_portland_2020-07-30.curblr.json';
-import geojsonData from '@/assets/data/mtl-subset-segment.curblr.json';
-
+// import geojsonData from '@/assets/data/mtl-subset-segment-low.curblr.json';
+// import geojsonData from '@/assets/data/mtl-subset-segment-to-update.curblr.json';
+// import geojsonData from '@/assets/data/mtl-subset-segment.curblr.json';
+import geojsonData from '@/assets/data/qc-subset-segment.curblr.json';
 import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/curblr';
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';
 

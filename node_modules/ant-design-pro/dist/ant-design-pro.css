@@ -1,10 +1,10 @@
 /*!
- *
+ * 
  * ant-design-pro v2.3.1
- *
+ * 
  * Copyright 2015-present, Alipay, Inc.
  * All rights reserved.
- *
+ *       
  */
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
@@ -139,7 +139,7 @@
   top: 50%;
   right: 0;
   min-width: 200px;
-  margin: 0 10px;
+  margin: 0 20px;
   padding: 0;
   list-style: none;
   -webkit-transform: translateY(-50%);
@@ -148,7 +148,8 @@
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-legend li {
   height: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  line-height: 22px;
   cursor: pointer;
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-legend li:last-child {
@@ -156,12 +157,12 @@
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-dot {
   position: relative;
-  top: 2px;
+  top: -1px;
   display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-right: 12px;
-  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 8px;
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-line {
   display: inline-block;
@@ -175,12 +176,10 @@
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-percent {
   color: rgba(0, 0, 0, 0.45);
-  margin-left: 16px;
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-value {
   position: absolute;
   right: 0;
-  color: rgba(0, 0, 0, 0.45);
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-title {
   margin-bottom: 8px;
@@ -196,10 +195,10 @@
           transform: translate(-50%, -50%);
 }
 .antd-pro-charts-pie-pie .antd-pro-charts-pie-total > h4 {
-  height: 30px;
-  margin-top: -16px;
-  margin-bottom: 14px;
+  height: 22px;
+  margin-bottom: 8px;
   color: rgba(0, 0, 0, 0.45);
+  font-weight: normal;
   font-size: 14px;
   line-height: 22px;
 }
@@ -213,7 +212,7 @@
 }
 .antd-pro-charts-pie-legendBlock.antd-pro-charts-pie-hasLegend .antd-pro-charts-pie-chart {
   width: 100%;
-  margin: 0 0 14px 0;
+  margin: 0 0 32px 0;
 }
 .antd-pro-charts-pie-legendBlock .antd-pro-charts-pie-legend {
   position: relative;
