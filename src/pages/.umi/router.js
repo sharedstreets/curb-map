@@ -3,7 +3,7 @@ import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@tmp/history';
-import RendererWrapper0 from '/home/eanoh/Bureau/CurbLr/quebec/erwin_fork/curb-map/src/pages/.umi/LocaleWrapper.jsx';
+import RendererWrapper0 from '/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/src/pages/.umi/LocaleWrapper.jsx';
 import { routerRedux } from 'dva';
 
 const Router = routerRedux.ConnectedRouter;
@@ -30,7 +30,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/home/eanoh/Bureau/CurbLr/quebec/erwin_fork/curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
@@ -44,7 +44,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('/home/eanoh/Bureau/CurbLr/quebec/erwin_fork/curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),

@@ -29,6 +29,8 @@ import {
   LineString
 } from "@turf/helpers";
 
+import { actions as curblrActions, geoDataFiles } from "../models/curblr";
+
 var mapboxAccessToken =
   "pk.eyJ1Ijoic2FhZGlxbSIsImEiOiJjamJpMXcxa3AyMG9zMzNyNmdxNDlneGRvIn0.wjlI8r1S_-xxtq2d-W5qPA";
 
@@ -287,9 +289,11 @@ class Map extends React.Component<PageProps, {}> {
       //        longitude:-75.174, //-71.20566699900684,46.81214413176751 - QUEBEC
       //        zoom: 16
       // PDX viewport 
-      latitude: 46.81214413176751,
-      longitude: -71.20566699900684,
-      zoom: 15
+      // latitude: 46.81214413176751,
+      // longitude: -71.20566699900684,
+      latitude: 45.5322288090008, 
+      longitude: -73.63143205202765,
+      zoom: 13
     }
   };
 
@@ -410,6 +414,17 @@ class Map extends React.Component<PageProps, {}> {
     );
     this._setMapData(data);
   };
+
+  changeGeoData = async (value) => {
+    await this.props.dispatch(curblrActions.fetchGeoData(value));
+    var data = renderCurblrData(
+      this.props.curblr.data,
+      this.state.day,
+      this.state.time,
+      this.state.mode
+    );
+    this._setMapData(data);
+  }
 
   render() {
     const { viewport, mapStyle, day, time, mode } = this.state;
@@ -594,7 +609,24 @@ class Map extends React.Component<PageProps, {}> {
             width: "310px"
           }}
         >
-          Day:{" "}
+          <br />
+          &nbsp; &nbsp;Arrondissement/quartier à afficher:{" "}
+          <Select onChange={this.changeGeoData} 
+          style={{
+            // position: "fixed",
+            // top: "40px",
+            // left: "40px",
+            width: "200px"
+          }}>
+            {React.Children.toArray(geoDataFiles.map((f) =>
+              <Select.Option value={f.path}>
+                {f.label}
+              </Select.Option>
+            ))}
+          </Select>
+          <br />
+          <br />
+          &nbsp; &nbsp;Day:{" "}
           <Select defaultValue={day} onChange={this.changeDay}>
             <Select.Option value="mo">Monday</Select.Option>
             <Select.Option value="tu">Tuesday</Select.Option>
