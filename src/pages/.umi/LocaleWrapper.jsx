@@ -26,7 +26,7 @@ const useLocalStorage = true;
 
 import { LocaleProvider, version } from 'antd';
 import moment from 'moment';
-let defaultAntd = require('antd/lib/locale-provider/en_US');
+let defaultAntd = require('antd/es/locale-provider/en_US');
 defaultAntd = defaultAntd.default || defaultAntd;
 
 const localeInfo = {
@@ -35,7 +35,7 @@ const localeInfo = {
       ...((locale) => locale.__esModule ? locale.default : locale)(require('/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/src/locales/en-US.ts')),
     },
     locale: 'en-US',
-    antd: require('antd/lib/locale-provider/en_US'),
+    antd: require('antd/es/locale-provider/en_US'),
     data: require('react-intl/locale-data/en'),
     momentLocale: '',
   },
@@ -122,7 +122,7 @@ class LocaleWrapper extends React.Component{
      const isConfigProvider = Number(major) > 3 || (Number(major) >= 3 && Number(minor) >= 21);
      if (isConfigProvider) {
        try {
-         AntdProvider = require('antd/lib/config-provider').default;
+         AntdProvider = require('antd/es/config-provider').default;
        } catch (e) {}
      }
 

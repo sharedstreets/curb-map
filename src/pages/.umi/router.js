@@ -1,8 +1,13 @@
 import React from 'react';
-import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
+import {
+  Router as DefaultRouter,
+  Route,
+  Switch,
+  StaticRouter,
+} from 'react-router-dom';
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
-import history from '@tmp/history';
+import history from '@@/history';
 import RendererWrapper0 from '/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/src/pages/.umi/LocaleWrapper.jsx';
 import { routerRedux } from 'dva';
 
