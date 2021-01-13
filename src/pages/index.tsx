@@ -600,7 +600,7 @@ class Map extends React.Component<PageProps, {}> {
 
         <Card
           size="small"
-          title="Stationnements Québec, QC"
+          title="Stationnements Montréal et Québec, QC"
           bordered={true}
           style={{
             position: "fixed",
