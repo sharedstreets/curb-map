@@ -66,7 +66,7 @@ async function loadAsset(path : string){
 }
 
 const builder = new DvaModelBuilder(initState, "curblr")
-    .takeLatest(fetchGeoData, function* (payload: string, { call, put }) {
+    .takeLatest(fetchGeoData, function* (payload, { call, put }) {
         const geoData = yield call(loadAsset, payload);
         yield put(loadGeoData(geoData));
     })
