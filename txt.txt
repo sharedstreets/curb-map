@@ -1,0 +1,4 @@
+yarn run v1.22.5
+$ /home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/node_modules/.bin/umi help test
+
+Done in 1.08s.
