@@ -771,7 +771,7 @@ class Map extends React.Component<PageProps, {}> {
         <Button
           size="small"
           type="primary" 
-          href="https://wiki.lafabriquedesmobilites.fr/wiki/Carte_CurbLR_de_la_ville_de_Qu%C3%A9bec"
+          href="https://wiki.lafabriquedesmobilites.fr/wiki/Carte_CurbLR_de_Montr%C3%A9al"
           style={{
             position: "fixed",
             bottom: "40px",
