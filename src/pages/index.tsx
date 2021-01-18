@@ -765,7 +765,8 @@ class Map extends React.Component<PageProps, {}> {
           <br />
           <br />
           <p style={{ "font-size": "11px" }}>
-            Données de <a href= "https://www.donneesquebec.ca/recherche/fr/dataset/vque_7"> stationnements de la ville de Québec </a> 
+            Données de stationnements des villes <a href= "https://donnees.montreal.ca/ville-de-montreal/stationnement-sur-rue-signalisation-courant"> de Montréal </a> et de 
+            <a href= "https://www.donneesquebec.ca/recherche/fr/dataset/vque_7"> de Québec </a>
           </p>
         </Card>
         <Button
