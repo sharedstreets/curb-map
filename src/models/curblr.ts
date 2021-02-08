@@ -38,7 +38,7 @@ const geoDataFiles = [
     // { path: "mtl-subset-segment.curblr.json", label: "mtl" }, //trop lourd pour etre affiche
     { path: "last_converted.curblr.json", label: "Parcomètres - Rosemont"},
     { path: "mtl-subset-places-oasis-bellechasse-plaza.curblr.json", label: "mtl - Oasis bellechasse + plaza"},
-    { path: "last_converted_all.curblr.json", label: "Parcomètres - Montréal (lent)"},
+    // { path: "last_converted_all.curblr.json", label: "Parcomètres - Montréal (lent)"},
     { path: "mtl-subset-segment-rosemont.curblr.json", label: "mtl - Rosemont" },
     { path: "mtl-subset-segment-Mercier-Hochelaga-Maisonneuve.curblr.json", label: "mtl - Mercier Hochelaga-Maisonneuve" },
     { path: "mtl-subset-segment-Villeray-Saint-Michel.curblr.json", label: "mtl - Villeray Saint-Michel"},
