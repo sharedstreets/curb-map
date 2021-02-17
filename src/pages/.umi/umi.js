@@ -222,7 +222,7 @@ export default (__IS_BROWSER ? null : serverRender);
 
     // Umi UI Bubble
     require('../../../node_modules/umi-plugin-ui/lib/bubble').default({
-      port: 3001,
+      port: 3000,
       path:
         '/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map',
       currentProject: '',

@@ -616,7 +616,7 @@ class Map extends React.Component<PageProps, {}> {
             // position: "fixed",
             // top: "40px",
             // left: "40px",
-            width: "200px"
+            width: "275px"
           }}>
             {React.Children.toArray(geoDataFiles.map((f) =>
               <Select.Option value={f.path}>
@@ -637,7 +637,13 @@ class Map extends React.Component<PageProps, {}> {
             <Select.Option value="su">Sunday</Select.Option>
           </Select>
           &nbsp; &nbsp; Time:{" "}
-          <Select defaultValue={time} onChange={this.changeTime}>
+          <Select defaultValue={time} onChange={this.changeTime}
+          style={{
+            // position: "fixed",
+            // top: "40px",
+            // left: "40px",
+            width: "85px"
+          }}>
             <Select.Option value="00:01">00:00</Select.Option>
             <Select.Option value="01:01">01:00</Select.Option>
             <Select.Option value="02:01">02:00</Select.Option>
