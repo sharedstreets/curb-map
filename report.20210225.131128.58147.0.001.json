@@ -1,0 +1,428 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210225.131128.58147.0.001.json",
+    "dumpEventTime": "2021-02-25T13:11:28Z",
+    "dumpEventTimeStamp": "1614276688860",
+    "processId": 58147,
+    "cwd": "/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map",
+    "commandLine": [
+      "/home/eanoh/.nvm/versions/node/v12.7.0/bin/node",
+      "/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/node_modules/umi/lib/scripts/realDev.js",
+      "dev"
+    ],
+    "nodejsVersion": "v12.7.0",
+    "glibcVersionRuntime": "2.31",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "12.7.0",
+      "v8": "7.5.288.22-node.16",
+      "uv": "1.30.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.1",
+      "napi": "4",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.7.0/node-v12.7.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.7.0/node-v12.7.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.8.0-43-generic",
+    "osVersion": "#49~20.04.1-Ubuntu SMP Fri Feb 5 09:57:56 UTC 2021",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "speed": 2736,
+        "user": 33699500,
+        "nice": 211700,
+        "sys": 8060200,
+        "idle": 364699800,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "speed": 2736,
+        "user": 33699500,
+        "nice": 211700,
+        "sys": 8060200,
+        "idle": 364699800,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "speed": 2736,
+        "user": 33699500,
+        "nice": 211700,
+        "sys": 8060200,
+        "idle": 364699800,
+        "irq": 0
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+        "speed": 2736,
+        "user": 33699500,
+        "nice": 211700,
+        "sys": 8060200,
+        "idle": 364699800,
+        "irq": 0
+      }
+    ],
+    "host": "eanoh-ThinkPad-T460s"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000ad0835",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x00000000009b10d3",
+      "symbol": "node::OnFatalError(char const*, char const*) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b09f1e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b0a299",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000ce71a5",
+      "symbol": " [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cf62bd",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cc6507",
+      "symbol": "v8::internal::Factory::NewRawTwoByteString(int, v8::internal::AllocationType) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000eab135",
+      "symbol": "v8::internal::String::SlowFlatten(v8::internal::Isolate*, v8::internal::Handle<v8::internal::ConsString>, v8::internal::AllocationType) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000eacb31",
+      "symbol": "v8::internal::String::IndexOf(v8::internal::Isolate*, v8::internal::Handle<v8::internal::String>, v8::internal::Handle<v8::internal::String>, int) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000fd9af8",
+      "symbol": "v8::internal::Runtime_StringIndexOfUnchecked(int, unsigned long*, v8::internal::Isolate*) [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000001318979",
+      "symbol": " [/home/eanoh/.nvm/versions/node/v12.7.0/bin/node]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2144595968,
+    "totalCommittedMemory": 2142334912,
+    "usedMemory": 2100574088,
+    "availableMemory": 56172832,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 32272,
+        "capacity": 261832,
+        "used": 31960,
+        "available": 229872
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1248,
+        "capacity": 1047328,
+        "used": 0,
+        "available": 1047328
+      },
+      "old_space": {
+        "memorySize": 787886080,
+        "committedMemory": 787285960,
+        "capacity": 749895728,
+        "used": 749266752,
+        "available": 628976
+      },
+      "code_space": {
+        "memorySize": 2785280,
+        "committedMemory": 2591904,
+        "capacity": 2299104,
+        "used": 2299104,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 7344128,
+        "committedMemory": 7153768,
+        "capacity": 4099680,
+        "used": 4099680,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 1344647168,
+        "committedMemory": 1344647168,
+        "capacity": 1344326032,
+        "used": 1344326032,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 550560,
+        "used": 550560,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047328,
+        "used": 0,
+        "available": 1047328
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 49.5252,
+    "kernelCpuSeconds": 2.4436,
+    "cpuConsumptionPercent": 185.603,
+    "maxRss": 2837725184,
+    "pageFaults": {
+      "IORequired": 0,
+      "IONotRequired": 1183730
+    },
+    "fsActivity": {
+      "reads": 104,
+      "writes": 48
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 24.1374,
+    "kernelCpuSeconds": 1.52961,
+    "cpuConsumptionPercent": 91.6678,
+    "fsActivity": {
+      "reads": 104,
+      "writes": 40
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "GJS_DEBUG_TOPICS": "JS ERROR;JS LOG",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "npm_package_devDependencies_tslint": "^5.12.0",
+    "LANGUAGE": "fr_CA:fr",
+    "USER": "eanoh",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_user_agent": "yarn/1.22.10 npm/? node/v12.7.0 linux x64",
+    "npm_package_dependencies_immutable": "^4.0.0-rc.12",
+    "npm_config_bin_links": "true",
+    "SSH_AGENT_PID": "1373",
+    "XDG_SESSION_TYPE": "x11",
+    "GIT_ASKPASS": "/snap/code/52/usr/share/code/resources/app/extensions/git/dist/askpass.sh",
+    "npm_node_execpath": "/home/eanoh/.nvm/versions/node/v12.7.0/bin/node",
+    "npm_package_devDependencies_eslint_plugin_flowtype": "^2.50.0",
+    "npm_config_init_version": "1.0.0",
+    "SHLVL": "1",
+    "npm_package_devDependencies_eslint_config_umi": "^1.4.0",
+    "HOME": "/home/eanoh",
+    "CHROME_DESKTOP": "code-url-handler.desktop",
+    "TERM_PROGRAM_VERSION": "1.53.2",
+    "DESKTOP_SESSION": "ubuntu",
+    "NVM_BIN": "/home/eanoh/.nvm/versions/node/v12.7.0/bin",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "npm_package_engines_node": ">=12.0.0",
+    "npm_package_dependencies__turf_helpers": "^6.1.4",
+    "npm_package_scripts_precommit": "lint-staged",
+    "npm_config_init_license": "MIT",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "GNOME_SHELL_SESSION_MODE": "ubuntu",
+    "GTK_MODULES": "gail:atk-bridge",
+    "VSCODE_GIT_ASKPASS_MAIN": "/snap/code/52/usr/share/code/resources/app/extensions/git/dist/askpass-main.js",
+    "YARN_WRAP_OUTPUT": "false",
+    "npm_package_devDependencies_umi_types": "^0.3.0",
+    "npm_config_version_tag_prefix": "v",
+    "VSCODE_GIT_ASKPASS_NODE": "/snap/code/52/usr/share/code/code",
+    "MANAGERPID": "1149",
+    "npm_package_dependencies_dva_model_creator": "^0.4.2",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "npm_package_devDependencies_husky": "^0.14.3",
+    "COLORTERM": "truecolor",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "55715",
+    "npm_package_description": "---",
+    "npm_package_devDependencies_umi": "^2.7.0",
+    "npm_package_dependencies_antd": "^3.19.5",
+    "NVM_DIR": "/home/eanoh/.nvm",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_devDependencies__types_react_dom": "^16.0.11",
+    "IM_CONFIG_PHASE": "1",
+    "LOGNAME": "eanoh",
+    "npm_package_devDependencies_eslint_plugin_import": "^2.14.0",
+    "JOURNAL_STREAM": "8:39878",
+    "_": "/home/eanoh/.nvm/versions/node/v12.7.0/bin/yarn",
+    "npm_package_devDependencies__types_jest": "^23.3.12",
+    "npm_package_dependencies_react_map_gl": "^5.0.10",
+    "npm_package_dependencies_json_loader": "^0.5.7",
+    "npm_package_scripts_lint_es": "eslint --ext .js src mock tests",
+    "npm_package_private": "true",
+    "XDG_SESSION_CLASS": "user",
+    "npm_package_lint_staged____js_jsx__0": "eslint --fix",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "USERNAME": "eanoh",
+    "TERM": "xterm-256color",
+    "npm_package_lint_staged____js_jsx__1": "git add",
+    "GNOME_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "npm_package_devDependencies_umi_plugin_react": "^1.8.0",
+    "npm_package_scripts_start": "umi dev",
+    "npm_config_ignore_scripts": "",
+    "WINDOWPATH": "2",
+    "npm_package_dependencies_ant_design_pro": "^2.3.2",
+    "PATH": "/tmp/yarn--1614276659842-0.38216027212782255:/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/node_modules/.bin:/home/eanoh/.config/yarn/link/node_modules/.bin:/home/eanoh/.yarn/bin:/home/eanoh/.nvm/versions/node/v12.7.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/eanoh/.nvm/versions/node/v12.7.0/lib/node_modules/npm/bin/node-gyp-bin:/home/eanoh/.nvm/versions/node/v12.7.0/bin/node_modules/npm/bin/node-gyp-bin:/home/eanoh/.nvm/versions/node/v12.7.0/bin:/home/eanoh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "NODE": "/home/eanoh/.nvm/versions/node/v12.7.0/bin/node",
+    "SESSION_MANAGER": "local/eanoh-ThinkPad-T460s:@/tmp/.ICE-unix/1416,unix/eanoh-ThinkPad-T460s:/tmp/.ICE-unix/1416",
+    "INVOCATION_ID": "053f3df7e219433f8fda0702a3c69af0",
+    "npm_package_name": "",
+    "npm_package_dependencies_dva": "^2.6.0-beta.6",
+    "XDG_MENU_PREFIX": "gnome-",
+    "BAMF_DESKTOP_FILE_HINT": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "npm_package_devDependencies_eslint_plugin_jsx_a11y": "^5.1.1",
+    "npm_package_dependencies_import": "^0.0.6",
+    "DISPLAY": ":0",
+    "LANG": "fr_CA.UTF-8",
+    "XDG_CURRENT_DESKTOP": "Unity",
+    "npm_package_devDependencies_react_test_renderer": "^16.7.0",
+    "npm_package_devDependencies_eslint": "^5.4.0",
+    "npm_package_dependencies_react_dom": "^16.8.6",
+    "XMODIFIERS": "@im=ibus",
+    "XDG_SESSION_DESKTOP": "ubuntu",
+    "XAUTHORITY": "/run/user/1000/gdm/Xauthority",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "VSCODE_GIT_IPC_HANDLE": "/run/user/1000/vscode-git-dd100b6afa.sock",
+    "TERM_PROGRAM": "vscode",
+    "npm_lifecycle_script": "umi dev",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "GSETTINGS_SCHEMA_DIR": "/snap/code/55/usr/share/glib-2.0/schemas",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "ubuntu:GNOME",
+    "npm_package_scripts_test": "umi test",
+    "npm_config_version_git_message": "v%s",
+    "SHELL": "/bin/bash",
+    "DISABLE_WAYLAND": "1",
+    "npm_lifecycle_event": "start",
+    "npm_package_version": "",
+    "npm_package_devDependencies__types_react": "^16.7.18",
+    "QT_ACCESSIBILITY": "1",
+    "NO_AT_BRIDGE": "1",
+    "GDMSESSION": "ubuntu",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_package_devDependencies_lint_staged": "^7.2.2",
+    "npm_package_scripts_build": "umi build",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "npm_package_dependencies__types_react_map_gl": "^5.0.0",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_git_sign": "",
+    "GPG_AGENT_INFO": "/run/user/1000/gnupg/S.gpg-agent:0:1",
+    "GJS_DEBUG_OUTPUT": "stderr",
+    "npm_package_devDependencies_eslint_plugin_react": "^7.11.1",
+    "npm_package_scripts_lint_ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "npm_config_strict_ssl": "true",
+    "QT_IM_MODULE": "ibus",
+    "PWD": "/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map",
+    "npm_execpath": "/home/eanoh/.nvm/versions/node/v12.7.0/lib/node_modules/yarn/bin/yarn.js",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-ubuntu:/etc/xdg",
+    "NVM_CD_FLAGS": "",
+    "XDG_DATA_DIRS": "/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop",
+    "npm_package_devDependencies_tslint_eslint_rules": "^5.4.0",
+    "npm_package_dependencies_mapbox_gl": "^1.3.0",
+    "npm_config_save_prefix": "^",
+    "npm_config_ignore_optional": "",
+    "npm_package_devDependencies_babel_eslint": "^9.0.0",
+    "npm_package_lint_staged____ts_tsx__0": "tslint --fix",
+    "npm_package_devDependencies_tslint_react": "^3.6.0",
+    "INIT_CWD": "/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map",
+    "npm_package_lint_staged____ts_tsx__1": "git add",
+    "npm_package_devDependencies__types_react_test_renderer": "^16.0.3",
+    "npm_package_dependencies_react": "^16.8.6",
+    "UMI_DIR": "/home/eanoh/Bureau/CurbLr/conversion-mt-qc-et-map/erwin_fork/curb-map/node_modules/umi",
+    "UMI_VERSION": "2.13.16",
+    "UMI_UI_BROWSER": "none",
+    "UMI_UI": "true",
+    "UMI_UI_PORT": "3000",
+    "NODE_ENV": "development"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 67108864,
+      "hard": 67108864
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 79187,
+      "hard": 79187
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/librt.so.1",
+    "/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2"
+  ]
+}

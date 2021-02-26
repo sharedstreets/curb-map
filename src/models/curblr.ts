@@ -31,27 +31,39 @@ console.error = (...args : any[]) => {
 };
 
 const geoDataFiles = [
+    // Autres
     // { path: "downtown_portland_2020-01-06.curblr.json", label: "Portland 2020-01" },
     // { path: "downtown_portland_2020-02-20.curblr.json", label: "Portland 2020-02" },
     // { path: "la.curblr.json", label: "LA" },
-//mtl-subset-places-oasis-bellechasse-plaza.curblr.json
+
+    { path: "mtl-subset-segment_all.curblr.json", label: "MTL - ALL" }, //last from data convert
     // { path: "mtl-subset-segment.curblr.json", label: "mtl" }, //trop lourd pour etre affiche
-    { path: "last_converted.curblr.json", label: "Parcomètres - Rosemont"},
+
+    { path: "mtl-parco-Outremont.filtred.curblr.json", label: "mtl-parco - Outremont"},
+    { path: "mtl-parco-Ville-Marie.filtred.curblr.json", label: "mtl-parco - Ville-Marie (lent)"}, //> 10 mo
+    { path: "mtl-parco-Ahuntsic-Cartierville.filtred.curblr.json", label: "mtl-parco - Ahuntsic-Cartierville"},                  
+    { path: "mtl-parco-Côte-des-Neiges-Notre-Dame-de-Grâce.filtred.curblr.json", label: "mtl-parco - Côte-des-Neiges-Notre-Dame-de-Grâce"},       
+    { path: "mtl-parco-Lachine.filtred.curblr.json", label: "mtl-parco - Lachine"},                                
+    { path: "mtl-parco-Le-Plateau-Mont-Royal.filtred.curblr.json", label: "mtl-parco - Le-Plateau-Mont-Royal (un peu lent)"}, // > 10 mo                 
+    { path: "mtl-parco-Le-Sud-Ouest.filtred.curblr.json", label: "mtl-parco - Le-Sud-Ouest"}, 
+    { path: "mtl-parco-Mercier-Hochelaga-Maisonneuve.filtred.curblr.json", label: "mtl-parco - Mercier-Hochelaga-Maisonneuve"},          
+    { path: "mtl-parco-Rosemont-La-Petite-Patrie.filtred.curblr.json", label: "mtl-parco - Rosemont-La-Petite-Patrie"},
+    { path: "mtl-parco-Verdun.filtred.curblr.json", label: "mtl-parco - Verdun"},
+    { path: "mtl-parco-Villeray-Saint-Michel-Parc-Extension.filtred.curblr.json", label: "mtl-parco - Villeray-Saint-Michel-Parc-Extension"}, 
+
     { path: "mtl-subset-places-oasis-bellechasse-plaza.curblr.json", label: "mtl - Oasis bellechasse + plaza"},
-    // { path: "last_converted_all.curblr.json", label: "Parcomètres - Montréal (lent)"},
+
     { path: "mtl-subset-segment-rosemont.curblr.json", label: "mtl - Rosemont" },
     { path: "mtl-subset-segment-Mercier-Hochelaga-Maisonneuve.curblr.json", label: "mtl - Mercier Hochelaga-Maisonneuve" },
     { path: "mtl-subset-segment-Villeray-Saint-Michel.curblr.json", label: "mtl - Villeray Saint-Michel"},
     { path: "mtl-subset-segment-Ville-Marie.curblr.json", label: "mtl - Ville-marie" },
     { path: "mtl-subset-segment-Plateau-Mont-Royal.curblr.json", label: "mtl - Plateau Mont-Royal" },
     { path: "mtl-subset-segment-Ahuntsic - Cartierville.curblr.json", label: "mtl - Ahuntsic-Cartierville" },
-    // { path: "mtl-subset-segment-Outremont.curblr.json", label: "mtl - Outremont" }, // bug
-    
-    { path: "qc-subset-segment-full.curblr.json", label: "Québec (lent)" }, // ralenti le site
+
+    { path: "qc-subset-segment-full.curblr.json", label: "Québec (lent)" }, // > 9 mo
     { path: "qc-subset-segment-saint-sauveur.curblr.json", label: "Québec - Saint-Sauveur" },    
     { path: "qc-subset-segment-vieux-Moulin.curblr.json", label: "Québec - Vieux-Moulin" }
 ];
-
 
 const curblrData = geojsonData as CurbFeatureCollection;
 
