@@ -36,7 +36,7 @@ const geoDataFiles = [
     // { path: "downtown_portland_2020-02-20.curblr.json", label: "Portland 2020-02" },
     // { path: "la.curblr.json", label: "LA" },
 
-    { path: "mtl-subset-segment_all.curblr.json", label: "MTL - ALL" }, //last from data convert
+    // { path: "mtl-subset-segment_all.curblr.json", label: "MTL - Test" }, //last from data convertÉ
     // { path: "mtl-subset-segment.curblr.json", label: "mtl" }, //trop lourd pour etre affiche
 
     { path: "mtl-parco-Outremont.filtred.curblr.json", label: "mtl-parco - Outremont"},
