@@ -39,6 +39,11 @@ const geoDataFiles = [
     // { path: "mtl-subset-segment_all.curblr.json", label: "MTL - Test" }, //last from data convertÉ
     // { path: "mtl-subset-segment.curblr.json", label: "mtl" }, //trop lourd pour etre affiche
 
+    { path: "mtl-subset-places-oasis-bellechasse-plaza.curblr.json", label: "1 mtl - Oasis bellechasse + plaza"},
+    { path: "mtl-parco-places-oasis-bellechasse-plaza.filtred.curblr.json", label: "2 mtl-parco - Oasis bellechasse + plaza"},
+    { path: "mtl-fusion-places-oasis-bellechasse-plaza.curblr.json", label: "3 test-fusion - Oasis bellechasse + plaza"},
+    
+
     { path: "mtl-parco-Outremont.filtred.curblr.json", label: "mtl-parco - Outremont"},
     // { path: "mtl-parco-Ville-Marie.filtred.curblr.json", label: "mtl-parco - Ville-Marie (lent)"}, //> 10 mo
     { path: "mtl-parco-Ahuntsic-Cartierville.filtred.curblr.json", label: "mtl-parco - Ahuntsic-Cartierville"},                  
@@ -50,8 +55,6 @@ const geoDataFiles = [
     { path: "mtl-parco-Rosemont-La-Petite-Patrie.filtred.curblr.json", label: "mtl-parco - Rosemont-La-Petite-Patrie"},
     { path: "mtl-parco-Verdun.filtred.curblr.json", label: "mtl-parco - Verdun"},
     { path: "mtl-parco-Villeray-Saint-Michel-Parc-Extension.filtred.curblr.json", label: "mtl-parco - Villeray-Saint-Michel-Parc-Extension"}, 
-
-    { path: "mtl-subset-places-oasis-bellechasse-plaza.curblr.json", label: "mtl - Oasis bellechasse + plaza"},
 
     { path: "mtl-subset-segment-rosemont.curblr.json", label: "mtl - Rosemont" },
     { path: "mtl-subset-segment-Mercier-Hochelaga-Maisonneuve.curblr.json", label: "mtl - Mercier Hochelaga-Maisonneuve" },
