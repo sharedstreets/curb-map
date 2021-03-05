@@ -2,23 +2,9 @@ import { GlobalState } from "../common/types";
 import { DvaModelBuilder } from "dva-model-creator";
 import { time, day, priority, activity } from "../actions/filter";
 import { fetchGeoData, loadGeoData } from "../actions/geo"
-
-// import geojsonData from '@/assets/data/mtl-subset-segment-rosemont.curblr.json';
-// import geojsonData from '@/assets/data/mtl-subset-segment.curblr.json';
-// import geojsonData from '@/assets/data/mtl-subset-segment-Mercier-Hochelaga-Maisonneuve.curblr.json';
-import geojsonData from '@/assets/data/mtl-subset-segment-Villeray-Saint-Michel.curblr.json';
-// import geojsonData from '@/assets/data/mtl-subset-segment-Ville-Marie.curblr.json';
-// import geojsonData from '@/assets/data/mtl-subset-segment-Plateau-Mont-Royal.curblr.json';
-// import geojsonData from '@/assets/data/mtl-subset-segment-Ahuntsic - Cartierville.curblr.json';
-// import geojsonData from '@/assets/data/mtl-subset-segment-Outremont.curblr.json';
-
-// import geojsonData from '@/assets/data/qc-subset-segment-full.curblr.json';
-// import geojsonData from '@/assets/data/qc-subset-segment-saint-sauveur.curblr.json';
-// import geojsonData from '@/assets/data/qc-subset-segment-vieux-Moulin.curblr.json';
-
+import geojsonData from '@/assets/data/mtl-subset-places-oasis-bellechasse-plaza.curblr.json';
 import { CurbFeature, CurbFeatureCollection, filterTimeAndDay } from '@/common/curblr';
 import { FeatureCollection, featureCollection, feature, LineString } from '@turf/helpers';
-
 import {fromJS} from 'immutable';
 import mapStyle from '../assets/style.json';
 
@@ -41,8 +27,7 @@ const geoDataFiles = [
 
     { path: "mtl-subset-places-oasis-bellechasse-plaza.curblr.json", label: "1 mtl - Oasis bellechasse + plaza"},
     { path: "mtl-parco-places-oasis-bellechasse-plaza.filtred.curblr.json", label: "2 mtl-parco - Oasis bellechasse + plaza"},
-    { path: "mtl-fusion-places-oasis-bellechasse-plaza.curblr.json", label: "3 test-fusion - Oasis bellechasse + plaza"},
-    
+    { path: "mtl-fusion-places-oasis-bellechasse-plaza.curblr.json", label: "3 fusion - Oasis bellechasse + plaza"},
 
     { path: "mtl-parco-Outremont.filtred.curblr.json", label: "mtl-parco - Outremont"},
     // { path: "mtl-parco-Ville-Marie.filtred.curblr.json", label: "mtl-parco - Ville-Marie (lent)"}, //> 10 mo
@@ -55,13 +40,27 @@ const geoDataFiles = [
     { path: "mtl-parco-Rosemont-La-Petite-Patrie.filtred.curblr.json", label: "mtl-parco - Rosemont-La-Petite-Patrie"},
     { path: "mtl-parco-Verdun.filtred.curblr.json", label: "mtl-parco - Verdun"},
     { path: "mtl-parco-Villeray-Saint-Michel-Parc-Extension.filtred.curblr.json", label: "mtl-parco - Villeray-Saint-Michel-Parc-Extension"}, 
-
-    { path: "mtl-subset-segment-rosemont.curblr.json", label: "mtl - Rosemont" },
-    { path: "mtl-subset-segment-Mercier-Hochelaga-Maisonneuve.curblr.json", label: "mtl - Mercier Hochelaga-Maisonneuve" },
-    { path: "mtl-subset-segment-Villeray-Saint-Michel.curblr.json", label: "mtl - Villeray Saint-Michel"},
-    { path: "mtl-subset-segment-Ville-Marie.curblr.json", label: "mtl - Ville-marie" },
-    { path: "mtl-subset-segment-Plateau-Mont-Royal.curblr.json", label: "mtl - Plateau Mont-Royal" },
-    { path: "mtl-subset-segment-Ahuntsic - Cartierville.curblr.json", label: "mtl - Ahuntsic-Cartierville" },
+    { path: "mtl-parco-Saint-Laurent.filtred.curblr.json", label: "mtl-parco - Saint-Laurent"}, 
+     
+    { path: "mtl-subset-segment-lasalle.curblr.json", label: "mtl - LaSalle" },
+    { path: "mtl-subset-segment-ville-marie.curblr.json", label: "mtl - Ville-Marie" },
+    // { path: "mtl-subset-segment-côte-des-neiges-notre-dame-de-grâce.curblr.json", label: "mtl - Côte-des-Neiges - Notre-Dame-de-Grâce" },//null
+    { path: "mtl-subset-segment-montréal-nord.curblr.json", label: "mtl - Montréal-Nord" },
+    // { path: "mtl-subset-segment-saint-léonard.curblr.json", label: "mtl - Saint-Léonard" },//null
+    { path: "mtl-subset-segment-verdun.curblr.json", label: "mtl - Verdun" },
+    // { path: "mtl-subset-segment-l'île-bizard-sainte-geneviève.curblr.json", label: "mtl - L'Île-Bizard - Sainte-Geneviève" },
+    // { path: "mtl-subset-segment-sud-ouest.curblr.json", label: "mtl - Sud-Ouest" },//null
+    { path: "mtl-subset-segment-villeray-saint-michel-parc-extension.curblr.json", label: "mtl - Villeray - Saint-Michel - Parc-Extension" },
+    { path: "mtl-subset-segment-anjou.curblr.json", label: "mtl - Anjou" },
+    { path: "mtl-subset-segment-lachine.curblr.json", label: "mtl - Lachine" },
+    { path: "mtl-subset-segment-plateau-mont-royal.curblr.json", label: "mtl - Plateau-Mont-Royal" },
+    { path: "mtl-subset-segment-rivière-des-prairies-pointe-aux-trembles.curblr.json", label: "mtl - Rivière-des-Prairies - Pointe-aux-Trembles" },
+    { path: "mtl-subset-segment-rosemont-lapetite-patrie.curblr.json", label: "mtl - Rosemont - La Petite-Patrie" },
+    { path: "mtl-subset-segment-mercier-hochelaga-maisonneuve.curblr.json", label: "mtl - Mercier - Hochelaga-Maisonneuve" },
+    { path: "mtl-subset-segment-pierrefonds-roxboro.curblr.json", label: "mtl - Pierrefonds - Roxboro" },
+    // { path: "mtl-subset-segment-outremont.curblr.json", label: "mtl - Outremont" },
+    { path: "mtl-subset-segment-ahuntsic-cartierville.curblr.json", label: "mtl - Ahuntsic - Cartierville" },
+    { path: "mtl-subset-segment-saint-laurent.curblr.json", label: "mtl - Saint-Laurent" },
 
     { path: "qc-subset-segment-full.curblr.json", label: "Québec (lent)" }, // > 9 mo
     { path: "qc-subset-segment-saint-sauveur.curblr.json", label: "Québec - Saint-Sauveur" },    
