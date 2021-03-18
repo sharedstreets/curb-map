@@ -62,9 +62,33 @@ const geoDataFiles = [
     { path: "mtl-subset-segment-ahuntsic-cartierville.curblr.json", label: "mtl - Ahuntsic - Cartierville" },
     { path: "mtl-subset-segment-saint-laurent.curblr.json", label: "mtl - Saint-Laurent" },
 
-    { path: "qc-subset-segment-full.curblr.json", label: "Québec (lent)" }, // > 9 mo
-    { path: "qc-subset-segment-saint-sauveur.curblr.json", label: "Québec - Saint-Sauveur" },    
-    { path: "qc-subset-segment-vieux-Moulin.curblr.json", label: "Québec - Vieux-Moulin" }
+    // { path: "qc-subset-segment-full.curblr.json", label: "Québec (lent)" }, // > 9 mo
+    // { path: "qc-subset-segment-saint-sauveur.curblr.json", label: "Québec - Saint-Sauveur" },    
+    // { path: "qc-subset-segment-vieux-Moulin.curblr.json", label: "Québec - Vieux-Moulin" }
+    { path: "vdq-panneauxstationnement-filtred-chutes-montmorency.curblr.json", label: "qc - chutes-montmorency"},
+    { path: "vdq-panneauxstationnement-filtred-des-châtels.curblr.json", label: "qc - des-châtels"},
+    { path: "vdq-panneauxstationnement-filtred-duberger—les-saules.curblr.json", label: "qc - duberger—les-saules"},
+    { path: "vdq-panneauxstationnement-filtred-jésuites.curblr.json", label: "qc - jésuites"},
+    { path: "vdq-panneauxstationnement-filtred-lac-saint-charles.curblr.json", label: "qc - lac-saint-charles"},
+    { path: "vdq-panneauxstationnement-filtred-maizerets.curblr.json", label: "qc - maizerets"},
+    { path: "vdq-panneauxstationnement-filtred-montcalm.curblr.json", label: "qc - montcalm"},
+    { path: "vdq-panneauxstationnement-filtred-neufchatel-est—lebourgneuf.curblr.json", label: "qc - neufchatel-est—lebourgneuf"},
+    { path: "vdq-panneauxstationnement-filtred-notre-dame-des-laurentides.curblr.json", label: "qc - notre-dame-des-laurentides"},
+    { path: "vdq-panneauxstationnement-filtred-plateau.curblr.json", label: "qc - plateau"},
+    { path: "vdq-panneauxstationnement-filtred-pointe-de-sainte-foy.curblr.json", label: "qc - pointe-de-sainte-foy"},
+    { path: "vdq-panneauxstationnement-filtred-quartier-4-2.curblr.json", label: "qc - quartier-4-2"},
+    { path: "vdq-panneauxstationnement-filtred-quartier-4-3.curblr.json", label: "qc - quartier-4-3"},
+    { path: "vdq-panneauxstationnement-filtred-quartier-4-6.curblr.json", label: "qc - quartier-4-6"},
+    { path: "vdq-panneauxstationnement-filtred-quartier-5-1.curblr.json", label: "qc - quartier-5-1"},
+    { path: "vdq-panneauxstationnement-filtred-quartier-5-2.curblr.json", label: "qc - quartier-5-2"},
+    { path: "vdq-panneauxstationnement-filtred-saint-louis.curblr.json", label: "qc - saint-louis"},
+    { path: "vdq-panneauxstationnement-filtred-saint-roch.curblr.json", label: "qc - saint-roch"},
+    { path: "vdq-panneauxstationnement-filtred-saint-sacrement.curblr.json", label: "qc - saint-sacrement"},
+    { path: "vdq-panneauxstationnement-filtred-saint-sauveur.curblr.json", label: "qc - saint-sauveur"},
+    { path: "vdq-panneauxstationnement-filtred-val-bélair.curblr.json", label: "qc - val-bélair"},
+    { path: "vdq-panneauxstationnement-filtred-vanier.curblr.json", label: "qc - vanier"},
+    { path: "vdq-panneauxstationnement-filtred-vieux-moulin.curblr.json", label: "qc - vieux-moulin"},
+    { path: "vdq-panneauxstationnement-filtred-vieux-québec—cap-blanc—colline-parlementaire.curblr.json", label: "qc - vieux-québec—cap-blanc—colline-parlementaire"}
 ];
 
 const curblrData = geojsonData as CurbFeatureCollection;
