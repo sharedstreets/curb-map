@@ -40,7 +40,7 @@ export function filterTimeAndDay(regulation: Regulation, filterDayOfWeek: string
 }
 
 
-
+//TODO FILTER DAY MONTH
 export function filterCurblrData (
     data: CurbFeatureCollection,
     day: string,
@@ -168,7 +168,7 @@ export interface DesignatedPeriods {
 }
 
 export class TimeSpan {
-    effectiveDates?:[{to:string, from:string}];
+    effectiveDates?:[{to:string, from:string}];//TODO FILTER DAY MONTH
     daysOfWeek:DaysOfWeek;
     daysOfMonth?:Array<string|"even"|"odd"|"last">;
     timesOfDay?:Array<TimesOfDay>;

@@ -20,7 +20,7 @@ import { GlobalState } from "@/common/types";
 import {
   CurbFeature,
   CurbFeatureCollection,
-  filterCurblrData
+  filterCurblrData //TODO FILTER DAY MONTH
 } from "@/common/curblr";
 import {
   FeatureCollection,
@@ -137,7 +137,7 @@ const renderCurblrData = (
   filterType: string
 ): FeatureCollection<LineString> => {
   var renderData = featureCollection<LineString>([]);
-  var filteredData = filterCurblrData(data, day, time);
+  var filteredData = filterCurblrData(data, day, time);//TODO FILTER DAY MONTH
 
   for (var curbFeature of filteredData.features) {
     var renderFeature = feature<LineString>(curbFeature.geometry);

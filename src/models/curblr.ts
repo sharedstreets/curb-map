@@ -103,6 +103,8 @@ const initState:GlobalState = {
 }
 
 async function loadAsset(path : string){
+    //../assets/data/
+    //https://raw.githubusercontent.com/ervinanoh/curb-map/master/src/assets/data/
     return await import(`../assets/data/${path}`)
 }
 
